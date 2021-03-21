@@ -69,27 +69,30 @@ html, body {
 
 @media screen and (max-width: 800px) {
 	.m-navigationMobile {
+		width: 50%;
 		display: flex;
+		justify-content: flex-end;
 
 		.a-button:first-child {
-			margin-left: 0;
+			margin-right: 65px;
 		}
 
 		.a-button {
 			background-color: transparent;
-
-			margin-left: 15.5vw;
 		}
 	}
 }
 
-@media screen and (max-width: 400px) {
-	.m-navigationMobile {
-		.a-button {
-			margin-left: 7vw;
-		}
-	}
-}
+// @media screen and (max-width: 400px) {
+// 	.m-navigationMobile {
+// 		width: 80%;
+// 		justify-content: space-between;
+
+// 		.a-button:first-child {
+// 			margin-left: 10vw;
+// 		}
+// 	}
+// }
 
 
 .t-header {
@@ -106,6 +109,10 @@ html, body {
 
 		width: @set-block-width;
 		padding: 20px 0;
+
+		.a-logoMob {
+			display: none;
+		}
 	}
 }
 
@@ -124,6 +131,14 @@ html, body {
 
 		.o-content {
 			padding: 17px 35px 17px 21px;
+
+			.a-logoDesktop {
+				display: none;
+			}
+
+			.a-logoMob {
+				display: inherit;
+			}
 		}
 	}
 }
