@@ -15,12 +15,13 @@ html, body {
     color: @color-white;
 
     // TEST
+    // height: 3000px;
 	background-color: grey;
 }
 
 // HEADER
 
-.m-navigation {
+.m-navigationDesktop {
 	.a-link:first-child {
 		margin-left: 0;
 	}
@@ -48,13 +49,48 @@ html, body {
 	}
 }
 
-@media screen and (max-width: @set-block-width) {
-	.m-navigation {
+@media screen and (max-width: 1120px) {
+	.m-navigationDesktop {
 		.a-link, .a-button {
 			margin-left: 2vw;
 		}
 	}
 }
+
+@media screen and (max-width: 800px) {
+	.m-navigationDesktop {
+		display: none;
+	}
+}
+
+.m-navigationMobile {
+	display: none;
+}
+
+@media screen and (max-width: 800px) {
+	.m-navigationMobile {
+		display: flex;
+
+		.a-button:first-child {
+			margin-left: 0;
+		}
+
+		.a-button {
+			background-color: transparent;
+
+			margin-left: 15.5vw;
+		}
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.m-navigationMobile {
+		.a-button {
+			margin-left: 7vw;
+		}
+	}
+}
+
 
 .t-header {
 	width: 100%;
@@ -73,10 +109,21 @@ html, body {
 	}
 }
 
-@media screen and (max-width: @set-block-width) {
+@media screen and (max-width: 1140px + 20px + 20px) {
 	.t-header {
 		.o-content {
 			padding: 20px;
+		}
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.t-header {
+		position: fixed;
+		box-shadow: -2px 1px 12px rgba(20, 74, 90, 0.14);
+
+		.o-content {
+			padding: 17px 35px 17px 21px;
 		}
 	}
 }
