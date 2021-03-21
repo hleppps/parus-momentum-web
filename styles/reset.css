@@ -45,7 +45,7 @@ table {
 button, input {
 	margin: 0;
 	border: 0;
-	/*box-shadow: none;*/
+	box-shadow: none;
 	border: none;
 	background-color: tr;
 	font-size: 100%;
