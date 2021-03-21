@@ -13,8 +13,6 @@ html, body {
 	font-family: 'Rubik', 'Arial';
   font-size: 16px;
 
-  // height: 3000px;
-
   // TEST
 	// background-color: grey;
 }
@@ -95,12 +93,20 @@ html, body {
 
 			  cursor: pointer;
 			  		  
-			  opacity: 0; 
-			  z-index: 2;
+			  opacity: 0;
+			  z-index: 0;
 			}
 
   	  .a-checkbox:checked ~ .m-menu-content {
 		  	transform: none;
+			}
+
+			.a-checkbox:checked {
+		  	top: 0px;
+		  	left: -800px;
+		  	width: 150vw;
+		  	height: 150vh;
+
 			}
 
   	}
