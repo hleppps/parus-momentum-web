@@ -7,7 +7,8 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
 
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/style.css">
@@ -29,8 +30,35 @@
 
         <div class="m-navigationMobile">
           <button class="a-button"><img src="images/call-btn.svg" alt=""></button>
-          <button class="a-button"><img src="images/menu-btn.svg" alt=""></button>
+
+          <div class="m-popUpMenu"> 
+            <input class="a-checkbox" type="checkbox"/>
+            <button class="a-button"><img src="images/menu-btn.svg" alt=""></button>
+
+            <div class="m-menu-content">
+              <nav class="m-navigation">
+                <a class="a-link" href="">Про нас</a>
+                <a class="a-link" href="">Послуги</a>
+                <a class="a-link" href="">Умови кредитування</a>
+                <a class="a-link" href="">Контакти</a>
+              </nav>
+              <div class="m-contacts">
+                <p class="a-text">г Киев,  ул. Рыбальская 2</p>
+                <div class="m-contacts-sub">
+                  <a class="a-text" href="tel:3800504625650">0504625650</a>
+                  <button class="a-button">Запитати</button>
+                </div>
+              </div>
+              <div class="m-socialNetworks">
+                <button><img src="images/telegram.svg" alt=""></button>
+                <button><img src="images/whatsapp.svg" alt=""></button>
+              </div>
+            </div>
+          </div>
+
         </div>
+
+
       </div>
     </header>
 

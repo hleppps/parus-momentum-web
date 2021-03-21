@@ -1,6 +1,7 @@
 @color-white: #fff;
 @color-dark-blue: #005182;
 @color-orange: #E96325;
+@color-blue: #D3EDFC;
 
 @set-block-width: 1120px;
 
@@ -12,14 +13,15 @@ html, body {
 	font-family: 'Rubik', 'Arial';
     font-size: 16px;
 
-    color: @color-white;
 
-    // TEST
-    // height: 3000px;
-	background-color: grey;
+  // TEST
+	// background-color: grey;
 }
 
 // HEADER
+.a-button {
+	cursor: pointer;
+}
 
 .m-navigationDesktop {
 	.a-link:first-child {
@@ -80,19 +82,123 @@ html, body {
 		.a-button {
 			background-color: transparent;
 		}
-	}
+
+		.m-popUpMenu {
+		  position: relative;
+  	  z-index: 2;
+
+			.a-checkbox {
+			  display: block;
+			  width: 40px;
+			  height: 30px;
+			  position: absolute;
+			  top: -10px;
+			  left: -5px;
+
+			  cursor: pointer;
+			  		  
+			  opacity: 0; 
+			  z-index: 2;
+			}
+
+  	  .a-checkbox:checked ~ .m-menu-content {
+		  	transform: none;
+		  	box-shadow: -10px 4px 22px rgba(0, 0, 0, 0.25);
+			}
+  	}
+
+		.m-menu-content {
+			display: flex;
+			flex-direction: column;
+
+		  position: absolute;
+		  		  
+		  background-color: @color-white;
+		  border-radius: 25px 0 0 25px;
+
+		  transform-origin: 0% 0%;
+		  transform: translate(100%, 0);
+		  transition: transform 0.3s cubic-bezier(.43,.25,.46,.52);
+		  
+		  padding: 43px 0 32.5px 0; 
+		  width: 314px;
+			top: 50px;
+			left: -250px;
+
+			.m-navigation {
+				display: flex;
+				flex-direction: column;
+				padding: 0 0 42px 30px;
+
+				.a-link:first-child {
+					margin-top: 0;
+				}
+
+				.a-link {
+					color: @color-dark-blue;
+					font-size: 1.25rem;
+					line-height: 1.5rem;
+					font-weight: 500;
+
+					margin-top: 35px;
+				}
+			}
+
+			.m-contacts {
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+
+				background-color: @color-blue;
+
+				padding: 48px 25px 48px 30px;
+
+				.a-text {
+					color: @color-dark-blue;
+					font-size: 1.25rem;
+					line-height: 1.125rem;
+				}
+
+				.m-contacts-sub {
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+
+					margin-top: 42px;
+					width: 100%;
+
+					.a-button {
+						font-size: 0.875rem;
+						font-weight: 700;
+						color: @color-white;
+
+						border-radius: 20px;
+						background-color: @color-orange;
+
+						padding: 10px 16px;
+					}
+				}
+			}
+
+			.m-socialNetworks {
+				display: flex;
+				justify-content: space-evenly;
+				align-items: center;
+
+				margin-top: 32px;
+
+			}
+		}
+	}	
 }
 
-// @media screen and (max-width: 400px) {
-// 	.m-navigationMobile {
-// 		width: 80%;
-// 		justify-content: space-between;
-
-// 		.a-button:first-child {
-// 			margin-left: 10vw;
-// 		}
-// 	}
-// }
+@media screen and (max-width: 330px) {
+	.m-navigationMobile {
+		.a-button:first-child {
+			margin-right: 10vw;
+		}
+	}
+}
 
 
 .t-header {
