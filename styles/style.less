@@ -121,7 +121,6 @@ html, body {
 		  transform: translate(120%, 0);
 		  transition: transform 0.3s cubic-bezier(.43,.25,.46,.52);
 		  
-		  padding: 43px 0 32.5px 0; 
 		  width: 314px;
 			top: 50px;
 			left: -250px;
@@ -129,7 +128,7 @@ html, body {
 			.m-navigation {
 				display: flex;
 				flex-direction: column;
-				padding: 0 0 42px 30px;
+				padding: 43px 0 42px 30px;
 
 				.a-link:first-child {
 					margin-top: 0;
@@ -186,7 +185,7 @@ html, body {
 				justify-content: space-evenly;
 				align-items: center;
 
-				margin-top: 32px;
+				padding: 32px 0 29px;
 				.a-button {
 					margin: 0;
 				}
@@ -194,6 +193,12 @@ html, body {
 			}
 		}
 	}	
+}
+
+@media screen and (max-height: 650px) {
+	.m-menu-content {
+		height: 280px;
+	}
 }
 
 @media screen and (max-width: 330px) {
