@@ -11,8 +11,9 @@ html, body {
 	justify-content: center;
 
 	font-family: 'Rubik', 'Arial';
-    font-size: 16px;
+  font-size: 16px;
 
+  // height: 3000px;
 
   // TEST
 	// background-color: grey;
@@ -70,6 +71,7 @@ html, body {
 }
 
 @media screen and (max-width: 800px) {
+
 	.m-navigationMobile {
 		width: 50%;
 		display: flex;
@@ -77,10 +79,6 @@ html, body {
 
 		.a-button:first-child {
 			margin-right: 65px;
-		}
-
-		.a-button {
-			background-color: transparent;
 		}
 
 		.m-popUpMenu {
@@ -103,16 +101,19 @@ html, body {
 
   	  .a-checkbox:checked ~ .m-menu-content {
 		  	transform: none;
-		  	box-shadow: -10px 4px 22px rgba(0, 0, 0, 0.25);
 			}
+
   	}
 
 		.m-menu-content {
+
+			overflow-y: scroll;
 			display: flex;
 			flex-direction: column;
 
 		  position: absolute;
 		  		  
+		  box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.25);
 		  background-color: @color-white;
 		  border-radius: 25px 0 0 25px;
 
@@ -121,9 +122,9 @@ html, body {
 		  transition: transform 0.3s cubic-bezier(.43,.25,.46,.52);
 		  
 		  padding: 43px 0 32.5px 0; 
-		  width: 314px;
+		  width: 325px;
 			top: 50px;
-			left: -250px;
+			left: -215px;
 
 			.m-navigation {
 				display: flex;
@@ -186,6 +187,9 @@ html, body {
 				align-items: center;
 
 				margin-top: 32px;
+				.a-button {
+					margin: 0;
+				}
 
 			}
 		}
@@ -202,6 +206,8 @@ html, body {
 
 
 .t-header {
+	position: fixed;
+	z-index: 10;
 	width: 100%;
 	box-shadow: 0px 4px 10px rgba(20, 74, 90, 0.14);
 	display: flex;
