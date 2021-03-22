@@ -263,6 +263,7 @@ body {
   width: 100%;
 }
 .o-productData .m-form .m-main .a-input {
+  font-family: 'Rubik';
   font-size: 0.875rem;
   color: #005182;
   box-sizing: border-box;
@@ -273,6 +274,7 @@ body {
   width: 100%;
 }
 .o-productData .m-form .m-main .m-select .m-inputSelect {
+  font-family: 'Rubik';
   font-size: 0.875rem;
   box-sizing: border-box;
   border: 1px solid #A8D6E4;
@@ -320,6 +322,7 @@ body {
   background-color: #FFEBE1;
 }
 .o-productData .m-form .m-main .m-inputItemInfo {
+  font-family: 'Rubik';
   font-size: 0.875rem;
   color: #005182;
   box-sizing: border-box;
@@ -332,6 +335,7 @@ body {
   height: 80px;
 }
 .o-productData .m-form .m-main .m-inputName {
+  font-family: 'Rubik';
   font-size: 0.875rem;
   color: #005182;
   box-sizing: border-box;
@@ -343,6 +347,7 @@ body {
   margin-top: 10px;
 }
 .o-productData .m-form .m-main .m-inputPhone {
+  font-family: 'Rubik';
   font-size: 0.875rem;
   color: #005182;
   box-sizing: border-box;
