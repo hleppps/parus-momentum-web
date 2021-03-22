@@ -40,5 +40,4 @@ function underlayClosePopUpMenu () {
 	underlay.removeEventListener('click', underlayClosePopUpMenu)
 	is_menu_open = true
 	popUpMenu()
-
 }
