@@ -15,9 +15,10 @@ html, body {
 
 
   height: 3000px;
+  // overflow-y: hidden;
 
   // TEST
-	// background-color: grey;
+	background-color: grey;
 }
 
 // HEADER
@@ -85,43 +86,18 @@ html, body {
 			margin-right: 65px;
 		}
 
+		.a-popUpMenuButton-open {
+			.a-button;
+		}
+
+		.a-popUpMenuButton-close {
+			.a-button;
+			display: none;
+
+			width: 28.3px;
+		}
+
 		.m-popUpMenu {
-			// width: 30px;
-			display: flex;
-			justify-content: flex-end;
-		  // position: relative;
-  	  // z-index: 2;
-
-			// .a-checkbox {
-			//   display: block;
-			//   // width: 40px;
-			//   // height: 30px;
-			//   position: absolute;
-			//   top: -6px;
-			//   left: -4px;
-
-			//   cursor: pointer;
-			  		  
-			//   // opacity: 0;
-			//   z-index: 0;
-			// }
-
-  	//   .a-checkbox:checked ~ .m-menu-content {
-		 //  	transform: none;
-			// }
-
-			// .a-checkbox:checked {
-			// 	position: fixed;
-		 //  	top: -20vh;
-		 //  	left: -20vw;
-		 //  	width: 150vw;
-		 //  	height: 150vh;
-
-			// }
-
-  	}
-
-		.m-menu-content {
 
 			overflow-y: scroll;
 			display: flex;

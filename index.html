@@ -29,32 +29,31 @@
         </div>
 
         <div class="m-navigationMobile">
-          <button class="a-button" onclick="ppopUpMenu()"><img src="images/call-btn.svg" alt=""></button>
+          <button class="a-button"><img src="images/call-btn.svg" alt=""></button>
 
-          <!-- <div class="m-popUpMenu"> -->
-            <!-- <input class="a-checkbox" type="checkbox"/> -->
-            <button class="a-button test" onclick="popUpMenu()"><img src="images/menu-btn.svg" alt=""></button>
+          <button class="a-popUpMenuButton-open"><img src="images/pop-up-menu-btn-open.svg" alt=""></button>
+          <button class="a-popUpMenuButton-close"><img src="images/pop-up-menu-btn-close.svg" alt=""></button>
 
-            <div class="m-menu-content">
-              <nav class="m-navigation">
-                <a class="a-link" href="">Про нас</a>
-                <a class="a-link" href="">Послуги</a>
-                <a class="a-link" href="">Умови кредитування</a>
-                <a class="a-link" href="">Контакти</a>
-              </nav>
-              <div class="m-contacts">
-                <p class="a-text">м. Київ,  вул. Рибальська 2</p>
-                <div class="m-contacts-sub">
-                  <a class="a-text" href="tel:3800504625650">050 462 56 50</a>
-                  <button class="a-button">Запитати</button>
-                </div>
-              </div>
-              <div class="m-socialNetworks">
-                <button class="a-button"><img src="images/telegram.svg" alt=""></button>
-                <button class="a-button"><img src="images/whatsapp.svg" alt=""></button>
+          <div class="m-popUpMenu">
+            <nav class="m-navigation">
+              <a class="a-link" href="">Про нас</a>
+              <a class="a-link" href="">Послуги</a>
+              <a class="a-link" href="">Умови кредитування</a>
+              <a class="a-link" href="">Контакти</a>
+            </nav>
+            <div class="m-contacts">
+              <p class="a-text">м. Київ,  вул. Рибальська 2</p>
+              <div class="m-contacts-sub">
+                <a class="a-text" href="tel:3800504625650">050 462 56 50</a>
+                <button class="a-button">Запитати</button>
               </div>
             </div>
-          <!-- </div> -->
+            <div class="m-socialNetworks">
+              <button class="a-button"><img src="images/telegram.svg" alt=""></button>
+              <button class="a-button"><img src="images/whatsapp.svg" alt=""></button>
+            </div>
+          </div>
+
 
         </div>
 
@@ -70,12 +69,14 @@
 
 
 
-    <script src="scripts/popup-menu.js"></script>
+    <script src="scripts/pop-up-menu.js"></script>
+    <script src="scripts/event-handling.js"></script>
 
-<!--     <script>
+
+    <script>
       window.onload = () => {
-
+        handleEvent()
       }
-    </script> -->
+    </script>
   </body>
 </html>
