@@ -6,6 +6,7 @@
 @set-block-width: 1120px;
 
 html, body {
+	
 	width: 100%;
 	display: flex;
 	justify-content: center;
@@ -14,8 +15,7 @@ html, body {
   font-size: 16px;
 
 
-  height: 3000px;
-  // overflow-y: hidden;
+  // 
 
   // TEST
 	background-color: grey;
@@ -198,9 +198,9 @@ html, body {
 }
 
 
-.t-header {
+.o-header {
 	position: fixed;
-	z-index: 10;
+	// z-index: 2;
 	width: 100%;
 	box-shadow: 0px 4px 10px rgba(20, 74, 90, 0.14);
 	display: flex;
@@ -231,7 +231,6 @@ html, body {
 
 @media screen and (max-width: 800px) {
 	.t-header {
-		position: fixed;
 		box-shadow: -2px 1px 12px rgba(20, 74, 90, 0.14);
 
 		.o-content {
@@ -246,4 +245,10 @@ html, body {
 			}
 		}
 	}
+}
+
+main {
+	position: relative;
+	z-index: -1;
+	// margin-top: 80px;
 }

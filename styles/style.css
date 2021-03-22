@@ -5,7 +5,6 @@ body {
   justify-content: center;
   font-family: 'Rubik', 'Arial';
   font-size: 16px;
-  height: 3000px;
   background-color: grey;
 }
 .a-button {
@@ -137,22 +136,21 @@ body {
     margin-right: 10vw;
   }
 }
-.t-header {
+.o-header {
   position: fixed;
-  z-index: 10;
   width: 100%;
   box-shadow: 0px 4px 10px rgba(20, 74, 90, 0.14);
   display: flex;
   justify-content: center;
 }
-.t-header .o-content {
+.o-header .o-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 1120px;
   padding: 20px 0;
 }
-.t-header .o-content .a-logoMob {
+.o-header .o-content .a-logoMob {
   display: none;
 }
 @media screen and (max-width: 1180px) {
@@ -162,7 +160,6 @@ body {
 }
 @media screen and (max-width: 800px) {
   .t-header {
-    position: fixed;
     box-shadow: -2px 1px 12px rgba(20, 74, 90, 0.14);
   }
   .t-header .o-content {
@@ -174,4 +171,8 @@ body {
   .t-header .o-content .a-logoMob {
     display: inherit;
   }
+}
+main {
+  position: relative;
+  z-index: -1;
 }
