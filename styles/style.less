@@ -13,6 +13,9 @@ html, body {
 	font-family: 'Rubik', 'Arial';
   font-size: 16px;
 
+
+  height: 3000px;
+
   // TEST
 	// background-color: grey;
 }
@@ -79,27 +82,28 @@ html, body {
 			margin-right: 65px;
 		}
 
-		.m-popUpMenu {
+		.test {
+			// width: 30px;
 		  position: relative;
-  	  z-index: 2;
+  	  // z-index: 2;
 
-			.a-checkbox {
-			  display: block;
-			  width: 40px;
-			  height: 30px;
-			  position: absolute;
-			  top: -6px;
-			  left: -4px;
+			// .a-checkbox {
+			//   display: block;
+			//   // width: 40px;
+			//   // height: 30px;
+			//   position: absolute;
+			//   top: -6px;
+			//   left: -4px;
 
-			  cursor: pointer;
+			//   cursor: pointer;
 			  		  
-			  opacity: 0;
-			  z-index: 0;
-			}
+			//   // opacity: 0;
+			//   z-index: 0;
+			// }
 
-  	  .a-checkbox:checked ~ .m-menu-content {
-		  	transform: none;
-			}
+  	//   .a-checkbox:checked ~ .m-menu-content {
+		 //  	transform: none;
+			// }
 
 			// .a-checkbox:checked {
 			// 	position: fixed;
@@ -125,12 +129,12 @@ html, body {
 		  border-radius: 25px 0 0 25px;
 
 		  transform-origin: 0% 0%;
-		  transform: translate(120%, 0);
+		  transform: translate(100%, 0);
 		  transition: transform 0.3s cubic-bezier(.43,.25,.46,.52);
 		  
 		  width: 314px;
-			top: 50px;
-			left: -250px;
+			top: 75px;
+			left: 155px;
 
 			.m-navigation {
 				display: flex;
@@ -204,7 +208,7 @@ html, body {
 
 @media screen and (max-height: 650px) {
 	.m-menu-content {
-		height: 280px;
+		height: 70vh;
 	}
 }
 
