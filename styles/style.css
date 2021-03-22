@@ -55,12 +55,9 @@ body {
   .m-navigationMobile .a-button:first-child {
     margin-right: 65px;
   }
-  .m-navigationMobile .a-popUpMenuButton-open {
+  .m-navigationMobile .a-popUpMenuButton {
     cursor: pointer;
-  }
-  .m-navigationMobile .a-popUpMenuButton-close {
-    cursor: pointer;
-    display: none;
+    text-align: center;
     width: 28.3px;
   }
   .m-navigationMobile .m-popUpMenu {

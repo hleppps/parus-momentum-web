@@ -1,26 +1,23 @@
-function openPopUpMenu () {
-	let pop_up_menu = document.querySelector('.m-popUpMenu')
-	let pop_up_menu_btn_open = document.querySelector('.a-popUpMenuButton-open')
-	let pop_up_menu_btn_close = document.querySelector('.a-popUpMenuButton-close')
+let is_menu_open = false
 
-	pop_up_menu.style.transform = 'none'
-	pop_up_menu_btn_open.style.display = 'none'
-	pop_up_menu_btn_close.style.display = 'inherit'
+function popUpMenu () {
+	let pop_up_menu = document.querySelector('.m-popUpMenu')
+	let pop_up_menu_img = document.querySelector('.a-popUpMenuImage')
+
+	!is_menu_open ? openPopUpMenu(pop_up_menu, pop_up_menu_img) : closePopUpMenu(pop_up_menu, pop_up_menu_img)
 }
 
-function closePopUpMenu () {
-	let pop_up_menu = document.querySelector('.m-popUpMenu')
-	let pop_up_menu_btn_open = document.querySelector('.a-popUpMenuButton-open')
-	let pop_up_menu_btn_close = document.querySelector('.a-popUpMenuButton-close')
+function openPopUpMenu (menu, img) {
+	img.setAttribute('src', 'images/pop-up-menu-btn-close.svg')
+	menu.style.transform = 'none'
 
-	pop_up_menu.style.transform = 'translate(120%, 0)'
-	pop_up_menu_btn_close.style.display = 'none'
-	pop_up_menu_btn_open.style.display = 'inherit'
+	is_menu_open = true
 }
 
 
+function closePopUpMenu (menu, img) {
+	img.setAttribute('src', 'images/pop-up-menu-btn-open.svg')
+	menu.style.transform = 'translate(120%, 0)'
 
-// function ppopUpMenu () {
-// 	let menu = document.querySelector('.m-menu-content')
-// 	menu.style.transform = 'translate(120%, 0)'
-// }
+	is_menu_open = false
+}
