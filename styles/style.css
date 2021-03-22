@@ -128,7 +128,7 @@ body {
   }
 }
 @media screen and (max-height: 650px) {
-  .m-menu-content {
+  .m-popUpMenu {
     height: 70vh;
   }
 }
