@@ -258,8 +258,100 @@ body {
   color: #005182;
 }
 .o-productData .m-form .m-main {
-  padding-top: 32px;
-  padding-bottom: 40px;
+  box-sizing: border-box;
+  padding: 32px 50px 40px 50px;
+  width: 100%;
+}
+.o-productData .m-form .m-main .a-input {
+  font-size: 0.875rem;
+  color: #005182;
+  box-sizing: border-box;
+  border: 1px solid #A8D6E4;
+  border-radius: 20px;
+  background-color: #fff;
+  padding: 12px 16px;
+  width: 100%;
+}
+.o-productData .m-form .m-main .m-select .m-inputSelect {
+  font-size: 0.875rem;
+  box-sizing: border-box;
+  border: 1px solid #A8D6E4;
+  border-radius: 20px;
+  background-color: #fff;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  color: #005182;
+  opacity: 1;
+  padding: 12px 16px;
+}
+.o-productData .m-form .m-main .m-select .m-valuesContainer {
+  position: fixed;
+  z-index: 1;
+  display: none;
+  box-sizing: border-box;
+  border-radius: 0 0 20px 20px;
+  border: 1px solid #A8D6E4;
+  border-top: none;
+  background-color: #fff;
+  max-height: 330px;
+  width: 358px;
+  padding: 25px 0 29px 0;
+  margin-top: -16px;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+.o-productData .m-form .m-main .m-select .m-valuesContainer::-webkit-scrollbar {
+  display: none;
+}
+.o-productData .m-form .m-main .m-select .a-value {
+  font-size: 0.875rem;
+  line-height: 1.0625;
+  opacity: 0.8;
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  color: #005182;
+  padding: 8px 0 8px 30px;
+}
+.o-productData .m-form .m-main .m-select .a-value:hover {
+  background-color: #FFEBE1;
+}
+.o-productData .m-form .m-main .m-inputItemInfo {
+  font-size: 0.875rem;
+  color: #005182;
+  box-sizing: border-box;
+  border: 1px solid #A8D6E4;
+  border-radius: 20px;
+  background-color: #fff;
+  padding: 12px 16px;
+  width: 100%;
+  margin-top: 21px;
+  height: 80px;
+}
+.o-productData .m-form .m-main .m-inputName {
+  font-size: 0.875rem;
+  color: #005182;
+  box-sizing: border-box;
+  border: 1px solid #A8D6E4;
+  border-radius: 20px;
+  background-color: #fff;
+  padding: 12px 16px;
+  width: 100%;
+  margin-top: 10px;
+}
+.o-productData .m-form .m-main .m-inputPhone {
+  font-size: 0.875rem;
+  color: #005182;
+  box-sizing: border-box;
+  border: 1px solid #A8D6E4;
+  border-radius: 20px;
+  background-color: #fff;
+  padding: 12px 16px;
+  width: 100%;
+  margin-top: 10px;
 }
 @media screen and (max-width: 1180px) {
   .o-productData .a-image {
@@ -278,6 +370,9 @@ body {
   }
   .o-productData .m-form {
     width: 400px;
+  }
+  .o-productData .m-form .m-valuesContainer {
+    width: 300px !important;
   }
 }
 @media screen and (max-width: 800px) {
