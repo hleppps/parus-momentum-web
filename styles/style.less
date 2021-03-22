@@ -6,19 +6,12 @@
 @set-block-width: 1120px;
 
 html, body {
-	
 	width: 100%;
 	display: flex;
 	justify-content: center;
 
 	font-family: 'Rubik', 'Arial';
   font-size: 16px;
-
-
-  // 
-
-  // TEST
-	background-color: grey;
 }
 
 // HEADER
@@ -78,7 +71,7 @@ html, body {
 		width: 50%;
 		display: flex;
 		justify-content: flex-end;
-			position: relative;
+		position: relative;
 
 
 
@@ -94,7 +87,6 @@ html, body {
 		}
 
 		.m-popUpMenu {
-
 			overflow-y: scroll;
 			display: flex;
 			flex-direction: column;
@@ -200,11 +192,14 @@ html, body {
 
 .o-header {
 	position: fixed;
-	// z-index: 2;
-	width: 100%;
-	box-shadow: 0px 4px 10px rgba(20, 74, 90, 0.14);
+	z-index: 1;
 	display: flex;
 	justify-content: center;
+
+	box-shadow: 0px 4px 10px rgba(20, 74, 90, 0.14);
+	background-color: @color-white;
+
+	width: 100%;
 
 	.o-content {
 		display: flex;
@@ -222,7 +217,7 @@ html, body {
 }
 
 @media screen and (max-width: 1140px + 20px + 20px) {
-	.t-header {
+	.o-header {
 		.o-content {
 			padding: 20px;
 		}
@@ -230,7 +225,7 @@ html, body {
 }
 
 @media screen and (max-width: 800px) {
-	.t-header {
+	.o-header {
 		box-shadow: -2px 1px 12px rgba(20, 74, 90, 0.14);
 
 		.o-content {
@@ -247,8 +242,11 @@ html, body {
 	}
 }
 
-main {
-	position: relative;
-	z-index: -1;
-	// margin-top: 80px;
+.a-underlay {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	
+	height: 100%;
+	width: 100%;
 }

@@ -1,4 +1,5 @@
 let is_menu_open = false
+let underlay = document.querySelector('.a-underlay')
 
 function popUpMenu () {
 	let pop_up_menu = document.querySelector('.m-popUpMenu')
@@ -8,9 +9,14 @@ function popUpMenu () {
 	if (!is_menu_open) {
 		body.style.overflowY = 'hidden'
 
+		underlay.style.display = 'inherit'
+		underlay.addEventListener('click', underlayClosePopUpMenu)
+
 		openPopUpMenu(pop_up_menu, pop_up_menu_img)
 	} else {
+		underlay.style.display = 'none'
 		body.style.overflowY = 'scroll'
+
 		closePopUpMenu(pop_up_menu, pop_up_menu_img)
 	}
 }
@@ -28,4 +34,11 @@ function closePopUpMenu (menu, img) {
 	menu.style.transform = 'translate(120%, 0)'
 
 	is_menu_open = false
+}
+
+function underlayClosePopUpMenu () {
+	underlay.removeEventListener('click', underlayClosePopUpMenu)
+	is_menu_open = true
+	popUpMenu()
+
 }
