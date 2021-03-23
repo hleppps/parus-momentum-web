@@ -482,6 +482,9 @@ body {
     padding: 11px 33.5px 11px 34px;
     margin-top: 41px;
   }
+  .o-productData .m-form {
+    display: none;
+  }
 }
 .o-main {
   width: 1120px;
