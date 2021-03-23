@@ -41,7 +41,7 @@ function keyControl(e, container) {
         }
     } else if (e.key == "Enter") {
         container.find("input").val(container.find("ul li.selected").text()).blur();
-        onSelect(container.find("ul li.selected").text())
+        // onSelect(container.find("ul li.selected").text())
     }
 
     container.find("ul li.selected")[0].scrollIntoView({

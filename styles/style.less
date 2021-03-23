@@ -201,7 +201,7 @@ html, body {
 
 .o-header {
 	position: fixed;
-	z-index: 1;
+	z-index: 3;
 	display: flex;
 	justify-content: center;
 
@@ -469,6 +469,95 @@ html, body {
 				}
 			}
 
+
+
+			.m-fileUploadBlock {
+				display: flex;
+				justify-content: space-between;
+
+				margin-top: 23px;
+				.m-textElements {
+					color: #3C80AA;
+
+					margin-top: 12px;
+
+					.a-textBasic {
+						font-size: 0.875rem;
+						line-height: 1.0625rem;
+						
+					}
+
+					.a-textSub {
+						font-size: 0.625rem;
+						line-height: 0.75rem;
+
+						margin-top: 6px;
+					}
+				}
+
+				.m-uploadBlocksContainer {
+					display: flex;
+					align-items: center;
+					box-sizing: border-box;
+
+
+					cursor: pointer;
+
+
+					.m-uploadBlock {
+						display: flex;
+						border-radius: 15px;
+
+						width: 150px;
+
+						.a-jsAddedImage {
+							border: 1px solid @color-white;
+							border-radius: 15px;
+							filter: drop-shadow(-3px 2px 8px rgba(0, 0, 0, 0.17));
+
+							margin-right: -45px;
+
+							width: 70px;
+							height: 70px;
+						}
+
+					}
+
+					.m-clickUploadBlock {
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						box-sizing: border-box;
+
+						border: 1px solid #BEE0EB;
+						border-radius: 15px;
+
+						width: 70px;
+						height: 70px;
+						margin-left: 10px;
+					}
+
+					.m-clickUploadBlock:first-child {
+						margin-left: 0;
+					}
+
+				}
+
+				.a-uploadFileInput {
+					display: none;
+				}
+
+				.a-uploadFileInputContainer {
+					display: none;
+				}
+			}
+
+
+
+
+
+
+
 			.m-textInputs {
 				.m-inputItemInfo {
 					.a-input;
@@ -492,12 +581,10 @@ html, body {
 	}
 }
 
-
-
 @media screen and (max-width: 1140px + 20px + 20px) {
 	.o-productData {
 
-		.a-image {
+		.a-dottedArrowImage {
 			display: none;
 		}
 	}
