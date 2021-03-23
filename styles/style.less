@@ -333,6 +333,7 @@ html, body {
 }
 
 .o-productData {
+
 	.m-form {
 		width: 458px;
 
@@ -400,7 +401,7 @@ html, body {
 				}
 
 				.m-valuesContainer {
-					position: fixed;
+					position: absolute;
 					z-index: 1;
     			display: none;
     			-webkit-box-sizing: border-box;
@@ -441,22 +442,52 @@ html, body {
 				}
 			}
 
-			.m-inputItemInfo {
-				.a-input;
+			.m-itemCondition {
+				display: flex;
+				justify-content: space-between;
 
-				margin-top: 21px;
-				height: 80px;
+				margin-top: 27px; 	
+
+				.a-text {
+					font-size: 0.875rem;
+					line-height: 1.0625rem;
+					color: #3C80AA;
+				}
+
+				.a-inputItemCoditionRate {
+					display: none;
+				}
+
+				.m-itemConditionRate {
+					display: flex;
+
+					.a-rateStar {
+						user-select: none;
+
+						margin-left: 12px;
+					}
+				}
 			}
 
-			.m-inputName {
-				.a-input;
-				margin-top: 10px;
+			.m-textInputs {
+				.m-inputItemInfo {
+					.a-input;
+
+					margin-top: 21px;
+					height: 80px;
+				}
+
+				.m-inputName {
+					.a-input;
+					margin-top: 10px;
+				}
+
+				.m-inputPhone {
+					.a-input;
+					margin-top: 10px;
+				}
 			}
 
-			.m-inputPhone {
-				.a-input;
-				margin-top: 10px;
-			}
 		}
 	}
 }

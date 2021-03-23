@@ -70,7 +70,7 @@
           <img class="a-logoDesktop" src="images/text-logo-desktop.svg" alt="Company Logo">
           <img class="a-logoMob" src="images/text-logo-mob.svg" alt="Company Logo">
           <p class="a-heading">З турботою про Вас</p>
-          <p class="a-text">Слідкуй за статусем свого товару</p>
+          <p class="a-text">Слідкуй за статусом свого товару</p>
           <button class="a-button">
             <img src="images/telegram-logo-2.svg" alt="Telegram Logo">
             <div class="m-textBlock">
@@ -94,21 +94,22 @@
 
               <input class="m-inputSelect" type="text" placeholder="Оберіть категорію товару" onkeyup="filterFunction(this,event)">
               <ul class="m-valuesContainer">
-                <li class="a-value">val 1</li>
-                <li class="a-value">val 2</li>
-                <li class="a-value">val 3</li>
-                <li class="a-value">val 3</li>
-                <li class="a-value">val 3</li>
-                <li class="a-value">val 3</li>
-                <li class="a-value">val 3</li>
-                <li class="a-value">val 3</li>
-                <li class="a-value">val 3</li>
-                <li class="a-value">val 3</li>
-                <li class="a-value">val 3</li>
+              </ul>
+              
+            </div>
+
+            <div class="m-itemCondition">
+              <p class="a-text">Стан товару: </p>
+              <input class="a-inputItemCoditionRate" type="text" name="itemCoditionRate">
+              <ul class="m-itemConditionRate">
+                <li><img class="a-rateStar" src="images/star-not-selected.svg" alt="1"></li>
+                <li><img class="a-rateStar" src="images/star-not-selected.svg" alt="2"></li>
+                <li><img class="a-rateStar" src="images/star-not-selected.svg" alt="1"></li>
+                <li><img class="a-rateStar" src="images/star-not-selected.svg" alt="2"></li>
+                <li><img class="a-rateStar" src="images/star-not-selected.svg" alt="1"></li>
               </ul>
             </div>
 
-            <div>стан товару</div>
             <div>фото товару</div>
 
             <div class="m-textInputs">
@@ -116,7 +117,6 @@
               <input class="m-inputName" type="text" placeholder="Ім'я">
               <input class="m-inputPhone" type="text" placeholder="Телефон">
             </div>
-
 
           </div>
         </form>
@@ -130,11 +130,13 @@
     <script src="scripts/pop-up-menu.js"></script>
     <script src="scripts/search-value.js"></script>
     <script src="scripts/event-handling.js"></script>
+    <script src="scripts/item-info-form.js"></script>
 
 
     <script>
       window.onload = () => {
         handleEvent()
+        fillItemFormSelect()
       }
     </script>
   </body>
