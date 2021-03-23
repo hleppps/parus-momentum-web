@@ -1,4 +1,6 @@
 let input_container = []
+let is_first_image_loaded = false
+let is_second_image_loaded = false
 let image_counter = 1
 
 
@@ -44,10 +46,12 @@ function previewFiles() {
       reader.addEventListener("load", function () {
 
       	input_container.push(this.result)
+      	console.log(input_container)
       	upload_file_input_container = input_container
       	
-      	files_len <= 2 ? numeredImageDrawer(this.result) : imageDrawer(this.result)
-      
+      	imageDrawer(this.result, files_len)
+
+
       }, false);
 
       reader.readAsDataURL(file);
@@ -60,27 +64,22 @@ function previewFiles() {
   }
 }
 
-function numeredImageDrawer(link) {
+function imageDrawer(link, len) {
 	let first_image = document.querySelector('#uploadImage-1')
 	let second_image = document.querySelector('#uploadImage-2')
 	let image_container = document.querySelector('.m-uploadBlock')
 
-	if (image_counter === 1) {
+	if (is_first_image_loaded === false && len <= 2) {
 		applyImageStyleSettings(first_image)
 		first_image.src = link
+		is_first_image_loaded = true
 
-	} else if (image_counter === 2) {
+	} else if (is_second_image_loaded === false && len <= 2) {
 		applyImageStyleSettings(second_image)
 		second_image.src = link
-	}
+		is_second_image_loaded = true
 
-	image_counter++
-}
-
-function imageDrawer(link) {
-	let image_container = document.querySelector('.m-uploadBlock')
-
-	if (image_counter <= 4) {
+	} else {
 		image_container.innerHTML = ''
 
 		for (image of input_container) {
@@ -90,7 +89,6 @@ function imageDrawer(link) {
 	    image_container.appendChild(img)
 		}
 	}
-	image_counter++
 }
 
 function applyImageStyleSettings(image) {
