@@ -25,7 +25,6 @@ html, body {
 
 // HEADER
 .a-button {
-	cursor: pointer;
 }
 
 .m-navigationDesktop {
@@ -413,7 +412,7 @@ html, body {
 			    border-top: none;
 			    background-color: @color-white;
 
-			    max-height: 330px;
+			    max-height: 315px;
 					width: 358px;
 			    padding: 25px 0 29px 0;
 			    margin-top: -16px;
@@ -442,6 +441,7 @@ html, body {
 				}
 			}
 
+
 			.m-itemCondition {
 				display: flex;
 				justify-content: space-between;
@@ -462,13 +462,13 @@ html, body {
 					display: flex;
 
 					.a-rateStar {
+						cursor: pointer;
 						user-select: none;
 
 						margin-left: 12px;
 					}
 				}
 			}
-
 
 
 			.m-fileUploadBlock {
@@ -555,11 +555,6 @@ html, body {
 			}
 
 
-
-
-
-
-
 			.m-textInputs {
 				.m-inputItemInfo {
 					.a-input;
@@ -579,6 +574,26 @@ html, body {
 				}
 			}
 
+
+			.m-submitBlock {
+				display: flex;
+				justify-content: center;
+
+				margin-top: 52px;
+
+				.a-submit {
+					font-size: 0.875rem;
+					line-height: 1.0625rem;
+					font-weight: 700;
+					color: @color-white;
+
+					background-color: @color-orange;
+					border-radius: 20px;
+
+					text-align: center;
+					padding: 12px 72px;
+				}
+			}
 		}
 	}
 }

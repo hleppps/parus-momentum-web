@@ -55,14 +55,9 @@ button, input {
 	outline: none;
 }
 
-input[type = submit], input[type = reset] {
-            background-color: orange;
-            border: none;
-            text-decoration: none;
-            color: white;
-            padding: 20px 20px;
-            margin: 20px 20px;
-            cursor: pointer;
+button {
+	cursor: pointer;
+
 }
 
 input:focus {
