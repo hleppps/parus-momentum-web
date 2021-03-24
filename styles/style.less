@@ -18,12 +18,14 @@ html, body {
 	display: none;
 	position: fixed;
 	z-index: 1;
+	// background-color: red;
+	// cursor: pointer;
 	
 	height: 100%;
 	width: 100%;
 }
 
-.o-requestCallForm {
+.o-callRequestForm {
 	display: none;
 	flex-direction: column;
 	position: fixed;
@@ -137,6 +139,9 @@ html, body {
 
 		display: flex;
 		justify-content: center;
+
+
+		font-family: 'Rubik';
 		color: @color-white;
 		font-size: 0.875rem;
 		line-height: 1.0625rem;
@@ -147,7 +152,7 @@ html, body {
 
 		width: 228px;
 		padding: 12px 0;
-		margin-top: 42px;
+		margin: 42px 0 0 0;
 	}
 
 	.a-close {
@@ -157,8 +162,10 @@ html, body {
 }
 
 @media screen and (max-width: 800px) {
-	.o-requestCallForm {
+	.o-callRequestForm {
 		align-items: center;
+
+		top: 40px;
 		width: 90%;
 		max-width: 374px;
 		padding-bottom: 50px;
@@ -179,7 +186,6 @@ html, body {
 			}
 
 			.a-inputPhone {
-				// width: 334px;
 				margin-top: 19px;
 			}
 
@@ -501,7 +507,7 @@ html, body {
 					line-height: 0.6875rem;
 					letter-spacing: .145rem;
 
-					margin-left: 0.5px;
+					margin-left: 2px;
 				}
 
 				.a-textSub {

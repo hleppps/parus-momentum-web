@@ -36,8 +36,13 @@ function closePopUpMenu (menu, img) {
 	is_menu_open = false
 }
 
-function underlayClosePopUpMenu () {
+function underlayClosePopUpMenu() {
 	underlay.removeEventListener('click', underlayClosePopUpMenu)
+	is_menu_open = true
+	popUpMenu()
+}
+
+function buttonClosePopUpMenu() {
 	is_menu_open = true
 	popUpMenu()
 }
