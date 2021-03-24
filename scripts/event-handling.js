@@ -20,6 +20,15 @@ function handleEvents() {
 
 	let close_call_request_form = document.querySelector('.o-callRequestForm .a-close')
 	close_call_request_form.addEventListener('click', closeCallRequestForm)
+
+	let close_call_request_form_btn = document.querySelector('.o-callRequestForm .a-image')
+	close_call_request_form_btn.addEventListener('click', closeCallRequestForm)
+
+	let is_checkbox_checked = document.querySelector('.o-callRequestForm .a-checkbox')
+	is_checkbox_checked.addEventListener('change', checkInputCallRequestForm)
+
+	let is_phone_entered = document.querySelector('.o-callRequestForm .a-inputPhone')
+	is_phone_entered.addEventListener('keyup', checkInputCallRequestForm) 
 }
 
 function handleCloseButtonEvent() {
