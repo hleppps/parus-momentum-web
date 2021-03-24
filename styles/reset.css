@@ -55,9 +55,8 @@ button, input {
 	outline: none;
 }
 
-button {
-	cursor: pointer;
-
+button, input[type = submit] {
+    cursor: pointer;
 }
 
 input:focus {

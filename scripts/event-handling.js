@@ -9,6 +9,11 @@ function handleEvents() {
 
 	let file_input = document.querySelector('.a-uploadFileInput')
 	file_input.addEventListener('change', previewFiles)
+
+	let call_btns = document.querySelectorAll('.a-callButton')
+	for (let i = 0; i < call_btns.length; i++) {
+		call_btns[i].addEventListener('click', requestCall)
+	}
 }
 
 function handleCloseButtonEvent() {
