@@ -58,6 +58,7 @@ function checkInputCallRequestForm() {
 }
 
 function checkNumberValidity(number) {
-  const reg = /^\+[0-9]{3}\s\((\d+)\)-\d{3}-\d{2}-\d{2}/g
-  number = reg.test(number) ? true : false
+	return true
+	// const reg = /^\+?3?8?(0[\s\.-]\d{2}[\s\.-]\d{3}[\s\.-]\d{2}[\s\.-]\d{2})$/
+ //  return reg.test(value) ? true : false
 }
