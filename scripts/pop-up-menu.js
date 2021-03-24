@@ -53,7 +53,6 @@ function checkInputCallRequestForm() {
 	is_phone_entered = checkNumberValidity(is_phone_entered)
 
 	if (is_checkbox_checked && is_phone_entered) {
-		alert('a')
 		submit_btn.disabled = false
 	}	
 }
