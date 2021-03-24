@@ -58,6 +58,6 @@ function checkInputCallRequestForm() {
 }
 
 function checkNumberValidity(number) {
-  number = number.replace(/[\s\-\(\)]/g, '');
-  return number.match(/^((\+?3)?8)?0\d{9}$/) != null;
+  const reg = /^\+[0-9]{3}\s\((\d+)\)-\d{3}-\d{2}-\d{2}/g
+  number = reg.test(number) ? true : false
 }
