@@ -1,4 +1,7 @@
 let input_container = []
+let image_container = document.querySelector('.m-uploadBlock')
+let image_container_default = image_container.innerHTML
+// let test = true
 
 function fillItemFormSelect () {
 	// запрос
@@ -42,7 +45,6 @@ function previewFiles() {
       reader.addEventListener("load", function () {
 
       	input_container.push(this.result)
-      	// console.log(input_container)
       	upload_file_input_container = input_container
       	
       	imageDrawer(this.result, files_len)
@@ -61,20 +63,19 @@ function previewFiles() {
 }
 
 function imageDrawer(link, len) {
-	console.log(link, len)
-	let first_image = document.querySelector('#uploadImage-1')
-	let second_image = document.querySelector('#uploadImage-2')
+	// let first_image = document.querySelector('#uploadImage-1')
+	// let second_image = document.querySelector('#uploadImage-2')
 	let image_container = document.querySelector('.m-uploadBlock')
 
-	if (input_container.length === 1) {
-		applyImageStyleSettings(first_image)
-		first_image.src = link
+	// if (input_container.length === 1 && t) {
+	// 	applyImageStyleSettings(first_image)
+	// 	first_image.src = link
 
-	} else if (input_container.length <= 2) {
-		applyImageStyleSettings(second_image)
-		second_image.src = link
+	// } else if (input_container.length <= 2 && t) {
+	// 	applyImageStyleSettings(second_image)
+	// 	second_image.src = link
 
-	} else {
+	// } else {
 		image_container.innerHTML = ''
 		for (image of input_container.slice(0,4)) {
 			let img = document.createElement('img')
@@ -86,32 +87,34 @@ function imageDrawer(link, len) {
 	    close_button.classList.add('a-jsAddedCloseButton')
 	    close_button.src = 'images/remove-img-btn.svg'
 	    image_container.appendChild(close_button)
-			
 		}
+
 		let close_buttons = document.querySelectorAll('.a-jsAddedCloseButton')
 		
 		for (let i = 0; i < close_buttons.length; i++) {
 			close_buttons[i].style.marginLeft = (8 + (27*i)) + 'px'
 		}
 		handleCloseButtonEvent() 
-	}
+	// }
 }
 
-function applyImageStyleSettings(image) {
-	image.src = ''
-	image.style.width = '70px'
-	image.style.height = '70px'
-	image.style.border = '1px solid #fff'
-	image.style.borderRadius = '15px'	
-}
+// function applyImageStyleSettings(image) {
+// 	image.src = ''
+// 	image.style.width = '70px'
+// 	image.style.height = '70px'
+// 	image.style.border = '1px solid #fff'
+// 	image.style.borderRadius = '15px'
+// }
 
 function removePhotos(number) {
 	return () => {
 		input_container.splice(number, 1)
-		for (value of input_container) {
-			// console.log(value, input_container.length)
-
-			imageDrawer(value, input_container.length)
+		if (input_container.length === 0) {
+			image_container.innerHTML = image_container_default
+		} else { 
+			for (value of input_container) {
+				imageDrawer(value, input_container.length)
+			}
 		}
 	}
 }
