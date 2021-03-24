@@ -37,6 +37,11 @@ function previewFiles() {
   let files = document.querySelector('.a-uploadFileInput').files;
   let files_len = files.length
 
+  if ((files_len + input_container.length) > 10) {
+  	alert('Не более 10 картинок')
+  	return
+  }
+
   function readAndPreview(file) {
 
     if ( /\.(jpe?g|png|gif)$/i.test(file.name) ) {
@@ -63,48 +68,31 @@ function previewFiles() {
 }
 
 function imageDrawer(link, len) {
-	// let first_image = document.querySelector('#uploadImage-1')
-	// let second_image = document.querySelector('#uploadImage-2')
+
 	let image_container = document.querySelector('.m-uploadBlock')
 
-	// if (input_container.length === 1 && t) {
-	// 	applyImageStyleSettings(first_image)
-	// 	first_image.src = link
+	image_container.innerHTML = ''
+	for (image of input_container.slice(0,4)) {
+		let img = document.createElement('img')
+    img.classList.add('a-jsAddedImage')
+    img.src = image
+    image_container.appendChild(img)
 
-	// } else if (input_container.length <= 2 && t) {
-	// 	applyImageStyleSettings(second_image)
-	// 	second_image.src = link
+    let close_button = document.createElement('img')
+    close_button.classList.add('a-jsAddedCloseButton')
+    close_button.src = 'images/remove-img-btn.svg'
+    image_container.appendChild(close_button)
+	}
 
-	// } else {
-		image_container.innerHTML = ''
-		for (image of input_container.slice(0,4)) {
-			let img = document.createElement('img')
-	    img.classList.add('a-jsAddedImage')
-	    img.src = image
-	    image_container.appendChild(img)
+	let close_buttons = document.querySelectorAll('.a-jsAddedCloseButton')
+	
+	for (let i = 0; i < close_buttons.length; i++) {
+		close_buttons[i].style.marginLeft = (8 + (27*i)) + 'px'
+	}
 
-	    let close_button = document.createElement('img')
-	    close_button.classList.add('a-jsAddedCloseButton')
-	    close_button.src = 'images/remove-img-btn.svg'
-	    image_container.appendChild(close_button)
-		}
+	handleCloseButtonEvent() 
 
-		let close_buttons = document.querySelectorAll('.a-jsAddedCloseButton')
-		
-		for (let i = 0; i < close_buttons.length; i++) {
-			close_buttons[i].style.marginLeft = (8 + (27*i)) + 'px'
-		}
-		handleCloseButtonEvent() 
-	// }
 }
-
-// function applyImageStyleSettings(image) {
-// 	image.src = ''
-// 	image.style.width = '70px'
-// 	image.style.height = '70px'
-// 	image.style.border = '1px solid #fff'
-// 	image.style.borderRadius = '15px'
-// }
 
 function removePhotos(number) {
 	return () => {
