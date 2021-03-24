@@ -61,6 +61,7 @@ function previewFiles() {
 }
 
 function imageDrawer(link, len) {
+	console.log(link, len)
 	let first_image = document.querySelector('#uploadImage-1')
 	let second_image = document.querySelector('#uploadImage-2')
 	let image_container = document.querySelector('.m-uploadBlock')
@@ -86,12 +87,13 @@ function imageDrawer(link, len) {
 	    close_button.src = 'images/remove-img-btn.svg'
 	    image_container.appendChild(close_button)
 			
-			let close_buttons = document.querySelectorAll('.a-jsAddedCloseButton')
-			
-			for (let i = 0; i < close_buttons.length; i++) {
-				close_buttons[i].style.marginLeft = (8 + (27*i)) + 'px'
-			}
 		}
+		let close_buttons = document.querySelectorAll('.a-jsAddedCloseButton')
+		
+		for (let i = 0; i < close_buttons.length; i++) {
+			close_buttons[i].style.marginLeft = (8 + (27*i)) + 'px'
+		}
+		handleCloseButtonEvent() 
 	}
 }
 
@@ -101,4 +103,15 @@ function applyImageStyleSettings(image) {
 	image.style.height = '70px'
 	image.style.border = '1px solid #fff'
 	image.style.borderRadius = '15px'	
+}
+
+function removePhotos(number) {
+	return () => {
+		input_container.splice(number, 1)
+		for (value of input_container) {
+			// console.log(value, input_container.length)
+
+			imageDrawer(value, input_container.length)
+		}
+	}
 }

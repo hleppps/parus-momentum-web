@@ -1,4 +1,4 @@
-function handleEvent() {
+function handleEvents() {
 	let pop_up_menu_btn = document.querySelector('.a-popUpMenuButton')
 	pop_up_menu_btn.addEventListener('click', popUpMenu)
 
@@ -9,4 +9,11 @@ function handleEvent() {
 
 	let file_input = document.querySelector('.a-uploadFileInput')
 	file_input.addEventListener('change', previewFiles)
+}
+
+function handleCloseButtonEvent() {
+	let close_buttons = document.querySelectorAll('.a-jsAddedCloseButton')
+	for (let i = 0; i < close_buttons.length; i++) {
+		close_buttons[i].addEventListener('click', removePhotos(i))
+	}
 }
