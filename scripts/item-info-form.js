@@ -1,8 +1,4 @@
 let input_container = []
-let is_first_image_loaded = false
-let is_second_image_loaded = false
-let image_counter = 1
-
 
 function fillItemFormSelect () {
 	// запрос
@@ -46,7 +42,7 @@ function previewFiles() {
       reader.addEventListener("load", function () {
 
       	input_container.push(this.result)
-      	console.log(input_container)
+      	// console.log(input_container)
       	upload_file_input_container = input_container
       	
       	imageDrawer(this.result, files_len)
@@ -69,24 +65,32 @@ function imageDrawer(link, len) {
 	let second_image = document.querySelector('#uploadImage-2')
 	let image_container = document.querySelector('.m-uploadBlock')
 
-	if (is_first_image_loaded === false && len <= 2) {
+	if (input_container.length === 1) {
 		applyImageStyleSettings(first_image)
 		first_image.src = link
-		is_first_image_loaded = true
 
-	} else if (is_second_image_loaded === false && len <= 2) {
+	} else if (input_container.length <= 2) {
 		applyImageStyleSettings(second_image)
 		second_image.src = link
-		is_second_image_loaded = true
 
 	} else {
 		image_container.innerHTML = ''
-
-		for (image of input_container) {
+		for (image of input_container.slice(0,4)) {
 			let img = document.createElement('img')
 	    img.classList.add('a-jsAddedImage')
 	    img.src = image
 	    image_container.appendChild(img)
+
+	    let close_button = document.createElement('img')
+	    close_button.classList.add('a-jsAddedCloseButton')
+	    close_button.src = 'images/remove-img-btn.svg'
+	    image_container.appendChild(close_button)
+			
+			let close_buttons = document.querySelectorAll('.a-jsAddedCloseButton')
+			
+			for (let i = 0; i < close_buttons.length; i++) {
+				close_buttons[i].style.marginLeft = (8 + (27*i)) + 'px'
+			}
 		}
 	}
 }

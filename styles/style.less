@@ -500,10 +500,6 @@ html, body {
 					align-items: center;
 					box-sizing: border-box;
 
-
-					cursor: pointer;
-
-
 					.m-uploadBlock {
 						display: flex;
 						border-radius: 15px;
@@ -511,14 +507,21 @@ html, body {
 						width: 150px;
 
 						.a-jsAddedImage {
+							position: relative;
 							border: 1px solid @color-white;
 							border-radius: 15px;
 							filter: drop-shadow(-3px 2px 8px rgba(0, 0, 0, 0.17));
 
 							margin-right: -45px;
-
 							width: 70px;
 							height: 70px;
+						}
+
+						.a-jsAddedCloseButton {
+							position: absolute;
+							z-index: 10;
+							margin-top: 8px;
+							margin-left: 27px;
 						}
 
 					}

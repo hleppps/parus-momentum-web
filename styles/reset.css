@@ -73,6 +73,10 @@ a {
 	text-decoration: none;
 }
 
+label {
+	cursor: pointer;
+}
+
 select {
 	padding: 0;
    -webkit-appearance: none;
