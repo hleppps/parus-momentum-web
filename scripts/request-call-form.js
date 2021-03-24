@@ -18,8 +18,11 @@ function showCallRequestForm() {
 }
 
 function closeCallRequestForm() {
-	let call_request_form = document.querySelector('.o-callRequestForm')	
+	let call_request_form = document.querySelector('.o-callRequestForm')
+	let body = document.body
+	
 	call_request_form.style.display = 'none'
+	body.style.overflowY = 'scroll'
 
 	underlay.style.display = 'none'
 	underlay.style.zIndex = '1'
