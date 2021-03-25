@@ -94,6 +94,18 @@ function imageDrawer(link, len) {
 
 }
 
+// setViewport(document.getElementsByTagName("img")[0], 10, 10, 70, 70);
+
+function setViewport(img, x, y, width, height) {
+  img.style.left = "-" + x + "px";
+  img.style.top  = "-" + y + "px";
+
+  if (width !== undefined) {
+      img.parentNode.style.width  = width  + "px";
+      img.parentNode.style.height = height + "px";
+  }
+}
+
 function removePhotos(number) {
 	return () => {
 		input_container.splice(number, 1)

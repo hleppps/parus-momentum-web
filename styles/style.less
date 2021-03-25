@@ -35,7 +35,7 @@ html, body {
 	border-radius: 25px;
 
 	padding: 32px 0 40px;
-	top: 251px;
+	top: 20vh;
 	width: 458px;
 
 	.m-header {
@@ -150,7 +150,8 @@ html, body {
 		border-radius: 20px;
 		background-color: @color-orange;
 
-		width: 228px;
+		width: 100%;
+		max-width: 228px;
 		padding: 12px 0;
 		margin: 42px 0 0 0;
 	}
@@ -172,7 +173,7 @@ html, body {
 	.o-callRequestForm {
 		align-items: center;
 
-		top: 40px;
+		top: 10vh;
 		width: 90%;
 		max-width: 374px;
 		padding-bottom: 50px;
@@ -545,6 +546,7 @@ html, body {
 
 	.m-form {
 		width: 458px;
+		// height: 70vh;
 
 		border-radius: 25px;
 		background-color: @color-white;
@@ -712,8 +714,9 @@ html, body {
 
 					.m-uploadBlock {
 						display: flex;
+						align-items: flex-start;
 						border-radius: 15px;
-
+						height: 70px;
 						width: 150px;
 
 						.a-jsAddedImage {
@@ -724,7 +727,8 @@ html, body {
 
 							margin-right: -45px;
 							width: 70px;
-							height: 70px;
+							// height: 100%;
+							max-height: 70px;
 						}
 
 						.a-jsAddedCloseButton {
@@ -802,6 +806,25 @@ html, body {
 
 					text-align: center;
 					padding: 12px 72px;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-height: 810px) and (orientation: landscape) {
+	.o-productData {
+
+		.m-form {
+			.m-header {
+				padding: 3vh 0;
+			}
+			.m-main {
+				.m-submitBlock {
+					margin-top: 0;
+					.a-submit {
+						margin-bottom: 0;
+					}
 				}
 			}
 		}
@@ -906,6 +929,12 @@ html, body {
 		display: flex;
 		justify-content: space-between;
 		// width: 100%;
+	}
+}
+
+@media screen and (max-height: 900px) and (orientation: landscape) {
+	.o-main {
+		padding-top: 87px + 10vh;
 	}
 }
 
