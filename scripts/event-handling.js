@@ -10,7 +10,7 @@ function handleEvents() {
 		rate_stars[i].addEventListener('click', changeConditionRate(+i+1))
 	}
 
-	let file_input = document.querySelector('.a-uploadFileInput')
+	let file_input = document.querySelector('.a-uploadFilesInput')
 	file_input.addEventListener('change', previewFiles)
 
 	let call_btns = document.querySelectorAll('.a-callButton')

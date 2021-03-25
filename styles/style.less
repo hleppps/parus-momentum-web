@@ -712,37 +712,63 @@ html, body {
 					align-items: center;
 					box-sizing: border-box;
 
-					.m-uploadBlock {
+
+					.m-uploadBlocksBasic {
 						display: flex;
-						align-items: flex-start;
-						border-radius: 15px;
+						justify-content: space-between;
+						// align-items: flex-start;
+						// border-radius: 15px;
 						height: 70px;
 						width: 150px;
+						margin-right: 10px;
 
-						.a-jsAddedImage {
-							position: relative;
+						.m-jsAddedImageContainer {
+							display: flex;
+							justify-content: center;
+							align-items: center;
+
+							overflow: hidden;
 							border: 1px solid @color-white;
 							border-radius: 15px;
-							filter: drop-shadow(-3px 2px 8px rgba(0, 0, 0, 0.17));
 
-							margin-right: -45px;
 							width: 70px;
-							// height: 100%;
-							max-height: 70px;
+							height: 70px;
+
+							.a-jsAddedImageWidth {
+								width: 100%;
+
+							}
+							.a-jsAddedImageHeight {
+								height: 100%;
+							}
 						}
+						// .a-jsAddedImage {
+						// 	position: relative;
+						// 	border: 1px solid @color-white;
+						// 	border-radius: 15px;
+						// 	filter: drop-shadow(-3px 2px 8px rgba(0, 0, 0, 0.17));
+
+						// 	margin-right: -45px;
+						// 	width: 70px;
+						// 	// height: 100%;
+						// 	max-height: 70px;
+						// }
 
 						.a-jsAddedCloseButton {
 							position: absolute;
-							margin-top: 8px;
-							margin-left: 27px;
+
+							cursor: pointer;
+
+							margin-top: -45px;
+							margin-left: -45px;
 						}
 
 					}
 
 					.m-clickUploadBlock {
-						display: flex;
-						justify-content: center;
-						align-items: center;
+						// display: flex;
+						// justify-content: center;
+						// align-items: center;
 						box-sizing: border-box;
 
 						border: 1px solid #BEE0EB;
@@ -750,20 +776,19 @@ html, body {
 
 						width: 70px;
 						height: 70px;
-						margin-left: 10px;
-					}
-
-					.m-clickUploadBlock:first-child {
-						margin-left: 0;
+						
+						.a-label {
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							width: 100%;
+							height: 100%;
+						}
 					}
 
 				}
 
-				.a-uploadFileInput {
-					display: none;
-				}
-
-				.a-uploadFileInputContainer {
+				.a-uploadFilesInput {
 					display: none;
 				}
 			}
