@@ -1,5 +1,5 @@
 let upload_files_container = []
-let counter = 0
+let photos_counter = 0
 
 function fillItemFormSelect () {
 	// запрос
@@ -32,7 +32,6 @@ function changeConditionRate (rate) {
 
 function previewFiles() {
   let files = document.querySelector('.a-uploadFilesInput').files
-  let value = document.querySelector('.a-uploadFilesInput').value
   let files_len = files.length
 
   if ((files_len + upload_files_container.length) > 10) {
@@ -48,7 +47,6 @@ function previewFiles() {
       reader.addEventListener("load", function () {
 
       	upload_files_container.push(this.result)
-      	value = upload_files_container
 				imageDrawer(this.result, files_len)      	
 
       }, false);
@@ -65,7 +63,10 @@ function previewFiles() {
 
 
 function imageDrawer(link, len) {
-	counter++
+	photos_counter++
+	if (photos_counter > 4) {
+		return
+	}
 	let photo_upload_block = document.querySelector('.m-uploadBlocksBasic') //parent
 	let сlick_upload_blocks = document.querySelectorAll('.m-clickUploadBlock')
 	let image = new Image()
@@ -84,7 +85,7 @@ function imageDrawer(link, len) {
 
 		сlick_upload_blocks[0].style.display = 'none'
 
-		if ((len >= 3 || upload_files_container.length >= 3) && upload_files_container.length <= 4) {
+		if (len >= 3 || upload_files_container.length >= 3) {
 			сlick_upload_blocks[1].style.display = 'none'
 			photo_upload_block.appendChild(added_container)
 
@@ -110,10 +111,8 @@ function imageDrawer(link, len) {
     close_button.classList.add('a-jsAddedCloseButton')
     close_button.src = 'images/remove-img-btn.svg'
     added_image_containers[added_image_containers.length - 1].appendChild(close_button)
+		handleCloseButtonEvent(added_image_containers.length - 1)
 
-    if (counter === len) {
-			handleCloseButtonEvent()
-		}
 	}
 
 }
@@ -141,25 +140,22 @@ function imageDrawer(link, len) {
 
 function removePhotos(number) {
 	return () => {
-		let сlick_upload_blocks = document.querySelectorAll('.m-clickUploadBlock')
-		let added_image_containers = document.querySelectorAll('.m-jsAddedImageContainer')
-		for( let i = 0; i < added_image_containers.length; i++ ){
-		  added_image_containers[i].outerHTML = "";
-		}
+		photos_counter = 0
+		upload_files_container.splice(number, 1)
 
+		let сlick_upload_blocks = document.querySelectorAll('.m-clickUploadBlock')
 		сlick_upload_blocks[0].style.display = 'inherit'
 		сlick_upload_blocks[1].style.display = 'inherit'
 
-		// alert(added_image_containers.length)
-		upload_files_container.splice(number, 1)
 
-		counter = 0
-		console.log(upload_files_container.length)
+		let added_image_containers = document.querySelectorAll('.m-jsAddedImageContainer')
+		for (let i = 0; i < added_image_containers.length; i++ ) {
+		  added_image_containers[i].outerHTML = ""
+		}
+
 		if (upload_files_container.length === 0) {
-			// alert('q')
 		} else { 
 			for (value of upload_files_container) {
-				// alert(counter)
 				imageDrawer(value, upload_files_container.length)
 			}
 		}

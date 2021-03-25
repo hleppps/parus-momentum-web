@@ -31,9 +31,8 @@ function handleEvents() {
 	is_phone_entered.addEventListener('keyup', checkInputCallRequestForm) 
 }
 
-function handleCloseButtonEvent() {
+function handleCloseButtonEvent(number) {
 	let close_buttons = document.querySelectorAll('.a-jsAddedCloseButton')
-	for (let i = 0; i < close_buttons.length; i++) {
-		close_buttons[i].addEventListener('click', removePhotos(i))
-	}
+	close_buttons[number].addEventListener('click', removePhotos(number))
+
 }
