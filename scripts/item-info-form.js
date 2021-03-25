@@ -35,13 +35,13 @@ function previewFiles() {
   let files_len = files.length
 
   if ((files_len + upload_files_container.length) > 10) {
-  	alert('Не более 10 картинок')
+  	alert('Не более 10 картинок!')
   	return
   }
 
   function readAndPreview(file) {
 
-    if ( /\.(jpe?g|png|gif)$/i.test(file.name) ) {
+    if ( /\.(jpe?g|png|tiff)$/i.test(file.name) ) {
       var reader = new FileReader();
 
       reader.addEventListener("load", function () {
@@ -86,14 +86,18 @@ function imageDrawer(link, len) {
 		сlick_upload_blocks[0].style.display = 'none'
 
 		if (len >= 3 || upload_files_container.length >= 3) {
+
+
 			сlick_upload_blocks[1].style.display = 'none'
 			photo_upload_block.appendChild(added_container)
 
 			let added_image_containers = document.querySelectorAll('.m-jsAddedImageContainer')
-			for (let i = 0; i < added_image_containers.length; i++) {
-				added_image_containers[i].style.position = 'absolute'
-				added_image_containers[i].style.marginLeft = 25*i + 'px'
-			}
+
+				for (let i = 0; i < added_image_containers.length; i++) {
+					added_image_containers[i].style.position = 'absolute'
+					added_image_containers[i].style.marginLeft = 25*i + 'px'
+				}
+			
 
 		} else if (len === 2 || upload_files_container.length === 2) {
 			photo_upload_block.insertBefore(added_container, сlick_upload_blocks[0]);
