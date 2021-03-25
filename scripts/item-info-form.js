@@ -86,9 +86,10 @@ function imageDrawer(link, len) {
 		сlick_upload_blocks[0].style.display = 'none'
 
 		if (len >= 3 || upload_files_container.length >= 3) {
-
-
 			сlick_upload_blocks[1].style.display = 'none'
+			сlick_upload_blocks[2].style.borderColor = '#a8d6e4'
+			сlick_upload_blocks[2].style.backgroundImage = 'url(images/upload-photo-active.svg)'
+
 			photo_upload_block.appendChild(added_container)
 
 			let added_image_containers = document.querySelectorAll('.m-jsAddedImageContainer')
@@ -103,9 +104,14 @@ function imageDrawer(link, len) {
 			photo_upload_block.insertBefore(added_container, сlick_upload_blocks[0]);
 			photo_upload_block.insertBefore(added_container, сlick_upload_blocks[1]);
 			сlick_upload_blocks[1].style.display = 'none'
+			сlick_upload_blocks[2].style.borderColor = '#a8d6e4'
+			сlick_upload_blocks[2].style.backgroundImage = 'url(images/upload-photo-active.svg)'
+
 
 		} else if (len === 1 && upload_files_container.length === 1) {
 			сlick_upload_blocks[1].style.display = 'inherit'
+			сlick_upload_blocks[1].style.backgroundImage = 'url(images/upload-photo-active.svg)'
+			сlick_upload_blocks[1].style.borderColor = '#a8d6e4'
 
 			photo_upload_block.insertBefore(added_container, сlick_upload_blocks[0]);
 		}
