@@ -74,6 +74,10 @@ input:focus {
 	outline: none;
 }
 
+input::placeholder {
+	color: #3C80AA;
+}
+
 a {
 	text-decoration: none;
 }

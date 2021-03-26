@@ -602,13 +602,21 @@ html, body {
 			    position: relative;
 				  z-index: 2;
 
-			    
-
-			    // opacity: 0.8;
 			    color: @color-dark-blue;
 			    opacity: 1;
+			    cursor: pointer;
+
+			    background-image: url(../images/dropdown-arrow-down.svg);
+			    background-repeat: no-repeat;
+			    background-position: right 20px bottom 50%;
 
 				  padding: 12px 16px;
+				}
+
+				.m-inputSelect:focus {
+					cursor: text;
+			    background-image: url(../images/dropdown-arrow-up.svg);
+
 				}
 
 				.m-valuesContainer {
@@ -619,12 +627,14 @@ html, body {
 		    	-moz-box-sizing: border-box;
 		    	box-sizing: border-box;
 
+			    cursor: pointer;
+
 			    border-radius: 0 0 20px 20px;
 			    border: 1px solid #A8D6E4;
 			    border-top: none;
 			    background-color: @color-white;
 
-			    max-height: 315px;
+			    height: 315px;
 					width: 358px;
 			    padding: 25px 0 29px 0;
 			    margin-top: -16px;
@@ -716,6 +726,7 @@ html, body {
 					.m-uploadBlocksBasic {
 						display: flex;
 						justify-content: space-between;
+						position: relative;
 						// align-items: flex-start;
 						// border-radius: 15px;
 						height: 70px;
@@ -742,17 +753,6 @@ html, body {
 								height: 100%;
 							}
 						}
-						// .a-jsAddedImage {
-						// 	position: relative;
-						// 	border: 1px solid @color-white;
-						// 	border-radius: 15px;
-						// 	filter: drop-shadow(-3px 2px 8px rgba(0, 0, 0, 0.17));
-
-						// 	margin-right: -45px;
-						// 	width: 70px;
-						// 	// height: 100%;
-						// 	max-height: 70px;
-						// }
 
 						.a-jsAddedCloseButton {
 							position: absolute;
@@ -761,6 +761,21 @@ html, body {
 
 							margin-top: -45px;
 							margin-left: -45px;
+						}
+
+						.a-jsAddedText {
+							display: none;
+							position: absolute;
+
+							color: @color-white;
+							font-size: 0.625rem;
+							line-height: 0.75rem;
+
+							right: 6%;
+							bottom: 8%;
+							z-index: 1;
+
+							user-select: none;
 						}
 
 					}
@@ -812,12 +827,12 @@ html, body {
 					height: 80px;
 				}
 
-				.m-inputName {
+				.a-inputName {
 					.a-input;
 					margin-top: 10px;
 				}
 
-				.m-inputPhone {
+				.a-inputPhone {
 					.a-input;
 					margin-top: 10px;
 				}

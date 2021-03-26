@@ -46,19 +46,3 @@ function buttonClosePopUpMenu() {
 	popUpMenu()
 }
 
-function checkInputCallRequestForm() {
-	let is_checkbox_checked = document.querySelector('.o-callRequestForm .a-checkbox').checked
-	let submit_btn = document.querySelector('.o-callRequestForm .a-submit')
-	let is_phone_entered = document.querySelector('.o-callRequestForm .a-inputPhone').value
-	is_phone_entered = checkNumberValidity(is_phone_entered)
-
-	if (is_checkbox_checked && is_phone_entered) {
-		submit_btn.disabled = false
-	}	
-}
-
-function checkNumberValidity(number) {
-	return true
-	// const reg = /^\+?3?8?(0[\s\.-]\d{2}[\s\.-]\d{3}[\s\.-]\d{2}[\s\.-]\d{2})$/
- //  return reg.test(value) ? true : false
-}

@@ -18,7 +18,7 @@ function filterFunction(that, event) {
         container.find("ul li").removeClass("selected");
         setTimeout(function () {
             container.find("ul li:visible").first().addClass("selected");
-        }, 100)
+        }, 1)
     }
 }
 
@@ -44,9 +44,9 @@ function keyControl(e, container) {
         // onSelect(container.find("ul li.selected").text())
     }
 
-    container.find("ul li.selected")[0].scrollIntoView({
-        behavior: "smooth",
-    });
+    // container.find("ul li.selected")[0].scrollIntoView({
+    //     behavior: "smooth",
+    // });
 }
 
 $(".searchable input").focus(function () {
@@ -57,7 +57,7 @@ $(".searchable input").blur(function () {
     let that = this;
     setTimeout(function () {
         $(that).closest(".searchable").find("ul").hide();
-    }, 300);
+    }, 200);
 });
 
 $(document).on('click', '.searchable ul li', function () {

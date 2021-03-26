@@ -18,6 +18,13 @@ function handleEvents() {
 		call_btns[i].addEventListener('click', showCallRequestForm)
 	}
 
+	let filter_function = document.querySelector('.m-form .m-inputSelect')
+	filter_function.addEventListener('keyup', (event) => {filterFunction(filter_function, event)})
+	filter_function.addEventListener('keyup', highlightSelectedValue)
+	filter_function.addEventListener('click', highlightSelectedValue)
+
+
+
 	let close_call_request_form = document.querySelector('.o-callRequestForm .a-close')
 	close_call_request_form.addEventListener('click', closeCallRequestForm)
 
@@ -28,11 +35,12 @@ function handleEvents() {
 	is_checkbox_checked.addEventListener('change', checkInputCallRequestForm)
 
 	let is_phone_entered = document.querySelector('.o-callRequestForm .a-inputPhone')
+	is_phone_entered.addEventListener('blur', checkInputCallRequestForm)
 	is_phone_entered.addEventListener('keyup', checkInputCallRequestForm) 
-}
 
-function handleCloseButtonEvent(number) {
-	let close_buttons = document.querySelectorAll('.a-jsAddedCloseButton')
-	close_buttons[number].addEventListener('click', removePhotos(number))
+
+	let is_phone_entered_itemForm = document.querySelector('.m-form .a-inputPhone')
+	is_phone_entered_itemForm.addEventListener('blur', checkInputItemInfoForm)
+	is_phone_entered_itemForm.addEventListener('keyup', checkInputItemInfoForm)
 
 }

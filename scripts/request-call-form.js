@@ -36,3 +36,24 @@ function underlayCloseCallRequestForm() {
 	underlay.removeEventListener('click', underlayCloseCallRequestForm)
 	closeCallRequestForm()
 }
+
+
+
+function checkInputCallRequestForm() {
+	let is_checkbox_checked = document.querySelector('.o-callRequestForm .a-checkbox').checked
+	let submit_btn = document.querySelector('.o-callRequestForm .a-submit')
+	let is_phone_entered = document.querySelector('.o-callRequestForm .a-inputPhone').value
+
+	is_phone_entered = checkNumberValidity(is_phone_entered)
+		
+	submit_btn.disabled = true
+
+	if (is_checkbox_checked && is_phone_entered) {
+		submit_btn.disabled = false
+	}	
+}
+
+function checkNumberValidity(number) {
+	const reg = /^\+380\s(\([0-9]{2}\)\s*|[0-9]{3}\-)\s[0-9]{3}-[0-9]{2}-[0-9]{2}$/
+	return reg.test(number) ? true : false
+}

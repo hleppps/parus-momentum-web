@@ -1,9 +1,9 @@
-let upload_files_container = []
-let photos_counter = 0
+let upload_images_container = []
+let files_len = 0
 
 function fillItemFormSelect () {
 	// запрос
-	const values = ['Test', 'Test', 'Test', 'Test', 'Test', 'Test', 'Транспорт', 'Бытовая техника', 'Электротехника', 'Украшения', 'Антиквариат', 'Меблі', 'Інструменти', 'Інше']
+	const values = ['Нерухомість','Транспорт', 'Побутова техніка', 'Электротехніка', 'Украшения', 'Антиквариат', 'Меблі', 'Інструменти', 'Інше', 'Тест']
 	let select = document.querySelector('.m-valuesContainer')
 
 	for (value of values) {
@@ -15,11 +15,23 @@ function fillItemFormSelect () {
 	}
 }
 
+function highlightSelectedValue() {
+	let input_value = document.querySelector('.m-form .m-inputSelect').value
+	console.log(input_value)
+	let options = document.querySelectorAll('.m-form .a-value')
+	for (let option of options) {
+		option.style.color = '#005182'
+		if (option.innerHTML === input_value) {
+			option.style.color = '#E96325'
+		}
+	}
+	// console.log(filter_function.value)
+}
+
 function changeConditionRate (rate) {
 	return () => {
 		let rate_stars = document.querySelectorAll('.a-rateStar')
-		let input = document.querySelectorAll('.a-inputItemCoditionRate')
-		input.value = rate
+		let input = document.querySelector('.a-inputItemCoditionRate')
 		let counter = 0
 		while (counter < rate_stars.length) {
 			counter < rate ? 
@@ -27,14 +39,15 @@ function changeConditionRate (rate) {
 				rate_stars[counter].setAttribute('src', 'images/star-not-selected.svg');
 			counter++
 		}
+		input.value = rate
 	}
 }
 
 function previewFiles() {
   let files = document.querySelector('.a-uploadFilesInput').files
-  let files_len = files.length
+  files_len += files.length
 
-  if ((files_len + upload_files_container.length) > 10) {
+  if ((files_len) > 10) {
   	alert('Не более 10 картинок!')
   	return
   }
@@ -46,8 +59,14 @@ function previewFiles() {
 
       reader.addEventListener("load", function () {
 
-      	upload_files_container.push(this.result)
-				imageDrawer(this.result, files_len)      	
+      	upload_images_container.push(this.result)
+
+
+				// imageDrawer(this.result, files_len)
+      	if (upload_images_container.length === files_len) {
+      		imageDrawer(upload_images_container)
+      	}
+
 
       }, false);
 
@@ -62,112 +81,133 @@ function previewFiles() {
 }
 
 
-function imageDrawer(link, len) {
-	photos_counter++
-	if (photos_counter > 4) {
-		return
-	}
+function imageDrawer(images) {
 	let photo_upload_block = document.querySelector('.m-uploadBlocksBasic') //parent
 	let сlick_upload_blocks = document.querySelectorAll('.m-clickUploadBlock')
-	let image = new Image()
-	image.src = link
-	image.onload = function() {
+	let amount_of_uploaded_photos = document.querySelector('.a-jsAddedText')
 
-		if (image.width <= image.height) {
-			image.classList.add('a-jsAddedImageWidth')
-		} else {
-			image.classList.add('a-jsAddedImageHeight')
-		}
+	cleanContainers()
 
-		let added_container = document.createElement('div')
-		added_container.appendChild(image)
-		added_container.classList.add('m-jsAddedImageContainer')
+	amount_of_uploaded_photos.style.display = 'none'
+	amount_of_uploaded_photos.innerHTML = '+' + images.length
+	amount_of_uploaded_photos.style.right = '6%'
 
-		сlick_upload_blocks[0].style.display = 'none'
-
-		if (len >= 3 || upload_files_container.length >= 3) {
-			сlick_upload_blocks[1].style.display = 'none'
-			сlick_upload_blocks[2].style.borderColor = '#a8d6e4'
-			сlick_upload_blocks[2].style.backgroundImage = 'url(images/upload-photo-active.svg)'
-
-			photo_upload_block.appendChild(added_container)
-
-			let added_image_containers = document.querySelectorAll('.m-jsAddedImageContainer')
-
-				for (let i = 0; i < added_image_containers.length; i++) {
-					added_image_containers[i].style.position = 'absolute'
-					added_image_containers[i].style.marginLeft = 25*i + 'px'
-				}
-			
-
-		} else if (len === 2 || upload_files_container.length === 2) {
-			photo_upload_block.insertBefore(added_container, сlick_upload_blocks[0]);
-			photo_upload_block.insertBefore(added_container, сlick_upload_blocks[1]);
-			сlick_upload_blocks[1].style.display = 'none'
-			сlick_upload_blocks[2].style.borderColor = '#a8d6e4'
-			сlick_upload_blocks[2].style.backgroundImage = 'url(images/upload-photo-active.svg)'
-
-
-		} else if (len === 1 && upload_files_container.length === 1) {
-			сlick_upload_blocks[1].style.display = 'inherit'
-			сlick_upload_blocks[1].style.backgroundImage = 'url(images/upload-photo-active.svg)'
-			сlick_upload_blocks[1].style.borderColor = '#a8d6e4'
-
-			photo_upload_block.insertBefore(added_container, сlick_upload_blocks[0]);
-		}
-		let added_image_containers = document.querySelectorAll('.m-jsAddedImageContainer')
-
-    let close_button = document.createElement('img')
-    close_button.classList.add('a-jsAddedCloseButton')
-    close_button.src = 'images/remove-img-btn.svg'
-    added_image_containers[added_image_containers.length - 1].appendChild(close_button)
-		handleCloseButtonEvent(added_image_containers.length - 1)
-
+	if (images.length === 3) {
+		amount_of_uploaded_photos.style.right = '23%'
 	}
 
-}
-// function imageDrawer(link, len) {
+	for (let index in images) {
+		if ((images.length > 4 && index >= images.length - 4) || (images.length <= 4)) {
 
-// 	let image_container = document.querySelector('.m-uploadBlock')
+			let image = new Image()
+			image.src = images[index]
 
-// 	image_container.innerHTML = ''
-// 	for (image of input_container.slice(0,4)) {
-// 		let img = document.createElement('img')
-//     img.classList.add('a-jsAddedImage')
-//     img.src = image
-//     image_container.appendChild(img)
+			image.onload = function() {
 
-// 	}
+				if (image.width <= image.height) {
+					image.classList.add('a-jsAddedImageWidth')
+				} else {
+					image.classList.add('a-jsAddedImageHeight')
+				}
 
-// 	let close_buttons = document.querySelectorAll('.a-jsAddedCloseButton')
-	
-// 	for (let i = 0; i < close_buttons.length; i++) {
-// 		close_buttons[i].style.marginLeft = (8 + (27*i)) + 'px'
-// 	}
+				let added_container = document.createElement('div')
+				added_container.appendChild(image)
+				added_container.classList.add('m-jsAddedImageContainer')
 
-
-// }
-
-function removePhotos(number) {
-	return () => {
-		photos_counter = 0
-		upload_files_container.splice(number, 1)
-
-		let сlick_upload_blocks = document.querySelectorAll('.m-clickUploadBlock')
-		сlick_upload_blocks[0].style.display = 'inherit'
-		сlick_upload_blocks[1].style.display = 'inherit'
+				let close_button = document.createElement('img')
+			  	close_button.classList.add('a-jsAddedCloseButton')
+			  	close_button.src = 'images/remove-img-btn.svg'
+			  	close_button.onclick = removePhotos(index)
+				added_container.appendChild(close_button)			
 
 
-		let added_image_containers = document.querySelectorAll('.m-jsAddedImageContainer')
-		for (let i = 0; i < added_image_containers.length; i++ ) {
-		  added_image_containers[i].outerHTML = ""
-		}
+				сlick_upload_blocks[0].style.display = 'none'
 
-		if (upload_files_container.length === 0) {
-		} else { 
-			for (value of upload_files_container) {
-				imageDrawer(value, upload_files_container.length)
+				switch (images.length) {
+					case 1:
+						сlick_upload_blocks[1].style.display = 'inherit'
+						сlick_upload_blocks[1].style.borderColor = '#a8d6e4'
+						сlick_upload_blocks[1].style.backgroundImage = 'url(images/upload-photo-active.svg)'
+
+						photo_upload_block.insertBefore(added_container, сlick_upload_blocks[0]);
+
+						break
+
+					case 2:
+						photo_upload_block.insertBefore(added_container, сlick_upload_blocks[0]);
+						photo_upload_block.insertBefore(added_container, сlick_upload_blocks[1]);
+						сlick_upload_blocks[1].style.display = 'none'
+						сlick_upload_blocks[2].style.borderColor = '#a8d6e4'
+						сlick_upload_blocks[2].style.backgroundImage = 'url(images/upload-photo-active.svg)'
+
+						break
+
+					default:
+						сlick_upload_blocks[1].style.display = 'none'
+						сlick_upload_blocks[2].style.borderColor = '#a8d6e4'
+						сlick_upload_blocks[2].style.backgroundImage = 'url(images/upload-photo-active.svg)'
+
+						photo_upload_block.appendChild(added_container)
+
+						let added_image_containers = document.querySelectorAll('.m-jsAddedImageContainer')
+
+						for (let i = 0; i < added_image_containers.length; i++) {
+							added_image_containers[i].style.position = 'absolute'
+							added_image_containers[i].style.marginLeft = 25*i + 'px'
+						}
+
+						amount_of_uploaded_photos.style.display = 'inherit'
+
+						break
+				}
+  			
+  			let input_value = document.querySelector('.a-uploadFilesInput').value
+  			input_value = upload_images_container
 			}
 		}
 	}
+}
+		
+
+function removePhotos(index) {
+
+		return () => {
+			upload_images_container.splice(index, 1)
+			files_len -= 1
+
+			let input_value = document.querySelector('.a-uploadFilesInput').value
+			input_value = upload_images_container
+
+			imageDrawer(upload_images_container)
+			let сlick_upload_blocks = document.querySelectorAll('.m-clickUploadBlock')
+			сlick_upload_blocks[0].style.display = 'inherit'
+			сlick_upload_blocks[0].style.borderColor = '#a8d6e4'
+			сlick_upload_blocks[0].style.backgroundImage = 'url(images/upload-photo-active.svg)'
+
+
+			for (let i = 1; i <= 2; i++) {
+				сlick_upload_blocks[i].style.borderColor = '#BEE0EB'
+				сlick_upload_blocks[i].style.backgroundImage = 'url(images/upload-photo.svg)'
+			}
+		}		
+}
+
+function cleanContainers() {
+	let added_image_containers = document.querySelectorAll('.m-jsAddedImageContainer')
+	for (let i = 0; i < added_image_containers.length; i++ ) {
+	  added_image_containers[i].outerHTML = ""
+	}
+}
+
+function checkInputItemInfoForm() {
+	let submit_btn = document.querySelector('.m-form .a-submit')
+	let is_phone_entered = document.querySelector('.m-form .a-inputPhone').value
+
+	submit_btn.disabled = true
+
+	is_phone_entered = checkNumberValidity(is_phone_entered)
+
+	if (is_phone_entered) {
+		submit_btn.disabled = false
+	}	
 }
