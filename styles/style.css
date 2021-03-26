@@ -6,6 +6,29 @@ body {
   font-family: 'Rubik', 'Arial';
   font-size: 16px;
 }
+.m-inputItemInfo::-webkit-input-placeholder {
+  color: #3C80AA;
+}
+.m-inputItemInfo::-moz-placeholder {
+  color: #3C80AA;
+}
+/* Firefox 19+ */
+.m-inputItemInfo:-moz-placeholder {
+  color: #3C80AA;
+}
+/* Firefox 18- */
+.m-inputItemInfo::placeholder {
+  color: #3C80AA;
+}
+input::placeholder {
+  color: #3C80AA;
+}
+input::-ms-input-placeholder {
+  color: #3C80AA;
+}
+input:-ms-input-placeholder {
+  color: #3C80AA;
+}
 .a-underlay {
   display: none;
   position: fixed;
@@ -606,6 +629,9 @@ body {
   border-color: #a8d6e4;
 }
 .o-productData .m-form .m-main .m-fileUploadBlock .a-uploadFilesInput {
+  display: none;
+}
+.o-productData .m-form .m-main .m-fileUploadBlock .a-photosContainer {
   display: none;
 }
 .o-productData .m-form .m-main .m-textInputs .m-inputItemInfo {

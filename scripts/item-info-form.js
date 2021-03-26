@@ -45,12 +45,13 @@ function changeConditionRate (rate) {
 
 function previewFiles() {
   let files = document.querySelector('.a-uploadFilesInput').files
-  files_len += files.length
 
   if ((files_len) > 10) {
   	alert('Не более 10 картинок!')
   	return
   }
+
+  files_len += files.length
 
   function readAndPreview(file) {
 
@@ -160,9 +161,8 @@ function imageDrawer(images) {
 
 						break
 				}
-  			
-  			let input_value = document.querySelector('.a-uploadFilesInput').value
-  			input_value = upload_images_container
+  			let photos_container = document.querySelector('.a-photosContainer')
+  			photos_container.value = upload_images_container
 			}
 		}
 	}
@@ -175,8 +175,8 @@ function removePhotos(index) {
 			upload_images_container.splice(index, 1)
 			files_len -= 1
 
-			let input_value = document.querySelector('.a-uploadFilesInput').value
-			input_value = upload_images_container
+			let photos_container = document.querySelector('.a-photosContainer')
+  			photos_container.value = upload_images_container
 
 			imageDrawer(upload_images_container)
 			let сlick_upload_blocks = document.querySelectorAll('.m-clickUploadBlock')
