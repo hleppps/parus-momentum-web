@@ -45,13 +45,15 @@ function changeConditionRate (rate) {
 
 function previewFiles() {
   let files = document.querySelector('.a-uploadFilesInput').files
+  files_len += files.length
 
-  if ((files_len) > 10) {
+  if (files_len > 10) {
+  	files_len -= files.length
   	alert('Не более 10 картинок!')
+
   	return
   }
 
-  files_len += files.length
 
   function readAndPreview(file) {
 
