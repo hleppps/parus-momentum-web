@@ -1,18 +1,24 @@
 function handleEvents() {
+
+	let rate_stars = document.querySelectorAll('.item-rating__option-value')
+	for (let i = 0; i < rate_stars.length; i++) {
+		rate_stars[i].addEventListener('click', changeConditionRate(+i+1))
+	}
+
+
+
+
+
+
+
+	let file_input = document.querySelector('.photos-upload__loading-container')
+	file_input.addEventListener('change', previewFiles)
+
 	let pop_up_menu_btn = document.querySelector('.a-popUpMenuButton')
 	pop_up_menu_btn.addEventListener('click', popUpMenu)
 
 	let close_pop_up_menu_btn = document.querySelector('.m-navigationMobile .a-callButton')
 	close_pop_up_menu_btn.addEventListener('click', buttonClosePopUpMenu)
-
-	let rate_stars = document.querySelectorAll('.a-rateStar')
-	for (let i = 0; i < rate_stars.length; i++) {
-		rate_stars[i].addEventListener('click', changeConditionRate(+i+1))
-	}
-
-	let file_input = document.querySelector('.a-uploadFilesInput')
-	file_input.addEventListener('change', previewFiles)
-
 
 
 
@@ -29,7 +35,15 @@ function handleEvents() {
 
 
 
-	let filter_function = document.querySelector('.m-form .m-inputSelect')
+	let open_item_info_form_btn = document.querySelector('.advantages-wrapper__button')
+	open_item_info_form_btn.addEventListener('click', () => {showOverlayForm('.item-description-wrapper')})
+
+	let close_item_info_form_btn = document.querySelector('.item-description__button_close-form')
+	close_call_request_form.addEventListener('click', () => {closeOverlayForm('.item-description-wrapper')})
+
+
+
+	let filter_function = document.querySelector('.category-selection__input')
 	filter_function.addEventListener('keyup', (event) => {filterFunction(filter_function, event)})
 	filter_function.addEventListener('keyup', highlightSelectedValue)
 	filter_function.addEventListener('click', highlightSelectedValue)
@@ -42,9 +56,9 @@ function handleEvents() {
 	is_phone_entered.addEventListener('blur', checkInputCallRequestForm)
 	is_phone_entered.addEventListener('keyup', checkInputCallRequestForm) 
 
-	let is_phone_entered_itemForm = document.querySelector('.m-form .a-inputPhone')
+	let is_phone_entered_itemForm = document.querySelector('.personal-info__user-info_phone')
 	is_phone_entered_itemForm.addEventListener('blur', checkInputItemInfoForm)
 	is_phone_entered_itemForm.addEventListener('keyup', checkInputItemInfoForm)
 
-	let show_item_description_form = document.querySelector('.advantages-wrapper__button')
+	// let show_item_description_form = document.querySelector('.advantages-wrapper__button')
 }

@@ -56,16 +56,6 @@ button, input {
 	outline: none;
 }
 
-input[type = submit], input[type = reset] {
-	background-color: orange;
-	border: none;
-	text-decoration: none;
-	color: white;
-	padding: 20px 20px;
-	margin: 20px 20px;
-	cursor: pointer;
-}
-
 button, input[type = submit] {
     cursor: pointer;
 }
@@ -95,6 +85,9 @@ select:focus {
 }
 
 textarea {
+	-webkit-appearance: none;
+
+	box-shadow: none;
     border: none;
     background-color: transparent;
     resize: none;

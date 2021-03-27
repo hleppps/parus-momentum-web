@@ -4,21 +4,20 @@ let files_len = 0
 function fillItemFormSelect () {
 	// запрос
 	const values = ['Нерухомість','Транспорт', 'Побутова техніка', 'Электротехніка', 'Украшения', 'Антиквариат', 'Меблі', 'Інструменти', 'Інше', 'Тест']
-	let select = document.querySelector('.m-valuesContainer')
+	let select = document.querySelector('.category-selection__options-container')
 
 	for (value of values) {
 		let li = document.createElement('li')
 		li.innerHTML = value
-    li.classList.add('a-value')
+    li.classList.add('category-selection__option-value')
 
     select.appendChild(li)
 	}
 }
 
 function highlightSelectedValue() {
-	let input_value = document.querySelector('.m-form .m-inputSelect').value
-	console.log(input_value)
-	let options = document.querySelectorAll('.m-form .a-value')
+	let input_value = document.querySelector('.category-selection__input').value
+	let options = document.querySelectorAll('.category-selection__option-value')
 	for (let option of options) {
 		option.style.color = '#005182'
 		if (option.innerHTML === input_value) {
@@ -30,8 +29,8 @@ function highlightSelectedValue() {
 
 function changeConditionRate (rate) {
 	return () => {
-		let rate_stars = document.querySelectorAll('.a-rateStar')
-		let input = document.querySelector('.a-inputItemCoditionRate')
+		let rate_stars = document.querySelectorAll('.item-rating__option-value')
+		let input = document.querySelector('.item-rating__rate')
 		let counter = 0
 		while (counter < rate_stars.length) {
 			counter < rate ? 
@@ -44,7 +43,7 @@ function changeConditionRate (rate) {
 }
 
 function previewFiles() {
-  let files = document.querySelector('.a-uploadFilesInput').files
+  let files = document.querySelector('.photos-upload__loading-container').files
   files_len += files.length
 
   if (files_len > 10) {
@@ -83,8 +82,8 @@ function previewFiles() {
 
 
 function imageDrawer(images) {
-	let photo_upload_block = document.querySelector('.m-uploadBlocksBasic') //parent
-	let сlick_upload_blocks = document.querySelectorAll('.m-clickUploadBlock')
+	let photo_upload_block = document.querySelector('.photos-upload__container_basic') //parent
+	let сlick_upload_blocks = document.querySelectorAll('.photos-upload__container__photo-block')
 	let amount_of_uploaded_photos = document.querySelector('.a-jsAddedText')
 
 	cleanContainers()
@@ -105,7 +104,7 @@ function imageDrawer(images) {
 				// TODO remove function
 			image.onload = function() {
 
-				
+
 				// if (image.width <= image.height) {
 					// image.classList.add('a-jsAddedImageWidth')
 				// } else {
@@ -166,7 +165,7 @@ function imageDrawer(images) {
 
 						break
 				}
-  			let photos_container = document.querySelector('.a-photosContainer')
+  			let photos_container = document.querySelector('.photos-upload__unloading-container')
   			photos_container.value = upload_images_container
 			}
 		}
@@ -180,11 +179,11 @@ function removePhotos(index) {
 			upload_images_container.splice(index, 1)
 			files_len -= 1
 
-			let photos_container = document.querySelector('.a-photosContainer')
+			let photos_container = document.querySelector('.photos-upload__unloading-container')
   			photos_container.value = upload_images_container
 
 			imageDrawer(upload_images_container)
-			let сlick_upload_blocks = document.querySelectorAll('.m-clickUploadBlock')
+			let сlick_upload_blocks = document.querySelectorAll('.photos-upload__container__photo-block')
 			сlick_upload_blocks[0].style.display = 'inherit'
 			сlick_upload_blocks[0].style.borderColor = '#a8d6e4'
 			сlick_upload_blocks[0].style.backgroundImage = 'url(images/upload-photo-active.svg)'

@@ -106,74 +106,77 @@
 
         <img class="a-dottedArrowImage" src="images/dotted-arrow.svg" alt="Arrow">
 
-        <form class="m-form item-descripton-wrapper">
-          <div class="m-header">
-            <p class="a-heading">Дані про товар</p>
+<!-- TODO: MAKE IN BEM -->
+
+        <form class="item-description-wrapper">
+
+          <div class="item-description__header">
+            <p class="item-description__heading">Дані про товар</p>
           </div>
-          <div class="m-main">
+          <div class="item-description__main">
 
-            <div class="m-select searchable">
+            <div class="searchable item-description__category-selection">
 
-              <input class="m-inputSelect" type="text" placeholder="Оберіть категорію товару" autocomplete="off" value="" name="item-category">
-              <ul class="m-valuesContainer">
+              <input class="category-selection__input" type="text" placeholder="Оберіть категорію товару" autocomplete="off" value="" name="item-category">
 
-                <!-- <li class="a-value">value</li> -->
+              <ul class="category-selection__options-container">
+
+                <!-- <li class="a-value   category-selection__option-value">value</li> -->
 
               </ul>
             </div>
 
-            <div class="m-itemCondition">
-              <p class="a-text">Стан товару: </p>
-              <input class="a-inputItemCoditionRate" type="text" name="item-codition-rate">
-              <ul class="m-itemConditionRate">
-                <li><img class="a-rateStar" src="images/star-not-selected.svg"></li>
-                <li><img class="a-rateStar" src="images/star-not-selected.svg"></li>
-                <li><img class="a-rateStar" src="images/star-not-selected.svg"></li>
-                <li><img class="a-rateStar" src="images/star-not-selected.svg"></li>
-                <li><img class="a-rateStar" src="images/star-not-selected.svg"></li>
+            <div class="item-description__item-rating">
+              <p class="item-rating__description">Стан товару: </p>
+              <input class="item-rating__rate" type="text" name="item-codition-rate">
+              <ul class="item-rating__options-container">
+                <li><img class="item-rating__option-value" src="images/star-not-selected.svg"></li>
+                <li><img class="item-rating__option-value" src="images/star-not-selected.svg"></li>
+                <li><img class="item-rating__option-value" src="images/star-not-selected.svg"></li>
+                <li><img class="item-rating__option-value" src="images/star-not-selected.svg"></li>
+                <li><img class="item-rating__option-value" src="images/star-not-selected.svg"></li>
               </ul>
             </div>
 
-            <div class="m-fileUploadBlock">
+            <div class="item-description__photos-upload">
 
-              <div class="m-textElements">
-                <p class="a-textBasic">Фото товару:</p>
-                <p class="a-textSub">(jpg,png,tiff)</p>
+              <div class="photos-upload__description">
+                <p class="photos-upload__description_basic">Фото товару:</p>
+                <p class="photos-upload__description_sub">(jpg,png,tiff)</p>
               </div>
 
-              <div class="m-uploadBlocksContainer" for="file">
-                <div class="m-uploadBlocksBasic">
+              <div class="photos-upload__container" for="file">
+                <div class="photos-upload__container_basic">
 
-                  <div class="m-clickUploadBlock">
-                    <label class="a-label" for="file">
+                  <div class="photos-upload__container__photo-block">
+                    <label class="photos-upload__label" for="file">
                     </label>
                   </div>
 
-                  <div class="m-clickUploadBlock">
-                    <label class="a-label" for="file">
+                  <div class="photos-upload__container__photo-block">
+                    <label class="photos-upload__label" for="file">
                     </label>
                   </div>
                   <p class="a-jsAddedText">+4</p>
                 </div>
-                <div class="m-clickUploadBlock">
-                  <label class="a-label" for="file">
+                <div class="photos-upload__container__photo-block">
+                  <label class="photos-upload__label" for="file">
                   </label>
                 </div>
               </div>
 
-              <input class="a-uploadFilesInput" type="file" id="file" multiple>
-              <input class="a-photosContainer" type="text" name="item-photos" value="">
+              <input class="photos-upload__loading-container" type="file" id="file" multiple>
+              <input class="photos-upload__unloading-container" type="text" name="item-photos" value="">
             </div>
 
-            <div class="m-textInputs">
-              <textarea class="m-inputItemInfo" placeholder="Про товар" name="item-info"></textarea>
-              <input class="a-inputName" type="text" placeholder="Ім'я" name="user-name">
-              <input class="a-inputPhone" type="text" placeholder="Телефон" name="user-number" autocomplete="off">
+            <div class="m-textInputs item-description__personal-info">
+              <textarea class="m-inputItemInfo personal-info__item-info" placeholder="Про товар" name="item-info"></textarea>
+              <input class="a-inputName personal-info__user-info" type="text" placeholder="Ім'я" name="user-name">
+              <input class="a-inputPhone personal-info__user-info personal-info__user-info_phone" type="text" placeholder="Телефон" name="user-number" autocomplete="off">
             </div>
-            <div class="m-submitBlock">
-              <input class="a-submit" type="submit" value="Відправити" disabled>
-            </div>
-            <button class="a-close">Зачинити</button>
+
+            <input class="item-description__button_send-form" type="submit" value="Відправити" disabled>
+            <button class="item-description__button_close-form">Зачинити</button>
 
           </div>
         </form>
