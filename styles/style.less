@@ -582,6 +582,10 @@ input:-ms-input-placeholder {color: @color-light-blue;}
 		}
 
 		.m-main {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
 			-webkit-box-sizing: border-box;
 		  -moz-box-sizing: border-box;
 		  box-sizing: border-box;
@@ -609,6 +613,7 @@ input:-ms-input-placeholder {color: @color-light-blue;}
 			}
 
 			.m-select {
+				width: 100%;
 
 				.m-inputSelect {
 					.a-input;
@@ -684,7 +689,8 @@ input:-ms-input-placeholder {color: @color-light-blue;}
 				display: flex;
 				justify-content: space-between;
 
-				margin-top: 27px; 	
+				margin-top: 27px;
+				width: 100%;	
 
 				.a-text {
 					font-size: 0.875rem;
@@ -714,6 +720,7 @@ input:-ms-input-placeholder {color: @color-light-blue;}
 				justify-content: space-between;
 
 				margin-top: 23px;
+				width: 100%;
 				.m-textElements {
 					color: @color-light-blue;
 
@@ -872,7 +879,7 @@ input:-ms-input-placeholder {color: @color-light-blue;}
 				display: flex;
 				justify-content: center;
 
-				margin-top: 52px;
+				margin-top: 40px;
 
 				.a-submit {
 					font-size: 0.875rem;
@@ -885,8 +892,48 @@ input:-ms-input-placeholder {color: @color-light-blue;}
 
 					text-align: center;
 					padding: 12px 72px;
+					margin: 0;
+
 				}
 			}
+
+			.a-close {
+				// display: none;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.m-form {
+		position: fixed;
+		z-index: 6;
+		top: 5vh;
+		left: 0;
+		right: 0;
+
+		margin: 0 auto;
+		width: 90vw;
+		height: 80vh;
+		max-width: 374px;
+		max-height: 710px;
+
+		.a-close {
+			display: flex;
+			justify-content: center;
+
+			font-weight: 700;
+			text-align: center;
+			color: @color-dark-blue;
+
+			background-color: @color-white;
+			border: 1px solid @color-dark-blue;
+			border-radius: 20px;
+
+			width: 100%;
+			max-width: 228px;
+			padding: 12px 0;
+			margin-top: 30px;
 		}
 	}
 }
@@ -901,9 +948,6 @@ input:-ms-input-placeholder {color: @color-light-blue;}
 			.m-main {
 				.m-submitBlock {
 					margin-top: 0;
-					.a-submit {
-						margin-bottom: 0;
-					}
 				}
 			}
 		}
@@ -986,9 +1030,6 @@ input:-ms-input-placeholder {color: @color-light-blue;}
 			}
 		}
 
-		.m-form {
-			display: none;
-		}
 	}
 }
 
@@ -1108,7 +1149,7 @@ input:-ms-input-placeholder {color: @color-light-blue;}
 	height: 100px;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1220px + 20px + 20px) {
 	.advantage-card__image {
 		height: 60px;
 	}

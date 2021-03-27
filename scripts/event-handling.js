@@ -13,23 +13,27 @@ function handleEvents() {
 	let file_input = document.querySelector('.a-uploadFilesInput')
 	file_input.addEventListener('change', previewFiles)
 
+
+
+
 	let call_btns = document.querySelectorAll('.a-callButton')
 	for (let i = 0; i < call_btns.length; i++) {
-		call_btns[i].addEventListener('click', showCallRequestForm)
+		call_btns[i].addEventListener('click', () => {showOverlayForm('.o-callRequestForm')})
 	}
+
+	let close_call_request_form = document.querySelector('.o-callRequestForm .a-close')
+	close_call_request_form.addEventListener('click', () => {closeOverlayForm('.o-callRequestForm')})
+
+	let close_call_request_form_btn = document.querySelector('.o-callRequestForm .a-image')
+	close_call_request_form_btn.addEventListener('click', () => {closeOverlayForm('.o-callRequestForm')})
+
+
 
 	let filter_function = document.querySelector('.m-form .m-inputSelect')
 	filter_function.addEventListener('keyup', (event) => {filterFunction(filter_function, event)})
 	filter_function.addEventListener('keyup', highlightSelectedValue)
 	filter_function.addEventListener('click', highlightSelectedValue)
 
-
-
-	let close_call_request_form = document.querySelector('.o-callRequestForm .a-close')
-	close_call_request_form.addEventListener('click', closeCallRequestForm)
-
-	let close_call_request_form_btn = document.querySelector('.o-callRequestForm .a-image')
-	close_call_request_form_btn.addEventListener('click', closeCallRequestForm)
 
 	let is_checkbox_checked = document.querySelector('.o-callRequestForm .a-checkbox')
 	is_checkbox_checked.addEventListener('change', checkInputCallRequestForm)
@@ -38,9 +42,9 @@ function handleEvents() {
 	is_phone_entered.addEventListener('blur', checkInputCallRequestForm)
 	is_phone_entered.addEventListener('keyup', checkInputCallRequestForm) 
 
-
 	let is_phone_entered_itemForm = document.querySelector('.m-form .a-inputPhone')
 	is_phone_entered_itemForm.addEventListener('blur', checkInputItemInfoForm)
 	is_phone_entered_itemForm.addEventListener('keyup', checkInputItemInfoForm)
 
+	let show_item_description_form = document.querySelector('.advantages-wrapper__button')
 }

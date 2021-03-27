@@ -1,7 +1,8 @@
-let is_call_request_form_open = false
+let is_overlay_form_open = false
 
-function showCallRequestForm() {
-	let call_request_form = document.querySelector('.o-callRequestForm')
+function showOverlayForm(selector) {
+	let underlay = document.querySelector('.a-underlay')
+	let call_request_form = document.querySelector(selector)
 	let body = document.body
 
 	call_request_form.style.display = 'flex'
@@ -11,14 +12,16 @@ function showCallRequestForm() {
 	underlay.style.backgroundColor = '#000'
 	underlay.style.opacity = '.5'
 	underlay.style.zIndex = '5'
-	underlay.addEventListener('click', underlayCloseCallRequestForm)
+	underlay.addEventListener('click', () => {closeOverlayForm(selector)})
 
-
-	is_call_request_form_open = true
+	is_overlay_form_open = true
 }
 
-function closeCallRequestForm() {
-	let call_request_form = document.querySelector('.o-callRequestForm')
+function closeOverlayForm(selector) {
+	let underlay = document.querySelector('.a-underlay')
+	underlay.removeEventListener('click', closeOverlayForm)
+
+	let call_request_form = document.querySelector(selector)
 	let body = document.body
 	
 	call_request_form.style.display = 'none'
@@ -29,14 +32,8 @@ function closeCallRequestForm() {
 	underlay.style.backgroundColor = 'transparent'
 	underlay.style.opacity = '1'
 
-	is_call_request_form_open = false
+	is_overlay_form_open = false
 }
-
-function underlayCloseCallRequestForm() {
-	underlay.removeEventListener('click', underlayCloseCallRequestForm)
-	closeCallRequestForm()
-}
-
 
 
 function checkInputCallRequestForm() {

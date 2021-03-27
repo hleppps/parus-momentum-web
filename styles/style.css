@@ -448,6 +448,9 @@ input:-ms-input-placeholder {
   color: #005182;
 }
 .o-productData .m-form .m-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   box-sizing: border-box;
   padding: 32px 50px 40px 50px;
   width: 100%;
@@ -461,6 +464,9 @@ input:-ms-input-placeholder {
   border-radius: 20px;
   background-color: #fff;
   padding: 12px 16px;
+  width: 100%;
+}
+.o-productData .m-form .m-main .m-select {
   width: 100%;
 }
 .o-productData .m-form .m-main .m-select .m-inputSelect {
@@ -524,6 +530,7 @@ input:-ms-input-placeholder {
   display: flex;
   justify-content: space-between;
   margin-top: 27px;
+  width: 100%;
 }
 .o-productData .m-form .m-main .m-itemCondition .a-text {
   font-size: 0.875rem;
@@ -546,6 +553,7 @@ input:-ms-input-placeholder {
   display: flex;
   justify-content: space-between;
   margin-top: 23px;
+  width: 100%;
 }
 .o-productData .m-form .m-main .m-fileUploadBlock .m-textElements {
   color: #3C80AA;
@@ -675,7 +683,7 @@ input:-ms-input-placeholder {
 .o-productData .m-form .m-main .m-submitBlock {
   display: flex;
   justify-content: center;
-  margin-top: 52px;
+  margin-top: 40px;
 }
 .o-productData .m-form .m-main .m-submitBlock .a-submit {
   font-size: 0.875rem;
@@ -686,6 +694,35 @@ input:-ms-input-placeholder {
   border-radius: 20px;
   text-align: center;
   padding: 12px 72px;
+  margin: 0;
+}
+@media screen and (max-width: 800px) {
+  .m-form {
+    position: fixed;
+    z-index: 6;
+    top: 5vh;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 90vw;
+    height: 80vh;
+    max-width: 374px;
+    max-height: 710px;
+  }
+  .m-form .a-close {
+    display: flex;
+    justify-content: center;
+    font-weight: 700;
+    text-align: center;
+    color: #005182;
+    background-color: #fff;
+    border: 1px solid #005182;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 228px;
+    padding: 12px 0;
+    margin-top: 30px;
+  }
 }
 @media screen and (max-height: 810px) and (orientation: landscape) {
   .o-productData .m-form .m-header {
@@ -693,9 +730,6 @@ input:-ms-input-placeholder {
   }
   .o-productData .m-form .m-main .m-submitBlock {
     margin-top: 0;
-  }
-  .o-productData .m-form .m-main .m-submitBlock .a-submit {
-    margin-bottom: 0;
   }
 }
 @media screen and (max-width: 1180px) {
@@ -743,9 +777,6 @@ input:-ms-input-placeholder {
     background-color: #E96325;
     padding: 11px 33.5px 11px 34px;
     margin-top: 41px;
-  }
-  .o-productData .m-form {
-    display: none;
   }
 }
 .o-main {
@@ -836,7 +867,7 @@ input:-ms-input-placeholder {
 .advantage-card__image {
   height: 100px;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1260px) {
   .advantage-card__image {
     height: 60px;
   }
