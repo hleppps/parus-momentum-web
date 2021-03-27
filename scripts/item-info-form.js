@@ -64,8 +64,6 @@ function previewFiles() {
 
       	upload_images_container.push(this.result)
 
-
-				// imageDrawer(this.result, files_len)
       	if (upload_images_container.length === files_len) {
       		imageDrawer(upload_images_container)
       	}
@@ -92,12 +90,8 @@ function imageDrawer(images) {
 	cleanContainers()
 
 	amount_of_uploaded_photos.style.display = 'none'
-	amount_of_uploaded_photos.innerHTML = '+' + images.length
+	amount_of_uploaded_photos.innerHTML = '+' + (images.length - 4) 
 	amount_of_uploaded_photos.style.right = '6%'
-
-	if (images.length === 3) {
-		amount_of_uploaded_photos.style.right = '23%'
-	}
 
 	for (let index in images) {
 		if ((images.length > 4 && index >= images.length - 4) || (images.length <= 4)) {
@@ -105,13 +99,18 @@ function imageDrawer(images) {
 			let image = new Image()
 			image.src = images[index]
 
+
+			image.classList.add('a-jsAddedImage')
+
+				// TODO remove function
 			image.onload = function() {
 
-				if (image.width <= image.height) {
-					image.classList.add('a-jsAddedImageWidth')
-				} else {
-					image.classList.add('a-jsAddedImageHeight')
-				}
+				
+				// if (image.width <= image.height) {
+					// image.classList.add('a-jsAddedImageWidth')
+				// } else {
+					// image.classList.add('a-jsAddedImageHeight')
+				// }
 
 				let added_container = document.createElement('div')
 				added_container.appendChild(image)
@@ -159,7 +158,11 @@ function imageDrawer(images) {
 							added_image_containers[i].style.marginLeft = 25*i + 'px'
 						}
 
-						amount_of_uploaded_photos.style.display = 'inherit'
+						if (images.length <= 4) {
+							amount_of_uploaded_photos.display = 'none'
+						} else {
+							amount_of_uploaded_photos.style.display = 'inherit'
+						}
 
 						break
 				}
