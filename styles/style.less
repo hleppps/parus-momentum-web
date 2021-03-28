@@ -10,6 +10,7 @@ html, body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	scroll-behavior: smooth;
 	// justify-content: center;
 
 	font-family: 'Rubik', 'Arial';
@@ -1308,6 +1309,7 @@ input:-ms-input-placeholder {color: @color-light-blue;}
 
 .assessment-wrapper {
 	padding-top: 160px;
+	box-sizing: border-box;
 }
 
 @media screen and (max-width: 1140px + 20px + 20px) {
@@ -1368,7 +1370,7 @@ input:-ms-input-placeholder {color: @color-light-blue;}
 @media screen and (max-width: 800px) {
 	.text-information__button {
 		margin-top: 80px;
-		width: 280px;
+		width: inherit;
 		margin-right: 20px;
 		margin-left: 20px;
 

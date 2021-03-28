@@ -4,6 +4,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  scroll-behavior: smooth;
   font-family: 'Rubik', 'Arial';
   font-size: 16px;
 }
@@ -962,6 +963,7 @@ input:-ms-input-placeholder {
 }
 .assessment-wrapper {
   padding-top: 160px;
+  box-sizing: border-box;
 }
 @media screen and (max-width: 1180px) {
   .assessment-wrapper {
@@ -1010,7 +1012,7 @@ input:-ms-input-placeholder {
 @media screen and (max-width: 800px) {
   .text-information__button {
     margin-top: 80px;
-    width: 280px;
+    width: inherit;
     margin-right: 20px;
     margin-left: 20px;
   }
