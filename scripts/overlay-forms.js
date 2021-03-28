@@ -1,6 +1,6 @@
 let is_overlay_form_open = false
 
-function showOverlayForm(selector) {
+function showOverlayForm(selector, display_type = 'none') {
 	let underlay = document.querySelector('.a-underlay')
 	let call_request_form = document.querySelector(selector)
 	let body = document.body
@@ -12,19 +12,19 @@ function showOverlayForm(selector) {
 	underlay.style.backgroundColor = '#000'
 	underlay.style.opacity = '.5'
 	underlay.style.zIndex = '5'
-	underlay.addEventListener('click', () => {closeOverlayForm(selector)})
+	underlay.addEventListener('click', () => {closeOverlayForm(selector, display_type)})
 
 	is_overlay_form_open = true
 }
 
-function closeOverlayForm(selector) {
+function closeOverlayForm(selector, display_type = 'none') {
 	let underlay = document.querySelector('.a-underlay')
 	underlay.removeEventListener('click', closeOverlayForm)
 
 	let call_request_form = document.querySelector(selector)
 	let body = document.body
-	
-	call_request_form.style.display = 'none'
+	console.log(display_type)
+	call_request_form.style.display = display_type
 	body.style.overflowY = 'scroll'
 
 	underlay.style.display = 'none'

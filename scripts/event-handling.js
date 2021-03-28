@@ -35,7 +35,7 @@ function handleEvents() {
 
 
 
-	let open_item_info_form_btn = document.querySelector('.advantages-wrapper__button')
+	let open_item_info_form_btn = document.querySelector('.advantages-wrapper__button_mob', 'inherit')
 	open_item_info_form_btn.addEventListener('click', () => {showOverlayForm('.item-description-wrapper')})
 
 	let close_item_info_form_btn = document.querySelector('.item-description__button_close-form')
