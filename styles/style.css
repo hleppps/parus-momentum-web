@@ -1029,11 +1029,11 @@ input:-ms-input-placeholder {
   transform: scale(1.1);
 }
 .comparison-table__column_active .column__cell_heading {
-  padding-top: 24.4px;
+  padding-top: 24px;
 }
 @media screen and (max-height: 1050px) and (orientation: landscape) {
   .comparison-table__column_active .column__cell_heading {
-    padding-top: 20.3px;
+    padding-top: 16.2px;
   }
 }
 .comparison-table__column_after-active {
@@ -1112,40 +1112,41 @@ input:-ms-input-placeholder {
   height: 60px;
 }
 .column-active__content .column__content__cell_time {
-  padding-top: 33px;
+  padding-top: 35.5px;
   height: 60px;
 }
 @media screen and (max-height: 1050px) and (orientation: landscape) {
   .column-active__content .column__content__cell_time {
-    padding-top: 6.5px;
+    padding-top: 7px;
   }
 }
 .column-active__content .column__content__cell_paperwork {
-  padding-top: 38px;
+  padding-top: 33.5px;
   height: 145px;
 }
 @media screen and (max-height: 1050px) and (orientation: landscape) {
   .column-active__content .column__content__cell_paperwork {
     height: 105px;
-    padding-top: 4px;
+    padding-top: 8.5px;
   }
 }
 .column-active__content .column__content__cell_sending {
-  padding-top: 36px;
+  padding-top: 37px;
   height: 125px;
 }
 @media screen and (max-height: 1050px) and (orientation: landscape) {
   .column-active__content .column__content__cell_sending {
-    padding-top: 15px;
+    padding-top: 13px;
     height: 95px;
   }
 }
 .column-active__content .column__content__cell_benefit {
+  padding-top: 39px;
   height: 52px;
 }
 @media screen and (max-height: 1050px) and (orientation: landscape) {
   .column-active__content .column__content__cell_benefit {
-    padding-top: 4px;
+    padding-top: 4.5px;
     height: 40px;
   }
 }
