@@ -23,7 +23,6 @@ function closeOverlayForm(selector, display_type = 'none') {
 
 	let call_request_form = document.querySelector(selector)
 	let body = document.body
-	console.log(display_type)
 	call_request_form.style.display = display_type
 	body.style.overflowY = 'scroll'
 

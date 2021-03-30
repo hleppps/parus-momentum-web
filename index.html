@@ -265,12 +265,73 @@
         <a class="advantages-wrapper__button_desktop" href="#">Взяти кредит</a>
       </div>
 
-      <!-- <div class="comparison-wrapper">
-        <h1 class="comparison-wrapper__heading">Співвідношення ломбардів</h1>
+      <div class="comparison-wrapper">
+        <h1 class="comparison__heading">Співвідношення ломбардів</h1>
+
+        <div class="comparison__comparison-table">
+          <div class="comparison-table__column comparison-table__column_headlines">
+            <div class="column__cell_heading"></div>
+            <div class="column_headlines__content column__content">
+              <div class="column__content__cell column__content__cell_time">Час:</div>
+              <div class="column__content__cell column__content__cell_paperwork">Оформлення:</div>
+              <div class="column__content__cell column__content__cell_sending">Відправка:</div>
+              <div class="column__content__cell column__content__cell_benefit">Вигода:</div>
+            </div>
+          </div>
+
+          <div class="comparison-table__column comparison-table__column_active">
+            <div class="column__cell_heading">
+              <img src="images/img-logo-desktop.svg" alt="">
+            </div>
+            <div class="column-active__content column__content">
+              <div class="column__content__cell column__content__cell_time">Від 10 хвилин</div>
+              <div class="column__content__cell column__content__cell_paperwork">Швидко без різних паперів</div>
+              <div class="column__content__cell column__content__cell_sending">Ми приїдемо до вас</div>
+              <div class="column__content__cell column__content__cell_benefit">Є можливість викупу</div>
+            </div>
+            <button class="column-active__button button_request-call">Зв'язатись</button>
+          </div>
+
+          <div class="comparison-table__column comparison-table__column_after-active">
+            <div class="column__cell_heading">
+              <img src="images/olx-logo.svg" alt="">
+            </div>
+            <div class="column_after-active__content column__content">
+              <div class="column__content__cell column__content__cell_time">Від 2 годин</div>
+              <div class="column__content__cell column__content__list column__content__cell_paperwork">
+                <span>- Створення об’яви</span>
+                <span>- Відправити посилку</span>
+                <span>- Дочекатися грошей</span>
+              </div>
+              <div class="column__content__cell column__content__cell_sending">На Вас, довго і потрібно їздити в відділення</div>
+              <div class="column__content__cell column__content__cell_benefit">Продано по низькій ціні нема можливості викупу</div>
+            </div>
+          </div>
+
+          <div class="comparison-table__column">
+            <div class="column__cell_heading">
+              <img src="images/credit-logo.svg" alt="">
+            </div>
+            <div class="column__content">
+              <div class="column__content__cell column__content__cell_time">Від 10 хвилин на невеликі суми</div>
+              <div class="column__content__cell column__content__list column__content__cell_paperwork">
+                <span>- В любому випадку потрібен паспорт</span>
+                <span>- Персональні дані</span>
+                <span>- Заповнення ряду паперів</span>
+              </div>
+              <div class="column__content__cell column__content__cell_sending">На невеликі суми  швидко і просто але! серйозніше, потрібно їхати в відділення</div>
+              <div class="column__content__cell column__content__cell_benefit">Зростаючий відсоток</div>
+            </div>
+          </div>
+        </div>
+
+
+
+        </div>
 
         <div class="comparison-list"></div>
         
-      </div> -->
+      </div>
 
       <div class="assessment-wrapper">
         <div class="assessment-content">
@@ -294,7 +355,7 @@
         <a class="footer-content__email" href="mailto:info@parus.com">info@parus.com</a>
         <a class="footer-content__phone-number" href="tel:+380504625650">0504625650</a>
 
-        <button class="footer-content__button">Запитати</button>
+        <button class="footer-content__button button_request-call">Запитати</button>
         <div class="footer-content__social-networks">
           <a class="social-networks__telegram-link" href=""><img src="images/telegram.svg" alt=""></a>
           <a class="social-networks__whatsapp-link" href=""><img src="images/whatsapp.svg" alt=""></a>
@@ -323,7 +384,6 @@
       window.onload = () => {
         $(".a-inputPhone").mask("+380 (99) 999-99-99")
 
-        // smoothScroll()
         fillItemFormSelect()
         handleEvents()
       }

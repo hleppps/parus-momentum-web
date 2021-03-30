@@ -204,8 +204,8 @@ function cleanContainers() {
 }
 
 function checkInputItemInfoForm() {
-	let submit_btn = document.querySelector('.m-form .a-submit')
-	let is_phone_entered = document.querySelector('.m-form .a-inputPhone').value
+	let submit_btn = document.querySelector('.item-description__button_send-form')
+	let is_phone_entered = document.querySelector('.personal-info__user-info_phone').value
 
 	submit_btn.disabled = true
 

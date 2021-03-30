@@ -7,10 +7,6 @@ function handleEvents() {
 
 
 
-
-
-
-
 	let file_input = document.querySelector('.photos-upload__loading-container')
 	file_input.addEventListener('change', previewFiles)
 
@@ -21,11 +17,18 @@ function handleEvents() {
 	close_pop_up_menu_btn.addEventListener('click', buttonClosePopUpMenu)
 
 
+// #REPLACE
+	let call_btnZ = document.querySelectorAll('.a-callButton')
+	for (let i = 0; i < call_btnZ.length; i++) {
+		call_btnZ[i].addEventListener('click', () => {showOverlayForm('.o-callRequestForm')})
+	}
 
-	let call_btns = document.querySelectorAll('.a-callButton')
+
+	let call_btns = document.querySelectorAll('.button_request-call')
 	for (let i = 0; i < call_btns.length; i++) {
 		call_btns[i].addEventListener('click', () => {showOverlayForm('.o-callRequestForm')})
 	}
+
 
 	let close_call_request_form = document.querySelector('.o-callRequestForm .a-close')
 	close_call_request_form.addEventListener('click', () => {closeOverlayForm('.o-callRequestForm')})
@@ -35,18 +38,18 @@ function handleEvents() {
 
 
 
-	let open_item_info_form_btn = document.querySelector('.advantages-wrapper__button_mob', 'inherit')
+	let open_item_info_form_btn = document.querySelector('.advantages-wrapper__button_mob')
 	open_item_info_form_btn.addEventListener('click', () => {showOverlayForm('.item-description-wrapper')})
 
 	let close_item_info_form_btn = document.querySelector('.item-description__button_close-form')
-	close_call_request_form.addEventListener('click', () => {closeOverlayForm('.item-description-wrapper')})
+	close_item_info_form_btn.addEventListener('click', () => {closeOverlayForm('.item-description-wrapper')})
 
 
 
 	let filter_function = document.querySelector('.category-selection__input')
 	filter_function.addEventListener('keyup', (event) => {filterFunction(filter_function, event)})
 	filter_function.addEventListener('keyup', highlightSelectedValue)
-	filter_function.addEventListener('click', highlightSelectedValue)
+	filter_function.addEventListener('mouseover', highlightSelectedValue)
 
 
 	let is_checkbox_checked = document.querySelector('.o-callRequestForm .a-checkbox')
