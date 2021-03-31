@@ -1167,6 +1167,7 @@ input:-ms-input-placeholder {
   }
   .column__content__cell_sending {
     height: 95px;
+    padding-top: 15px;
   }
 }
 .column-active__content .column__content__cell_time {
@@ -1193,7 +1194,7 @@ input:-ms-input-placeholder {
     padding-top: 10px;
   }
   .column-active__content .column__content__cell_sending {
-    padding-top: 10px;
+    padding-top: 15px;
   }
   .column-active__content .column__content__cell_benefit {
     height: 60px;
@@ -1210,6 +1211,11 @@ input:-ms-input-placeholder {
   padding: 7px 21px;
   margin-top: 10px;
   margin-bottom: 20px;
+}
+@media screen and (max-width: 800px) {
+  .column-active__button {
+    margin-bottom: 30px;
+  }
 }
 .column__content__list {
   display: flex;
