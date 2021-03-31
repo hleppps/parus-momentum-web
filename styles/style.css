@@ -1097,7 +1097,7 @@ input:-ms-input-placeholder {
   }
 }
 .comparison-table__column_active .column__cell_heading {
-  padding-top: 15px;
+  padding-top: 25px;
 }
 .comparison-table__column_after-active {
   border-right: 1px solid #d9e5ed;
@@ -1120,6 +1120,7 @@ input:-ms-input-placeholder {
 }
 @media screen and (max-width: 800px) {
   .column__cell_heading {
+    padding-top: 10px;
     padding-bottom: 10px;
   }
 }
