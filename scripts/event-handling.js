@@ -30,11 +30,11 @@ function handleEvents() {
 	}
 
 
-	let close_call_request_form = document.querySelector('.o-callRequestForm .a-close')
-	close_call_request_form.addEventListener('click', () => {closeOverlayForm('.o-callRequestForm')})
-
-	let close_call_request_form_btn = document.querySelector('.o-callRequestForm .a-image')
+	let close_call_request_form_btn = document.querySelector('.o-callRequestForm .a-close')
 	close_call_request_form_btn.addEventListener('click', () => {closeOverlayForm('.o-callRequestForm')})
+
+	let close_call_request_form_img = document.querySelector('.o-callRequestForm .a-image')
+	close_call_request_form_img.addEventListener('click', () => {closeOverlayForm('.o-callRequestForm')})
 
 
 

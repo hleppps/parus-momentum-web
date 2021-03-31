@@ -364,6 +364,7 @@ input:-ms-input-placeholder {
   align-items: flex-start;
 }
 .o-productData .m-infoBlock .a-logoDesktop {
+  width: 90%;
   margin-top: 85px;
 }
 .o-productData .m-infoBlock .a-logoMob {
@@ -419,6 +420,7 @@ input:-ms-input-placeholder {
 }
 .item-description-wrapper {
   display: flex;
+  position: inherit;
   flex-direction: column;
   width: 458px;
   border-radius: 25px;
@@ -474,7 +476,7 @@ input:-ms-input-placeholder {
 }
 @media screen and (max-height: 800px) {
   .item-description__main {
-    padding: 15px 20px 20px;
+    padding-top: 15px;
   }
 }
 .item-description__category-selection {
@@ -994,11 +996,29 @@ input:-ms-input-placeholder {
   width: 1120px;
   padding-top: 220px;
 }
+@media screen and (max-width: 1180px) {
+  .comparison-wrapper {
+    width: 100vw;
+    box-sizing: border-box;
+    padding: 220px 20px 0;
+  }
+}
+@media screen and (max-width: 800px) {
+  .comparison-wrapper {
+    padding: 220px 0 0;
+  }
+}
 .comparison__heading {
+  text-align: center;
   font-size: 1.875rem;
   line-height: 2.25rem;
   font-weight: 500;
   color: #005182;
+}
+@media screen and (max-width: 800px) {
+  .comparison__heading {
+    margin: 0 20px;
+  }
 }
 .comparison__comparison-table {
   display: flex;
@@ -1012,15 +1032,56 @@ input:-ms-input-placeholder {
     margin-top: 50px;
   }
 }
+@media screen and (max-width: 800px) {
+  .comparison__comparison-table {
+    display: flex;
+    overflow-x: auto;
+    box-sizing: border-box;
+    box-shadow: none;
+    background-color: transparent;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    width: 100%;
+    padding-left: 40px;
+    margin-top: 30px;
+  }
+  .comparison__comparison-table::-webkit-scrollbar {
+    display: none;
+  }
+}
 .comparison-table__column {
   text-align: center;
   width: 308px;
   box-sizing: border-box;
 }
+@media screen and (max-width: 1180px) {
+  .comparison-table__column {
+    width: 30vw;
+  }
+}
+@media screen and (max-width: 800px) {
+  .comparison-table__column {
+    max-width: 308vw;
+    min-width: 308px;
+    margin-right: 20px;
+    margin-bottom: 30px;
+    box-shadow: 1px 9px 30px rgba(11, 58, 72, 0.08);
+    border-radius: 25px;
+  }
+  .comparison-table__column:not(.comparison-table__column_active) {
+    margin-top: 16px;
+    margin-bottom: 50px;
+  }
+}
 .comparison-table__column_headlines {
   flex-direction: column;
   align-items: flex-end;
   width: 193px;
+}
+@media screen and (max-width: 1180px) {
+  .comparison-table__column_headlines {
+    display: none;
+  }
 }
 .comparison-table__column_active {
   background-color: #fff;
@@ -1028,16 +1089,23 @@ input:-ms-input-placeholder {
   box-shadow: 8px 9px 30px rgba(11, 58, 72, 0.08);
   transform: scale(1.1);
 }
-.comparison-table__column_active .column__cell_heading {
-  padding-top: 24px;
-}
-@media screen and (max-height: 1050px) and (orientation: landscape) {
-  .comparison-table__column_active .column__cell_heading {
-    padding-top: 16.2px;
+@media screen and (max-width: 800px) {
+  .comparison-table__column_active {
+    transform: none;
+    box-shadow: 1px 9px 30px rgba(11, 58, 72, 0.08);
+    height: 94%;
   }
+}
+.comparison-table__column_active .column__cell_heading {
+  padding-top: 15px;
 }
 .comparison-table__column_after-active {
   border-right: 1px solid #d9e5ed;
+}
+@media screen and (max-width: 800px) {
+  .comparison-table__column_after-active {
+    border-right: none;
+  }
 }
 .comparison-table__column_after-active .column__cell_heading {
   border-right: 1px solid #fff;
@@ -1047,25 +1115,18 @@ input:-ms-input-placeholder {
   align-items: center;
   justify-content: center;
   border-bottom: 1px solid #d9e5ed;
-  height: 120px;
+  height: 60px;
   width: 100%;
 }
-@media screen and (max-height: 1050px) and (orientation: landscape) {
+@media screen and (max-width: 800px) {
   .column__cell_heading {
-    height: 60px;
+    padding-bottom: 10px;
   }
 }
 .column__content {
   color: #005182;
   text-align: center;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 40px;
-}
-@media screen and (max-height: 1050px) and (orientation: landscape) {
-  .column__content {
-    padding-bottom: 10px;
-  }
+  padding: 10px 20px;
 }
 .column_headlines__content {
   color: #3C80AA;
@@ -1079,75 +1140,63 @@ input:-ms-input-placeholder {
   padding-left: 25px;
 }
 .column__content__cell {
-  font-size: 1.25rem;
   line-height: 1.5rem;
-  padding-top: 40px;
-}
-@media screen and (max-height: 1050px) and (orientation: landscape) {
-  .column__content__cell {
-    padding-top: 10px;
-  }
+  padding-top: 10px;
+  box-sizing: border-box;
 }
 .column__content__cell_time {
   height: 65px;
 }
 .column__content__cell_paperwork {
-  height: 160px;
-}
-@media screen and (max-height: 1050px) and (orientation: landscape) {
-  .column__content__cell_paperwork {
-    height: 120px;
-  }
+  height: 120px;
 }
 .column__content__cell_sending {
-  height: 140px;
-}
-@media screen and (max-height: 1050px) and (orientation: landscape) {
-  .column__content__cell_sending {
-    height: 100px;
-    padding-top: 10px;
-  }
+  height: 100px;
+  padding-top: 10px;
 }
 .column__content__cell_benefit {
   height: 60px;
 }
-.column-active__content .column__content__cell_time {
-  padding-top: 35px;
-  height: 60px;
-}
-@media screen and (max-height: 1050px) and (orientation: landscape) {
-  .column-active__content .column__content__cell_time {
-    padding-top: 7px;
+@media screen and (max-width: 800px) {
+  .column__content__cell_time {
+    height: 60px;
   }
-}
-.column-active__content .column__content__cell_paperwork {
-  padding-top: 34.5px;
-  height: 145px;
-}
-@media screen and (max-height: 1050px) and (orientation: landscape) {
-  .column-active__content .column__content__cell_paperwork {
+  .column__content__cell_paperwork {
     height: 105px;
-    padding-top: 8.5px;
   }
-}
-.column-active__content .column__content__cell_sending {
-  padding-top: 37px;
-  height: 125px;
-}
-@media screen and (max-height: 1050px) and (orientation: landscape) {
-  .column-active__content .column__content__cell_sending {
-    padding-top: 13px;
+  .column__content__cell_sending {
     height: 95px;
   }
 }
-.column-active__content .column__content__cell_benefit {
-  padding-top: 39px;
-  height: 52px;
+.column-active__content .column__content__cell_time {
+  padding-top: 9px;
+  height: 60px;
 }
-@media screen and (max-height: 1050px) and (orientation: landscape) {
+.column-active__content .column__content__cell_paperwork {
+  height: 105px;
+  padding-top: 7px;
+}
+.column-active__content .column__content__cell_sending {
+  padding-top: 8.5px;
+  height: 95px;
+}
+.column-active__content .column__content__cell_benefit {
+  padding-top: 4.5px;
+  height: 40px;
+}
+@media screen and (max-width: 800px) {
+  .column-active__content .column__content__cell_time {
+    padding-top: 10px;
+  }
+  .column-active__content .column__content__cell_paperwork {
+    padding-top: 10px;
+  }
+  .column-active__content .column__content__cell_sending {
+    padding-top: 10px;
+  }
   .column-active__content .column__content__cell_benefit {
-    padding-top: 4.5px;
-    height: 40px;
+    height: 60px;
+    padding-top: 10px;
   }
 }
 .column-active__button {
@@ -1158,6 +1207,7 @@ input:-ms-input-placeholder {
   background-color: #E96325;
   border-radius: 20px;
   padding: 7px 21px;
+  margin-top: 10px;
   margin-bottom: 20px;
 }
 .column__content__list {
@@ -1215,14 +1265,25 @@ input:-ms-input-placeholder {
 }
 @media screen and (max-width: 800px) {
   .text-information__button {
-    margin-top: 80px;
+    font-size: 1rem;
+    margin-top: 40px;
     width: inherit;
     margin-right: 20px;
     margin-left: 20px;
   }
 }
+@media screen and (max-width: 450px) {
+  .text-information__button {
+    font-size: 0.875rem;
+  }
+}
 .text-information__slogan {
   width: 80%;
+}
+@media screen and (max-width: 800px) {
+  .text-information__slogan {
+    width: 90%;
+  }
 }
 .assessment-content__image {
   width: 50%;
@@ -1230,7 +1291,7 @@ input:-ms-input-placeholder {
 }
 @media screen and (max-width: 800px) {
   .assessment-content__image {
-    width: 100%;
+    width: 80%;
   }
 }
 .footer-wrapper {
