@@ -1487,9 +1487,15 @@ input:-ms-input-placeholder {color: @color-light-blue;}
 }
 
 .comparison-table__column_active .column__cell_heading {
-		padding-top: 25px;
-
+	padding-top: 15px;
 }
+
+@media screen and (max-width: 800px) {
+	.comparison-table__column_active .column__cell_heading {
+		padding-top: 25px;
+	}
+}
+
 
 .comparison-table__column_after-active {
 	border-right: 1px solid #d9e5ed;
