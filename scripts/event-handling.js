@@ -20,21 +20,20 @@ function handleEvents() {
 // #REPLACE THIS
 	let call_btnZ = document.querySelectorAll('.a-callButton')
 	for (let i = 0; i < call_btnZ.length; i++) {
-		call_btnZ[i].addEventListener('click', () => {showOverlayForm('.o-callRequestForm')})
+		call_btnZ[i].addEventListener('click', () => {showOverlayForm('.form_call-request')})
 	}
 
 // ON THIS
-	let call_btns = document.querySelectorAll('.button_request-call')
-	for (let i = 0; i < call_btns.length; i++) {
-		call_btns[i].addEventListener('click', () => {showOverlayForm('.o-callRequestForm')})
+	let open_call_request_form_btns = document.querySelectorAll('.button_request-call')
+	for (let i = 0; i < open_call_request_form_btns.length; i++) {
+		open_call_request_form_btns[i].addEventListener('click', () => {showOverlayForm('.form_call-request')})
 	}
 
 
-	let close_call_request_form_btn = document.querySelector('.o-callRequestForm .a-close')
-	close_call_request_form_btn.addEventListener('click', () => {closeOverlayForm('.o-callRequestForm')})
-
-	let close_call_request_form_img = document.querySelector('.o-callRequestForm .a-image')
-	close_call_request_form_img.addEventListener('click', () => {closeOverlayForm('.o-callRequestForm')})
+	let close_call_request_form_btns = document.querySelectorAll('.form_call-request__close')
+	for (let i = 0; i < close_call_request_form_btns.length; i++) {
+		close_call_request_form_btns[i].addEventListener('click', () => {closeOverlayForm('.form_call-request')})
+	}
 
 
 
@@ -54,10 +53,10 @@ function handleEvents() {
 	filter_function.addEventListener('mouseover', highlightSelectedValue)
 
 
-	let is_checkbox_checked = document.querySelector('.o-callRequestForm .a-checkbox')
+	let is_checkbox_checked = document.querySelector('.form_call-request__main__checkbox')
 	is_checkbox_checked.addEventListener('change', checkInputCallRequestForm)
 
-	let is_phone_entered = document.querySelector('.o-callRequestForm .a-inputPhone')
+	let is_phone_entered = document.querySelector('.form_call-request__main__input_phone')
 	is_phone_entered.addEventListener('blur', checkInputCallRequestForm)
 	is_phone_entered.addEventListener('keyup', checkInputCallRequestForm) 
 

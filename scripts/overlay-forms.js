@@ -37,9 +37,9 @@ function closeOverlayForm(selector, display_type = 'none') {
 
 
 function checkInputCallRequestForm() {
-	let is_checkbox_checked = document.querySelector('.o-callRequestForm .a-checkbox').checked
-	let submit_btn = document.querySelector('.o-callRequestForm .a-submit')
-	let is_phone_entered = document.querySelector('.o-callRequestForm .a-inputPhone').value
+	let is_checkbox_checked = document.querySelector('.form_call-request__main__checkbox').checked
+	let submit_btn = document.querySelector('.form_call-request__input_submit')
+	let is_phone_entered = document.querySelector('.form_call-request__main__input_phone').value
 
 	is_phone_entered = checkNumberValidity(is_phone_entered)
 		
