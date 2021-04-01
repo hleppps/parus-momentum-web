@@ -47,47 +47,54 @@
 
 
 
-    <header class="o-header">
-      <div class="o-content">
-        <img class="a-logoDesktop" src="images/img-logo-desktop.svg" alt="Company Logo">
-        <img class="a-logoMob" src="images/img-logo-mob.svg" alt="Company Logo">
+    <header class="header__wrapper o-header">
+      <div class="header o-content">
+        <img class="header__logo_desktop a-logoDesktop" src="images/img-logo-desktop.svg" alt="Company Logo">
+        <img class="header__logo_mob a-logoMob" src="images/img-logo-mob.svg" alt="Company Logo">
 
-        <div class="m-navigationDesktop">
-          <a class="a-link" href="">Про нас</a>
-          <a class="a-link" href="">Послуги</a>
-          <a class="a-link" href="">Умови кредитування</a>
-          <a class="a-link" href="">Контакти</a>
-          <button class="a-callButton">Запитати</button>
+        <div class="header__desktop m-navigationDesktop">
+          <a class="header__desktop__link a-link" href="">Про нас</a>
+          <a class="header__desktop__link a-link" href="">Послуги</a>
+          <a class="header__desktop__link a-link" href="">Умови кредитування</a>
+          <a class="header__desktop__link a-link" href="">Контакти</a>
+          <button class="header__desktop__button button_request-call a-callButton">Запитати</button>
         </div>
 
-        <div class="m-navigationMobile">
-          <button class="a-button"><a href="tel:+380504625650"><img src="images/call-btn.svg" alt=""></a></button>
+        <div class="header__mob m-navigationMobile">
+          <a class="header__mob__button_call a-button" href="tel:+380504625650">
+            <img src="images/call-btn.svg" alt="">
+          </a>
 
-          <button class="a-popUpMenuButton"><img class="a-popUpMenuImage" src="images/pop-up-menu-btn-open.svg" alt=""></button>
+          <button class="header__mob__button_pop-up-menu a-popUpMenuButton">
+            <img class="header__mob__button_pop-up-menu__image a-popUpMenuImage" src="images/pop-up-menu-btn-open.svg" alt="">
+          </button>
 
-          <div class="m-popUpMenu">
-            <nav class="m-navigation">
-              <a class="a-link" href="">Про нас</a>
-              <a class="a-link" href="">Послуги</a>
-              <a class="a-link" href="">Умови кредитування</a>
-              <a class="a-link" href="">Контакти</a>
+          <div class="header_mob__pop-up-menu m-popUpMenu">
+            <nav class="pop-up-menu__nav m-navigation">
+              <a class="pop-up-menu__nav__link a-link" href="">Про нас</a>
+              <a class="pop-up-menu__nav__link a-link" href="">Послуги</a>
+              <a class="pop-up-menu__nav__link a-link" href="">Умови кредитування</a>
+              <a class="pop-up-menu__nav__link a-link" href="">Контакти</a>
             </nav>
-            <div class="m-contacts">
-              <p class="a-text">м. Київ,  вул. Рибальська 2</p>
-              <div class="m-contacts-sub">
-                <a class="a-text" href="tel:+380504625650">050 462 56 50</a>
-                <button class="a-callButton">Запитати</button>
+
+            <div class="pop-up-menu__contacts m-contacts">
+              <p class="pop-up-menu__contacts__address a-text">м. Київ,  вул. Рибальська 2</p>
+              <div class="pop-up-menu__contacts_sub m-contacts-sub">
+                <a class="pop-up-menu__contacts_sub__phone a-text" href="tel:+380504625650">050 462 56 50</a>
+                <button class="pop-up-menu__contacts_sub__button a-callButton">Запитати</button>
               </div>
             </div>
-            <div class="m-socialNetworks">
-              <button class="a-button"><img src="images/telegram.svg" alt="Telegram Logo"></button>
-              <button class="a-button"><img src="images/whatsapp.svg" alt="Whatsapp Logo"></button>
+            <div class="pop-up-menu__social-networks m-socialNetworks">
+              <button class="pop-up-menu__social-networks__button a-button">
+                <img src="images/telegram.svg" alt="Telegram Logo">
+              </button>
+              <button class="pop-up-menu__social-networks__button a-button">
+                <img src="images/whatsapp.svg" alt="Whatsapp Logo">
+              </button>
             </div>
           </div>
 
-
         </div>
-
 
       </div>
     </header>
