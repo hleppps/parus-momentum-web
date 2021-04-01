@@ -260,181 +260,8 @@ input:-ms-input-placeholder {color: @color-light-blue;}
 
 
 // HEADER
-.a-button {
-}
 
-.m-navigationDesktop {
-	.a-link:first-child {
-		margin-left: 0;
-	}
-
-	.a-link {
-		font-size: 0.875rem;
-		line-height: 1.3125rem;
-		font-family: 'Poppins', sans-serif;
-		color: @color-dark-blue;
-
-		margin-left: 40px;
-	}
-
-	.a-callButton {
-		font-size: 0.875rem;
-		line-height: 1.037rem;
-		font-weight: 700;
-		color: @color-white;
-		
-		background-color: @color-orange;
-		border-radius: 20px;
-
-		margin-left: 40px;
-		padding: 7px 27px 8px;
-	}
-}
-
-@media screen and (max-width: 1120px) {
-	.m-navigationDesktop {
-		.a-link, .a-button {
-			margin-left: 2vw;
-		}
-	}
-}
-
-@media screen and (max-width: 800px) {
-	.m-navigationDesktop {
-		display: none;
-	}
-}
-
-.m-navigationMobile {
-	display: none;
-}
-
-@media screen and (max-width: 800px) {
-
-	.m-navigationMobile {
-		width: 50%;
-		display: flex;
-		justify-content: flex-end;
-		position: relative;
-
-
-
-		.a-button:first-child {
-			margin-right: 65px;
-		}
-
-		.a-popUpMenuButton {
-			.a-button;
-
-			text-align: center;
-			width: 28.3px;
-		}
-
-		.m-popUpMenu {
-			overflow-y: scroll;
-			display: flex;
-			flex-direction: column;
-
-		  position: absolute;
-		  		  
-		  box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.25);
-		  background-color: @color-white;
-		  border-radius: 25px 0 0 25px;
-
-		  transform-origin: 0% 0%;
-		  transform: translate(100%, 0);
-		  transition: transform 0.3s cubic-bezier(.43,.25,.46,.52);
-		  
-		  width: 314px;
-		  top: 49px;
-			right: -45px;
-
-			.m-navigation {
-				display: flex;
-				flex-direction: column;
-				padding: 43px 0 42px 30px;
-
-				.a-link:first-child {
-					margin-top: 0;
-				}
-
-				.a-link {
-					color: @color-dark-blue;
-					font-size: 1.25rem;
-					line-height: 1.5rem;
-					font-weight: 500;
-
-					margin-top: 35px;
-				}
-			}
-
-			.m-contacts {
-				display: flex;
-				flex-wrap: wrap;
-				align-items: center;
-
-				background-color: @color-blue;
-
-				padding: 48px 25px 48px 30px;
-
-				.a-text {
-					color: @color-dark-blue;
-					font-size: 1.25rem;
-					line-height: 1.125rem;
-				}
-
-				.m-contacts-sub {
-					display: flex;
-					justify-content: space-between;
-					align-items: center;
-
-					margin-top: 42px;
-					width: 100%;
-
-					.a-callButton {
-						font-size: 0.875rem;
-						font-weight: 700;
-						color: @color-white;
-
-						border-radius: 20px;
-						background-color: @color-orange;
-
-						padding: 10px 16px;
-					}
-				}
-			}
-
-			.m-socialNetworks {
-				display: flex;
-				justify-content: space-evenly;
-				align-items: center;
-
-				padding: 32px 0 29px;
-				.a-button {
-					margin: 0;
-				}
-
-			}
-		}
-	}	
-}
-
-@media screen and (max-height: 650px) {
-	.m-popUpMenu {
-		height: 70vh;
-	}
-}
-
-@media screen and (max-width: 330px) {
-	.m-navigationMobile {
-		.a-button:first-child {
-			margin-right: 10vw;
-		}
-	}
-}
-
-
-.o-header {
+.header__wrapper {
 	position: fixed;
 	z-index: 3;
 	display: flex;
@@ -444,48 +271,230 @@ input:-ms-input-placeholder {color: @color-light-blue;}
 	background-color: @color-white;
 
 	width: 100%;
+}
 
-	.o-content {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-
-
-		width: @set-block-width;
-		padding: 20px 0;
-
-		.a-logoMob {
-			display: none;
-		}
+@media screen and (max-width: 800px) {
+	.header__wrapper {
+		box-shadow: -2px 1px 12px rgba(20, 74, 90, 0.14);
 	}
 }
 
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+
+	width: @set-block-width;
+	padding: 20px 0;
+}
+
 @media screen and (max-width: 1140px + 20px + 20px) {
-	.o-header {
-		.o-content {
-			padding: 20px;
-		}
+	.header {
+		padding: 20px;
 	}
 }
 
 @media screen and (max-width: 800px) {
-	.o-header {
-		box-shadow: -2px 1px 12px rgba(20, 74, 90, 0.14);
-
-		.o-content {
-			padding: 17px 35px 17px 21px;
-
-			.a-logoDesktop {
-				display: none;
-			}
-
-			.a-logoMob {
-				display: inherit;
-			}
-		}
+	.header {
+		padding: 17px 35px 17px 21px;
 	}
 }
 
+.header__logo_mob {
+	display: none;
+}
+@media screen and (max-width: 800px) {
+	.header__logo_mob {
+		display: inherit;
+	}
+	
+	.header__logo_desktop {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.header__desktop {
+		display: none;
+	}
+}
+
+.header__desktop__link:first-child {
+	margin-left: 0;
+}
+
+.header__desktop__link {
+	font-size: 0.875rem;
+	line-height: 1.3125rem;
+	font-family: 'Poppins', sans-serif;
+	color: @color-dark-blue;
+
+	margin-left: 40px;
+}
+
+@media screen and (max-width: 1120px) {
+	.header__desktop__link {
+		margin-left: 2vw;
+	}
+}
+
+.header__desktop__button {
+	font-size: 0.875rem;
+	line-height: 1.037rem;
+	font-weight: 700;
+	color: @color-white;
+	
+	background-color: @color-orange;
+	border-radius: 20px;
+
+	margin-left: 40px;
+	padding: 7px 27px 8px;
+}
+
+@media screen and (max-width: 1120px) {
+	.header__desktop__button {
+		margin-left: 2vw;
+	}
+}
+
+
+.header__mob {
+	display: none;
+}
+
+@media screen and (max-width: 800px) {
+	.header__mob {
+		width: 50%;
+		display: flex;
+		justify-content: flex-end;
+		position: relative;
+	}
+
+	.header__mob__button_call {
+
+		height: 21px;
+		margin-right: 65px;
+	}
+}
+
+@media screen and (max-width: 330px) {
+	.header__mob__button_call {
+		margin-right: 10vw;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.header__mob__button_pop-up-menu {
+		background-image: url(../images/pop-up-menu-btn-open.svg);
+		background-repeat: no-repeat;
+		background-position: center;
+		text-align: center;
+		width: 28.3px;
+	}
+}
+
+@media screen and (max-height: 650px) {
+	.header__mob__button_pop-up-menu {
+		height: 70vh;
+	}
+}
+
+
+@media screen and (max-width: 800px) {
+	.header_mob__pop-up-menu {
+		overflow-y: scroll;
+		display: flex;
+		flex-direction: column;
+
+	  position: absolute;
+	  		  
+	  box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.25);
+	  background-color: @color-white;
+	  border-radius: 25px 0 0 25px;
+
+	  transform-origin: 0% 0%;
+	  transform: translate(100%, 0);
+	  transition: transform 0.3s cubic-bezier(.43,.25,.46,.52);
+	  
+	  width: 314px;
+	  top: 49px;
+		right: -45px;
+	}
+
+	.pop-up-menu__nav {
+		display: flex;
+		flex-direction: column;
+		padding: 43px 0 42px 30px;
+	}
+
+	.pop-up-menu__nav__link:first-child {
+		margin-top: 0;
+	}
+
+	.pop-up-menu__nav__link {
+		color: @color-dark-blue;
+		font-size: 1.25rem;
+		line-height: 1.5rem;
+		font-weight: 500;
+
+		margin-top: 35px;
+	}
+
+	.pop-up-menu__contacts {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+
+		background-color: @color-blue;
+
+		padding: 48px 25px 48px 30px;
+	}
+
+	.pop-up-menu__contacts__address {
+		color: @color-dark-blue;
+		font-size: 1.25rem;
+		line-height: 1.125rem;
+	}
+
+	.pop-up-menu__contacts_sub {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		margin-top: 42px;
+		width: 100%;
+	}
+
+	.pop-up-menu__contacts_sub__phone {
+		color: @color-dark-blue;
+		font-size: 1.25rem;
+		line-height: 1.125rem;
+	}
+
+	.pop-up-menu__contacts_sub__button {
+		font-size: 0.875rem;
+		font-weight: 700;
+		color: @color-white;
+
+		border-radius: 20px;
+		background-color: @color-orange;
+
+		padding: 10px 16px;
+	}
+
+	.pop-up-menu__social-networks {
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+
+		padding: 32px 0 29px;
+	}
+
+	.pop-up-menu__social-networks__button {
+		margin: 0;
+	}
+}
 
 
 
@@ -1122,23 +1131,7 @@ input:-ms-input-placeholder {color: @color-light-blue;}
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// ADVANTAGES
 
 .main__advantages-wrapper {
 	display: flex;
@@ -1147,7 +1140,6 @@ input:-ms-input-placeholder {color: @color-light-blue;}
 
 	padding-top: 80px;
 	max-width: 1120px;
-	// max-width: 100vh;
 }
 
 @media screen and (max-width: 1140px + 20px + 20px) {
@@ -1490,6 +1482,17 @@ input:-ms-input-placeholder {color: @color-light-blue;}
 @media screen and (max-width: 800px) {
 	.comparison-table__column_after-active {
 		border-right: none;
+	}
+}
+
+.comparison-table__column_plug {
+	display: none;
+
+}
+
+@media screen and (max-width: 800px) {
+	.comparison-table__column_plug {
+		display: inherit;
 	}
 }
 
@@ -1912,7 +1915,6 @@ input:-ms-input-placeholder {color: @color-light-blue;}
 		align-self: center;
 
 		margin-top: 50px;
-		// width: 30%;
 		width: 150px;
 	}
 }

@@ -1,5 +1,30 @@
 let is_overlay_form_open = false
 
+
+window.addEventListener('load', () => {
+  $(".input_phone").mask("+380 (99) 999-99-99")
+
+	let open_call_request_form_btns = document.querySelectorAll('.button_request-call')
+	for (let i = 0; i < open_call_request_form_btns.length; i++) {
+		open_call_request_form_btns[i].addEventListener('click', () => {showOverlayForm('.form_call-request')})
+	}
+
+	let close_call_request_form_btns = document.querySelectorAll('.form_call-request__close')
+	for (let i = 0; i < close_call_request_form_btns.length; i++) {
+		close_call_request_form_btns[i].addEventListener('click', () => {closeOverlayForm('.form_call-request')})
+	}
+
+	let open_item_info_form_btns = document.querySelectorAll('.button_take-credit')
+	for (let i = 0; i < open_item_info_form_btns.length; i++) {
+		open_item_info_form_btns[i].addEventListener('click', () => {showOverlayForm('.item-description-wrapper')})
+	}
+
+	let close_item_info_form_btn = document.querySelector('.item-description__button_close-form')
+	close_item_info_form_btn.addEventListener('click', () => {closeOverlayForm('.item-description-wrapper')})
+})
+
+
+
 function showOverlayForm(selector, display_type = 'none') {
 
 	let underlay = document.querySelector('.underlay')

@@ -18,6 +18,7 @@
   <body>
     <div class="underlay"></div>
 
+
     <form class="form_call-request">
       <div class="form_call-request__header">
         <p class="form_call-request__header__heading">Замовити дзвінок</p>
@@ -42,53 +43,46 @@
     </form>
 
 
+    <header class="header__wrapper">
+      <div class="header">
+        <img class="header__logo_desktop" src="images/img-logo-desktop.svg" alt="Company Logo">
+        <img class="header__logo_mob" src="images/img-logo-mob.svg" alt="Company Logo">
 
-
-
-
-
-    <header class="header__wrapper o-header">
-      <div class="header o-content">
-        <img class="header__logo_desktop a-logoDesktop" src="images/img-logo-desktop.svg" alt="Company Logo">
-        <img class="header__logo_mob a-logoMob" src="images/img-logo-mob.svg" alt="Company Logo">
-
-        <div class="header__desktop m-navigationDesktop">
-          <a class="header__desktop__link a-link" href="">Про нас</a>
-          <a class="header__desktop__link a-link" href="">Послуги</a>
-          <a class="header__desktop__link a-link" href="">Умови кредитування</a>
-          <a class="header__desktop__link a-link" href="">Контакти</a>
-          <button class="header__desktop__button button_request-call a-callButton">Запитати</button>
+        <div class="header__desktop">
+          <a class="header__desktop__link" href="">Про нас</a>
+          <a class="header__desktop__link" href="">Послуги</a>
+          <a class="header__desktop__link" href="">Умови кредитування</a>
+          <a class="header__desktop__link" href="">Контакти</a>
+          <button class="header__desktop__button button_request-call">Запитати</button>
         </div>
 
-        <div class="header__mob m-navigationMobile">
-          <a class="header__mob__button_call a-button" href="tel:+380504625650">
+        <div class="header__mob">
+          <a class="header__mob__button_call" href="tel:+380504625650">
             <img src="images/call-btn.svg" alt="">
           </a>
 
-          <button class="header__mob__button_pop-up-menu a-popUpMenuButton">
-            <img class="header__mob__button_pop-up-menu__image a-popUpMenuImage" src="images/pop-up-menu-btn-open.svg" alt="">
-          </button>
+          <button class="header__mob__button_pop-up-menu"></button>
 
-          <div class="header_mob__pop-up-menu m-popUpMenu">
-            <nav class="pop-up-menu__nav m-navigation">
-              <a class="pop-up-menu__nav__link a-link" href="">Про нас</a>
-              <a class="pop-up-menu__nav__link a-link" href="">Послуги</a>
-              <a class="pop-up-menu__nav__link a-link" href="">Умови кредитування</a>
-              <a class="pop-up-menu__nav__link a-link" href="">Контакти</a>
+          <div class="header_mob__pop-up-menu">
+            <nav class="pop-up-menu__nav">
+              <a class="pop-up-menu__nav__link" href="">Про нас</a>
+              <a class="pop-up-menu__nav__link" href="">Послуги</a>
+              <a class="pop-up-menu__nav__link" href="">Умови кредитування</a>
+              <a class="pop-up-menu__nav__link" href="">Контакти</a>
             </nav>
 
-            <div class="pop-up-menu__contacts m-contacts">
-              <p class="pop-up-menu__contacts__address a-text">м. Київ,  вул. Рибальська 2</p>
-              <div class="pop-up-menu__contacts_sub m-contacts-sub">
-                <a class="pop-up-menu__contacts_sub__phone a-text" href="tel:+380504625650">050 462 56 50</a>
-                <button class="pop-up-menu__contacts_sub__button a-callButton">Запитати</button>
+            <div class="pop-up-menu__contacts">
+              <p class="pop-up-menu__contacts__address">м. Київ,  вул. Рибальська 2</p>
+              <div class="pop-up-menu__contacts_sub">
+                <a class="pop-up-menu__contacts_sub__phone" href="tel:+380504625650">050 462 56 50</a>
+                <button class="pop-up-menu__contacts_sub__button button_request-call">Запитати</button>
               </div>
             </div>
-            <div class="pop-up-menu__social-networks m-socialNetworks">
-              <button class="pop-up-menu__social-networks__button a-button">
+            <div class="pop-up-menu__social-networks">
+              <button class="pop-up-menu__social-networks__button">
                 <img src="images/telegram.svg" alt="Telegram Logo">
               </button>
-              <button class="pop-up-menu__social-networks__button a-button">
+              <button class="pop-up-menu__social-networks__button">
                 <img src="images/whatsapp.svg" alt="Whatsapp Logo">
               </button>
             </div>
@@ -335,7 +329,7 @@
             </div>
           </div>
 
-          <div style="color: #fff">.</div>
+          <div class="comparison-table__column_plug">.</div>
         </div>
       </div>
 
@@ -358,6 +352,7 @@
         </div>
       </div>
     </main>
+
 
     <footer class="footer-wrapper">
       <div class="footer-content">
@@ -395,9 +390,6 @@
 
     <script>
       window.onload = () => {
-        $(".input_phone").mask("+380 (99) 999-99-99")
-
-        fillItemFormSelect()
         handleEvents()
       }
     </script>

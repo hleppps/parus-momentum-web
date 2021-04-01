@@ -1,6 +1,11 @@
 let upload_images_container = []
 let files_len = 0
 
+window.addEventListener('load', () => {
+	fillItemFormSelect()
+})
+
+
 function fillItemFormSelect () {
 	// запрос
 	const values = ['Нерухомість','Транспорт', 'Побутова техніка', 'Электротехніка', 'Украшения', 'Антиквариат', 'Меблі', 'Інструменти', 'Інше', 'Тест']
@@ -103,13 +108,6 @@ function imageDrawer(images) {
 
 				// TODO remove function
 			image.onload = function() {
-
-
-				// if (image.width <= image.height) {
-					// image.classList.add('a-jsAddedImageWidth')
-				// } else {
-					// image.classList.add('a-jsAddedImageHeight')
-				// }
 
 				let added_container = document.createElement('div')
 				added_container.appendChild(image)
