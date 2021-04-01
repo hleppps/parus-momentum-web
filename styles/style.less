@@ -1109,17 +1109,33 @@ input:-ms-input-placeholder {color: @color-light-blue;}
 	}
 }
 
-.o-main {
-	// width: @set-block-width;
+.main {
 	padding-top: 87px + 99px;
+}
 
-	.o-productData {
-		display: flex;
-		justify-content: space-between;
-
-		padding-bottom: 68px;
+@media screen and (max-height: 900px) and (orientation: landscape) {
+	.main {
+		padding-top: 87px + 10vh;
 	}
 }
+
+.main__product-data-wrapper {
+	display: flex;
+	justify-content: space-between;
+
+	padding-bottom: 68px;	
+}
+
+// .o-main {
+// 	// padding-top: 87px + 99px;
+
+// 	.o-productData {
+// 		display: flex;
+// 		justify-content: space-between;
+
+// 		padding-bottom: 68px;
+// 	}
+// }
 
 @media screen and (max-height: 900px) and (orientation: landscape) {
 	.o-main {
@@ -1152,7 +1168,7 @@ input:-ms-input-placeholder {color: @color-light-blue;}
 
 
 
-.advantages-wrapper {
+.main__advantages-wrapper {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -1163,7 +1179,7 @@ input:-ms-input-placeholder {color: @color-light-blue;}
 }
 
 @media screen and (max-width: 1140px + 20px + 20px) {
-	.advantages-wrapper {
+	.main__advantages-wrapper {
 		padding-left: 20px;
 		padding-right: 20px;
 	}
@@ -1354,7 +1370,7 @@ input:-ms-input-placeholder {color: @color-light-blue;}
 
 // COMPARISON
 
-.comparison-wrapper {
+.main__comparison-wrapper {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -1364,7 +1380,7 @@ input:-ms-input-placeholder {color: @color-light-blue;}
 }
 
 @media screen and (max-width: 1140px + 20px + 20px) {
-	.comparison-wrapper {
+	.main__comparison-wrapper {
 		width: 100vw;
 		box-sizing: border-box;
 		padding: 220px 20px 0;
@@ -1372,7 +1388,7 @@ input:-ms-input-placeholder {color: @color-light-blue;}
 }
 
 @media screen and (max-width: 800px) {
-	.comparison-wrapper {
+	.main__comparison-wrapper {
 		padding: 220px 0 0;
 	}
 }
@@ -1664,13 +1680,13 @@ input:-ms-input-placeholder {color: @color-light-blue;}
 
 // ASSESSMENT
 
-.assessment-wrapper {
+.main__assessment-wrapper {
 	padding-top: 180px;
 	box-sizing: border-box;
 }
 
 @media screen and (max-width: 1140px + 20px + 20px) {
-	.assessment-wrapper {
+	.main__assessment-wrapper {
 		padding: 120px 20px 0;
 	}
 }

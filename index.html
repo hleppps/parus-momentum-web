@@ -86,27 +86,26 @@
     </header>
 
 
-    <main class="o-main">
-      <div class="o-productData">
-        <section class="m-infoBlock">
-          <img class="a-logoDesktop" src="images/text-logo-desktop.svg" alt="Company Logo">
-          <img class="a-logoMob" src="images/text-logo-mob.svg" alt="Company Logo">
-          <p class="a-heading">З турботою про Вас</p>
-          <p class="a-text">Слідкуй за статусом свого товару</p>
-          <button class="a-button">
+    <main class="main o-main">
+      <div class="main__product-data-wrapper o-productData">
+        <section class="product-data__info-block m-infoBlock">
+          <img class="product-data__info-block__logo_desktop a-logoDesktop" src="images/text-logo-desktop.svg" alt="Company Logo">
+          <img class="product-data__info-block__logo_mob a-logoMob" src="images/text-logo-mob.svg" alt="Company Logo">
+          <p class="product-data__info-block__heading a-heading">З турботою про Вас</p>
+          <p class="product-data__info-block__text a-text">Слідкуй за статусом свого товару</p>
+          <button class="product-data__info-block__button a-button">
             <img src="images/telegram-logo-2.svg" alt="Telegram Logo">
-            <div class="m-textBlock">
-              <p class="a-textBasic">ЗАВЖДИ ПОРЯД</p>
-              <p class="a-textSub">TELEGRAM BOT</p>
+            <div class="info-block__button__text-block m-textBlock">
+              <p class="info-block__button__text-block__text_basic a-textBasic">ЗАВЖДИ ПОРЯД</p>
+              <p class="info-block__button__text-block__text_sub a-textSub">TELEGRAM BOT</p>
             </div>
           </button>
-          <img class="a-textBanner" src="images/text-banner-1.svg" alt="">
-          <button class="a-callButton">Запитати</button>
+          <img class="product-data__info-block__text-banner a-textBanner" src="images/text-banner-1.svg" alt="">
+          <button class="product-data__info-block__button_call button_request-call a-callButton">Запитати</button>
         </section>
 
         <img class="a-dottedArrowImage" src="images/dotted-arrow.svg" alt="Arrow">
 
-<!-- TODO: MAKE IN BEM -->
 
         <form class="item-description-wrapper">
 
@@ -182,9 +181,7 @@
         </form>
       </div>
 
-
-
-      <div class="advantages-wrapper">
+      <div class="main__advantages-wrapper">
         <h1 class="advantages-wrapper__heading">Переваги які ти отримаєш</h1>
 
         <section class="advantages-list">   
@@ -265,7 +262,7 @@
         <a class="advantages-wrapper__button_desktop" href="#">Взяти кредит</a>
       </div>
 
-      <div class="comparison-wrapper">
+      <div class="main__comparison-wrapper">
         <h1 class="comparison__heading">Співвідношення ломбардів</h1>
 
         <div class="comparison__comparison-table">
@@ -326,10 +323,9 @@
 
           <div style="color: #fff">.</div>
         </div>
-
       </div>
 
-      <div class="assessment-wrapper">
+      <div class="main__assessment-wrapper">
         <div class="assessment-content">
           <div class="assessment-content__text-information">
             <img class="text-information__slogan text-information__slogan" src="images/text-slogan.svg" alt="">
@@ -339,7 +335,6 @@
           <img class="assessment-content__image" src="images/assessment-image.svg" alt="">
         </div>
       </div>
-
     </main>
 
     <footer class="footer-wrapper">
