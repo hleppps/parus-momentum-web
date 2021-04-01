@@ -17,13 +17,13 @@ function handleEvents() {
 	close_pop_up_menu_btn.addEventListener('click', buttonClosePopUpMenu)
 
 
-// #REPLACE
+// #REPLACE THIS
 	let call_btnZ = document.querySelectorAll('.a-callButton')
 	for (let i = 0; i < call_btnZ.length; i++) {
 		call_btnZ[i].addEventListener('click', () => {showOverlayForm('.o-callRequestForm')})
 	}
 
-
+// ON THIS
 	let call_btns = document.querySelectorAll('.button_request-call')
 	for (let i = 0; i < call_btns.length; i++) {
 		call_btns[i].addEventListener('click', () => {showOverlayForm('.o-callRequestForm')})
@@ -38,8 +38,10 @@ function handleEvents() {
 
 
 
-	let open_item_info_form_btn = document.querySelector('.advantages-wrapper__button_mob')
-	open_item_info_form_btn.addEventListener('click', () => {showOverlayForm('.item-description-wrapper')})
+	let open_item_info_form_btns = document.querySelectorAll('.button_take-credit')
+	for (let i = 0; i < open_item_info_form_btns.length; i++) {
+		open_item_info_form_btns[i].addEventListener('click', () => {showOverlayForm('.item-description-wrapper')})
+	}
 
 	let close_item_info_form_btn = document.querySelector('.item-description__button_close-form')
 	close_item_info_form_btn.addEventListener('click', () => {closeOverlayForm('.item-description-wrapper')})
@@ -62,6 +64,4 @@ function handleEvents() {
 	let is_phone_entered_itemForm = document.querySelector('.personal-info__user-info_phone')
 	is_phone_entered_itemForm.addEventListener('blur', checkInputItemInfoForm)
 	is_phone_entered_itemForm.addEventListener('keyup', checkInputItemInfoForm)
-
-	// let show_item_description_form = document.querySelector('.advantages-wrapper__button')
 }

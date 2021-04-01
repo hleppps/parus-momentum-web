@@ -1,7 +1,7 @@
 let is_overlay_form_open = false
 
 function showOverlayForm(selector, display_type = 'none') {
-	
+
 	let underlay = document.querySelector('.a-underlay')
 	let call_request_form = document.querySelector(selector)
 	let body = document.body
@@ -46,6 +46,19 @@ function checkInputCallRequestForm() {
 	submit_btn.disabled = true
 
 	if (is_checkbox_checked && is_phone_entered) {
+		submit_btn.disabled = false
+	}	
+}
+
+function checkInputItemInfoForm() {
+	let submit_btn = document.querySelector('.item-description__button_send-form')
+	let is_phone_entered = document.querySelector('.personal-info__user-info_phone').value
+
+	submit_btn.disabled = true
+
+	is_phone_entered = checkNumberValidity(is_phone_entered)
+
+	if (is_phone_entered) {
 		submit_btn.disabled = false
 	}	
 }
