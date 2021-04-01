@@ -1,7 +1,7 @@
 let is_menu_open = false
 
 function popUpMenu () {
-	let underlay = document.querySelector('.a-underlay')
+	let underlay = document.querySelector('.underlay')
 	let pop_up_menu = document.querySelector('.m-popUpMenu')
 	let pop_up_menu_img = document.querySelector('.a-popUpMenuImage')
 	let body = document.body
@@ -36,7 +36,7 @@ function closePopUpMenu (menu, img) {
 }
 
 function underlayClosePopUpMenu() {
-	let underlay = document.querySelector('.a-underlay')
+	let underlay = document.querySelector('.underlay')
 	underlay.removeEventListener('click', underlayClosePopUpMenu)
 	is_menu_open = true
 	popUpMenu()

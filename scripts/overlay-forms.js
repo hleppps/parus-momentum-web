@@ -2,7 +2,7 @@ let is_overlay_form_open = false
 
 function showOverlayForm(selector, display_type = 'none') {
 
-	let underlay = document.querySelector('.a-underlay')
+	let underlay = document.querySelector('.underlay')
 	let call_request_form = document.querySelector(selector)
 	let body = document.body
 
@@ -19,7 +19,7 @@ function showOverlayForm(selector, display_type = 'none') {
 }
 
 function closeOverlayForm(selector, display_type = 'none') {
-	let underlay = document.querySelector('.a-underlay')
+	let underlay = document.querySelector('.underlay')
 	underlay.removeEventListener('click', closeOverlayForm)
 
 	let call_request_form = document.querySelector(selector)

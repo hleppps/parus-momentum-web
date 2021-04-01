@@ -16,29 +16,35 @@
   </head>
 
   <body>
-    <div class="a-underlay"></div>
+    <div class="underlay"></div>
 
-    <form class="o-callRequestForm">
-      <div class="m-header">
-        <p class="a-heading">Замовити дзвінок</p>
+    <form class="form_call-request o-callRequestForm">
+      <div class="form_call-request__header m-header">
+        <p class="form_call-request__header__heading a-heading">Замовити дзвінок</p>
       </div>
-      <div class="m-main">
-        <p class="a-text">
+      <div class="form_call-request__main m-main">
+        <p class="form_call-request__main__text_info a-text">
           Вкажіть свій контактний телефон, і ми зателефонуємо Вам протягом 5 хвилин
         </p>
-        <input class="a-inputName" type="text" name="user-name" placeholder="Ім'я" autocomplete="off">
-        <input class="a-inputPhone" type="text" name="user-number" placeholder="Телефон">
-        <div class="m-checkboxBlock">
-          <input class="a-checkbox" id="confirmDataProcessing" type="checkbox">
-          <div class="m-text" for="confirmDataProcessing">
+        <input class="form_call-request__main__input_name a-inputName" type="text" name="user-name" placeholder="Ім'я" autocomplete="off">
+        <input class="form_call-request__main__input_phone a-inputPhone" type="text" name="user-number" placeholder="Телефон">
+        <div class="form_call-request__main__checkbox m-checkboxBlock">
+          <input class="form_call-request__main__checkbox__input a-checkbox" id="confirmDataProcessing" type="checkbox">
+          <div class="form_call-request__main__checkbox__text_confirmation m-text" for="confirmDataProcessing">
             Погоджуюсь на <span class="a-textHighlighted">обробку даних</span>
           </div>
         </div>
       </div>
-      <input class="a-submit" type="submit" value="Відправити" disabled>
-      <button class="a-close" type='button'>Зачинити</button>
-      <img class="a-image" src="images/close-callback-form.svg" alt="">
+      <input class="form_call-request__input_submit a-submit" type="submit" value="Відправити" disabled>
+      <button class="form_call-request__button_close a-close" type='button'>Зачинити</button>
+      <img class="form_call-request__image_close a-image" src="images/close-callback-form.svg" alt="">
     </form>
+
+
+
+
+
+
 
     <header class="o-header">
       <div class="o-content">

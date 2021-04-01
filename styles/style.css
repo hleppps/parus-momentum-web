@@ -17,7 +17,7 @@ input::-ms-input-placeholder {
 input:-ms-input-placeholder {
   color: #3C80AA;
 }
-.a-underlay {
+.underlay {
   display: none;
   position: fixed;
   z-index: 1;
