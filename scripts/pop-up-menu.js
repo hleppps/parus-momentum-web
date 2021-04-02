@@ -3,11 +3,11 @@ let is_menu_open = false
 window.addEventListener('load', () => {
 	// document.querySelector('.header__mob')
  //    .addEventListener('click', event => {
- //      // if (event.target.className === 'header__mob__button_pop-up-menu') {
- //      //   popUpMenu()
- //      // } else if (event.target.className === 'button_request-call') {
- //      // 	buttonClosePopUpMenu()
- //      // }
+ //      if (event.target.className === 'header__mob__button_pop-up-menu') {
+ //        popUpMenu()
+ //      } else if (event.target.className === 'pop-up-menu__contacts_sub__button') {
+ //      	buttonClosePopUpMenu()
+ //      }
  //    });
 
 
@@ -40,8 +40,6 @@ function popUpMenu () {
 }
 
 function openPopUpMenu (menu, btn) {
-	// alert(btn.)
-	// img.setAttribute('src', 'images/pop-up-menu-btn-close.svg')
 	btn.style.backgroundImage = 'url(images/pop-up-menu-btn-close.svg)'
 	menu.style.transform = 'none'
 
