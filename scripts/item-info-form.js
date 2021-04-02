@@ -3,6 +3,19 @@ let files_len = 0
 
 window.addEventListener('load', () => {
 	fillItemFormSelect()
+
+	let rate_stars = document.querySelectorAll('.item-rating__option-value')
+	for (let i = 0; i < rate_stars.length; i++) {
+		rate_stars[i].addEventListener('click', changeConditionRate(+i+1))
+	}
+
+	let file_input = document.querySelector('.photos-upload__loading-container')
+	file_input.addEventListener('change', previewFiles)
+
+	let filter_function = document.querySelector('.category-selection__input')
+	filter_function.addEventListener('keyup', (event) => {filterFunction(filter_function, event)})
+	filter_function.addEventListener('keyup', highlightSelectedValue)
+	filter_function.addEventListener('mouseover', highlightSelectedValue)
 })
 
 
@@ -29,7 +42,6 @@ function highlightSelectedValue() {
 			option.style.color = '#E96325'
 		}
 	}
-	// console.log(filter_function.value)
 }
 
 function changeConditionRate (rate) {

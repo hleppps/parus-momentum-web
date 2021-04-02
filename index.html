@@ -13,6 +13,8 @@
 
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/input-range-style.css">
+
   </head>
 
   <body>
@@ -270,6 +272,102 @@
         <a class="advantages-wrapper__button_desktop" href="#">Взяти кредит</a>
       </div>
 
+
+
+
+      <div class="main__calculator-wrapper">
+        <div class="main__calculator">
+          <h1 class="main__calculator__heading">КАЛЬКУЛЯТОР КРЕДИТУ ПІД ЗАСТАВУ</h1>
+
+          <form class="main__calculator__content">
+
+            <div class="calculator__content__amount-of-money__text">
+              <h2 class="content__amount-of-money__text__heading content__heading">Бажана сума:</h2>
+              <p class="content__amount-of-money__text__description">
+                (Не більше нiж 80% від нашої оцінки)
+              </p>
+
+            </div>
+
+            <div class="calculator__content__amount-of-money__selection">
+              <div class="content__amount-of-money__selection__scroller-wrapper content__scroller-wrapper">
+                <input class="content__amount-of-money__selection__scroller content__scroller" type="range" min="2500" max="50000">
+                <output class="content__amount-of-money__selection__scroller-bubble content__scroller-bubble"></output> 
+              </div>
+              <div class="content__amount-of-money__selection__critical-values content__critical-values">
+                <span class="content__amount-of-money__selection__critical-values_min">2 500 грн.</span>
+                <span class="content__amount-of-money__selection__critical-values_max">50 000 грн.</span>
+              </div>
+            </div>
+
+            <div class="calculator__content__amount-of-money__mobile-select calculator__content__mobile-select"></div>
+
+
+            <div class="calculator__content__term">
+              <h2 class="content__term__text__heading content__heading">Строк:</h2>
+              <div class="content__term__text__radio-buttons">
+
+                <input id="calculator__radio-button-1" class="content__term__text__radio-buttons__button" name="radio-group" type="radio" checked="">
+                <label for="calculator__radio-button-1" class="content__term__text__radio-buttons__label content__term__text__radio-buttons__label_radio-button-1">
+                  Місяць
+                </label>
+
+                <input id="calculator__radio-button-2" class="content__term__text__radio-buttons__button" name="radio-group" type="radio">
+                <label for="calculator__radio-button-2" class="content__term__text__radio-buttons__label">
+                  Рік
+                </label>
+
+              </div>
+            </div>
+            
+            <div class="calculator__content__term__selection">
+              <div class="content__term__selection__scroller-wrapper content__scroller-wrapper">
+                <input class="content__term__selection__scroller content__scroller" type="range" min="2500" max="50000">
+                <output class="content__term__selection__scroller-bubble content__scroller-bubble"></output> 
+              </div>
+              <div class="content__term__selection__critical-values content__critical-values">
+                <span class="content__term__selection__critical-values_min">5 діб</span>
+                <span class="content__term__selection__critical-values_max">30 діб</span>
+              </div>
+            </div>
+
+            <div class="calculator__content__term__mobile-select calculator__content__mobile-select"></div>
+
+
+            <div class="calculator__content__confidence">
+              <div class="content__confidence__text">
+                <h2 class="content__confidence__text__heading content__heading">Кредит довіри:</h2>
+                <p class="content__confidence__text__description">
+                  <span class="content__confidence__text__description_highlighted">+0</span>
+                  Бонусів
+                </p>
+              </div>
+              <input class="content__confidence__button" type="submit" value="Взяти кредит під заставу">
+            </div>
+
+            <div class="calculator__content__total-value">
+              <p class="content__total-value__text_percent content__total-value__text">% за період:</p>
+              <p class="content__total-value__sum_percent content__total-value__sum">
+                <span class="content__total-value__sum_percent_value">1000</span>
+                 грн.(₴)
+              </p>
+              <p class="content__total-value__text_repayment content__total-value__text">Сума погашення:</p>
+              <p class="content__total-value__sum_repayment content__total-value__sum">
+                <span class="content__total-value__sum_repayment_value">11000</span>
+                 грн.(₴)
+               </p>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+
+
+
+
+
+
       <div class="main__comparison-wrapper">
         <h1 class="comparison__heading">Співвідношення ломбардів</h1>
 
@@ -337,7 +435,6 @@
         <div class="assessment-content">
           <div class="assessment-content__text-information">
             <img class="text-information__slogan text-information__slogan" src="images/text-slogan.svg" alt="">
-            <!-- <button class="text-information__button">Взяти кредит під заставу</button> -->
 
             <a class="text-information__button text-information__button_desktop" href="#">Взяти кредит під заставу</a>
             <button class="text-information__button text-information__button_mob button_take-credit">
@@ -381,17 +478,10 @@
 
     <script src="scripts/pop-up-menu.js"></script>
     <script src="scripts/search-value.js"></script>
-    <script src="scripts/event-handling.js"></script>
+    <!-- <script src="scripts/event-handling.js"></script> -->
     <script src="scripts/item-info-form.js"></script>
     <script src="scripts/overlay-forms.js"></script>
     <script src="scripts/smooth-scroll.js"></script>
-
-
-
-    <script>
-      window.onload = () => {
-        handleEvents()
-      }
-    </script>
+    <script src="scripts/calculator.js"></script>
   </body>
 </html>

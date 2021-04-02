@@ -1,4 +1,5 @@
 @color-white: #fff;
+@color-black: #000;
 @color-dark-blue: #005182;
 @color-orange: #E96325;
 @color-blue: #D3EDFC;
@@ -17,7 +18,9 @@ html, body {
   font-size: 16px;
 }
 
-
+.body_show-overlay-element {
+	overflow-y: hidden;
+}
 
 
 input::placeholder {color: @color-light-blue;}
@@ -28,11 +31,23 @@ input:-ms-input-placeholder {color: @color-light-blue;}
 	display: none;
 	position: fixed;
 	z-index: 1;
+	background-color: transparent;
 	// background-color: red;
 	// cursor: pointer;
 	
 	height: 100%;
 	width: 100%;
+}
+
+.underlay_show-overlay-form {
+	display: inherit;
+	background-color: @color-black;
+	opacity: .5;
+	z-index: 5;
+}
+
+.underlay_show-pop-up-menu {
+	display: inherit;
 }
 
 .form_call-request {
@@ -399,7 +414,6 @@ input:-ms-input-placeholder {color: @color-light-blue;}
 		height: 70vh;
 	}
 }
-
 
 @media screen and (max-width: 800px) {
 	.header_mob__pop-up-menu {
@@ -1327,8 +1341,285 @@ input:-ms-input-placeholder {color: @color-light-blue;}
 }
 
 
+// CALCULATOR 
+
+.main__calculator-wrapper {
+	padding-top: 220px;
+}
+
+.main__calculator {
+	display: flex;
+	flex-direction: column;
+	// justify-content: center;
+
+	background-color: @color-white;
+	box-shadow: 8px 9px 30px rgba(11, 58, 72, 0.08);
+	border-radius: 25px;
+
+	width: @set-block-width;
+}
+
+.main__calculator__heading {
+	font-size: 1.875rem;
+	color: @color-dark-blue;
+	line-height: 2.25rem;
+	font-weight: 500;
+
+	text-align: center;
+	background-color: #d3edfc;
+	border-radius: 25px;
+
+	padding: 34px 0;
+	// width: 100%;
+}
+
+.main__calculator__content {
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+	grid-column-gap: 140px;
+
+	padding: 30px 80px 80px; 
+}
+
+.content__heading {
+	display: flex;
+	align-items: center;
+
+	font-size: 1.25rem;
+	line-height: 1.5rem;
+	color: #3C80AA;
+}
+
+.content__heading:before {
+	width: 20px;
+	height: 20px;
+	margin-right: 10px;
+}
+
+// SLIDERS
+
+.content__scroller-wrapper {
+  position: relative;
+}
+
+.content__scroller {
+  width: 100%;
+}
+
+.content__scroller-bubble {
+  // background: @color-white;
+  background-image: url(../images/scroller-background-img.svg);
+  background-size: 100% 30px;
+  background-repeat: no-repeat;
+  color: @color-dark-blue;
+  padding: 4px 12px;
+  position: absolute;
+  bottom: 35px;
+  left: 50%;
+  top: -20px;
+  transform: translateX(-49%);  
+}
+
+// SLIDERS
 
 
+.content__critical-values {
+	display: flex;
+	justify-content: space-between;
+
+	font-family: Rubik;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	font-size: 1.1875rem;
+	color: #3B80AA;
+}
+
+.calculator__content__mobile-select {
+	display: none;
+}
+
+.calculator__content__amount-of-money__text {
+	align-self: end;
+}
+
+.content__amount-of-money__text__heading:before {
+	content: url(../images/wallet.svg);
+}
+
+.content__amount-of-money__text__description {
+	font-size: 0.625rem;
+	line-height: 1,125rem;
+	color: @color-light-blue;
+
+	margin-top: 14px;
+}
+
+
+.calculator__content__term {
+	align-self: end;
+}
+
+.content__term__text__heading:before {
+	content: url(../images/calendar.svg);
+}
+
+.content__term__text__radio-buttons {
+	margin-top: 15px;
+}
+
+.content__term__text__radio-buttons__label {
+	user-select: none;
+}
+
+.content__term__text__radio-buttons__label_radio-button-1 {
+	margin-right: 50px;
+}
+
+// RB STYLES
+
+.content__term__text__radio-buttons__button {
+    opacity: 0;
+    position: absolute;   
+}
+
+.content__term__text__radio-buttons__button, .content__term__text__radio-buttons__label {
+    display: inline-block;
+    vertical-align: middle;
+    // margin: 5px;
+    cursor: pointer;
+}
+
+.radio-custom-label {
+    position: relative;
+}
+
+.content__term__text__radio-buttons__button + .content__term__text__radio-buttons__label:before {
+    content: '';
+    background: #fff;
+    border: 1px solid #57A0CD;
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    padding: 2px;
+    margin-right: 5px;
+    text-align: center;
+}
+
+.content__term__text__radio-buttons__button + .content__term__text__radio-buttons__label:before {
+    border-radius: 50%;
+}
+
+.content__term__text__radio-buttons__button:checked + .content__term__text__radio-buttons__label:before {
+    background: #E96325;
+    border: 1px solid #57A0CD;
+    box-shadow: inset 0px 0px 0px 4px #fff;
+}
+
+// RB STYLES
+
+
+.content__term__text__radio-buttons__label {
+	line-height: 1.125rem;
+	color: @color-dark-blue;
+}
+
+
+.content__confidence__text__heading {
+	align-items: flex-start;
+}
+
+.content__confidence__text__heading:before {
+	content: url(../images/gift.svg);
+	width: 18px;
+	height: 18px;
+	margin-top: 1px;
+}
+
+.content__confidence__text__heading::after{
+	content: url(../images/information-button.svg);
+	width: 16px;
+	height: 16px;
+	margin-top: 2.5px;
+	margin-left: 8px;
+}
+
+.content__confidence__text__heading:hover::after{
+	cursor: pointer;
+}
+
+.content__confidence__text__description {
+	line-height: 1.125rem;
+	font-weight: 300;
+	color: @color-dark-blue;
+
+	margin-top: 10px;
+}
+
+.content__confidence__text__description_highlighted {
+	font-weight: 700;
+	color: @color-orange;
+}
+
+.content__confidence__button {
+	font-size: 0.875rem;
+	line-height: 1.0625rem;
+	font-weight: 700;
+	color: @color-white;
+
+	background-color: @color-orange;
+	border-radius: 20px;
+
+	padding: 12px 22px;
+	margin-top: 45px;
+}
+
+
+.calculator__content__total-value {
+	display: grid;
+	justify-content: center;
+	grid-template-columns: 2fr 3fr;
+
+	background-image: url('../images/border-dashed.svg');
+	background-repeat: no-repeat;
+	background-size: 100%;
+	padding: 39px 0px 39px 39px;
+}
+
+.content__total-value__text {
+	align-self: center;
+
+	font-size: 1.25rem;
+	line-height: 1.5rem;
+	color: @color-light-blue;
+}
+
+.content__total-value__sum {
+	align-self: center;
+	
+	line-height: 1.1875rem;
+	font-weight: 300;
+	color: @color-dark-blue;
+}
+
+.content__total-value__sum_percent_value {
+	font-size: 1.25rem;
+	line-height: 1.5rem;
+	font-weight: 500;
+	color: @color-dark-blue;
+}
+
+.content__total-value__sum_repayment {
+	margin-top: 10px;
+}
+
+.content__total-value__sum_repayment_value {
+	font-size: 1.875rem;
+	line-height: 2.25rem;
+	font-weight: 700;
+	color: @color-dark-blue;
+}
 
 // COMPARISON
 
