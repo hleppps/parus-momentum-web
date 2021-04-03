@@ -44,6 +44,24 @@
       <img class="form_call-request__close_image form_call-request__close" src="images/close-callback-form.svg" alt="">
     </form>
 
+    <div class="form_term-choose">
+      <h1 class="form_term-choose__header">Оберіть термін</h1>
+
+      <ul class="form_term-choose__list">
+        <!-- <li class="form_term-choose__list__option">
+          <input class="form_term-choose__list__option__radio-button" type="radio" name="" id="">
+          <label class="form_term-choose__list__option__label" for=""></label>
+          <span class="form_term-choose__list__option__value"></span>
+          <span class="form_term-choose__list__option__text"></span>
+        </li> -->
+      </ul>
+
+      <div class="form_term-choose__footer">
+        <button class="form_term-choose__footer__button_close">Зачинити</button>
+        <button class="form_term-choose__footer__button_choose">Обрати</button>
+      </div>
+    </div>
+
 
     <header class="header__wrapper">
       <div class="header">
@@ -286,12 +304,11 @@
               <p class="content__amount-of-money__text__description">
                 (Не більше нiж 80% від нашої оцінки)
               </p>
-
             </div>
 
-            <div class="calculator__content__amount-of-money__selection">
+            <div class="calculator__content__amount-of-money__selection calculator__content__selection">
               <div class="content__amount-of-money__selection__scroller-wrapper content__scroller-wrapper">
-                <input class="content__amount-of-money__selection__scroller content__scroller" type="range" min="2500" max="50000">
+                <input class="content__amount-of-money__selection__scroller content__scroller" type="range" min="2500" max="50000" step="100">
                 <output class="content__amount-of-money__selection__scroller-bubble content__scroller-bubble"></output> 
               </div>
               <div class="content__amount-of-money__selection__critical-values content__critical-values">
@@ -300,29 +317,31 @@
               </div>
             </div>
 
-            <div class="calculator__content__amount-of-money__mobile-select calculator__content__mobile-select"></div>
+            <div class="calculator__content__amount-of-money__mobile-select calculator__content__mobile-select">
+              <input class="content__amount-of-money__mobile-select__input content__mobile-select__input" type="number" pattern="[0-9]*" placeholder="Введіть суму:">
+            </div>
 
 
             <div class="calculator__content__term">
               <h2 class="content__term__text__heading content__heading">Строк:</h2>
               <div class="content__term__text__radio-buttons">
 
-                <input id="calculator__radio-button-1" class="content__term__text__radio-buttons__button" name="radio-group" type="radio" checked="">
-                <label for="calculator__radio-button-1" class="content__term__text__radio-buttons__label content__term__text__radio-buttons__label_radio-button-1">
+                <input id="calculator__radio-button-1" class="content__term__text__radio-buttons__button radio-button_orange" name="select-term-type" type="radio" checked="">
+                <label for="calculator__radio-button-1" class="content__term__text__radio-buttons__label content__term__text__radio-buttons__label_radio-button-1 radio-button_orange__label">
                   Місяць
                 </label>
 
-                <input id="calculator__radio-button-2" class="content__term__text__radio-buttons__button" name="radio-group" type="radio">
-                <label for="calculator__radio-button-2" class="content__term__text__radio-buttons__label">
+                <input id="calculator__radio-button-2" class="content__term__text__radio-buttons__button radio-button_orange" name="select-term-type" type="radio">
+                <label for="calculator__radio-button-2" class="content__term__text__radio-buttons__label radio-button_orange__label">
                   Рік
                 </label>
 
               </div>
             </div>
             
-            <div class="calculator__content__term__selection">
+            <div class="calculator__content__term__selection calculator__content__selection">
               <div class="content__term__selection__scroller-wrapper content__scroller-wrapper">
-                <input class="content__term__selection__scroller content__scroller" type="range" min="2500" max="50000">
+                <input class="content__term__selection__scroller content__scroller" type="range" min="5" max="30">
                 <output class="content__term__selection__scroller-bubble content__scroller-bubble"></output> 
               </div>
               <div class="content__term__selection__critical-values content__critical-values">
@@ -331,8 +350,9 @@
               </div>
             </div>
 
-            <div class="calculator__content__term__mobile-select calculator__content__mobile-select"></div>
-
+            <div class="calculator__content__term__mobile-select calculator__content__mobile-select">
+              <button class="content__term__mobile-select__input content__mobile-select__input" type="button">Оберіть термін</button>
+            </div>
 
             <div class="calculator__content__confidence">
               <div class="content__confidence__text">
@@ -431,6 +451,9 @@
         </div>
       </div>
 
+
+
+
       <div class="main__assessment-wrapper">
         <div class="assessment-content">
           <div class="assessment-content__text-information">
@@ -448,6 +471,9 @@
           <img class="assessment-content__image" src="images/assessment-image.svg" alt="">
         </div>
       </div>
+
+
+
     </main>
 
 

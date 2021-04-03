@@ -1,20 +1,20 @@
 let is_menu_open = false
 
 window.addEventListener('load', () => {
-	document.querySelector('.header__mob').addEventListener('click', event => {
-    if (event.target.className === 'header__mob__button_pop-up-menu') {
-      popUpMenu()
-    } else if (event.target.classList.contains('pop-up-menu__contacts_sub__button')) {
-    	buttonClosePopUpMenu()
-    } 
-  })
+	// document.querySelector('.header__mob').addEventListener('click', event => {
+ //    if (event.target.className === 'header__mob__button_pop-up-menu') {
+ //      popUpMenu()
+ //    } else if (event.target.classList.contains('pop-up-menu__contacts_sub__button')) {
+ //    	buttonClosePopUpMenu()
+ //    } 
+ //  })
 
 
-	// let pop_up_menu_btn = document.querySelector('.header__mob__button_pop-up-menu')
-	// pop_up_menu_btn.addEventListener('click', popUpMenu)
+	let pop_up_menu_btn = document.querySelector('.header__mob__button_pop-up-menu')
+	pop_up_menu_btn.addEventListener('click', popUpMenu)
 
-	// let close_pop_up_menu_btn = document.querySelector('.pop-up-menu__contacts_sub__button')
-	// close_pop_up_menu_btn.addEventListener('click', buttonClosePopUpMenu)
+	let close_pop_up_menu_btn = document.querySelector('.pop-up-menu__contacts_sub__button')
+	close_pop_up_menu_btn.addEventListener('click', buttonClosePopUpMenu)
 })
 
 function popUpMenu () {
@@ -28,7 +28,7 @@ function popUpMenu () {
 		body.classList.add('body_show-overlay-element')
 
 
-		underlay.style.display = 'inherit'
+		// underlay.style.display = 'inherit'
 		underlay.classList.add('underlay_show-pop-up-menu')
 		underlay.addEventListener('click', underlayClosePopUpMenu)
 
@@ -36,12 +36,15 @@ function popUpMenu () {
 	} else {
 		// underlay.style.display = 'none'
 		underlay.classList.remove('underlay_show-pop-up-menu')
+		// underlay.classList.add('underlay_hide-pop-up-menu')
+
 
 		// body.style.overflowY = 'scroll'
 		body.classList.remove('body_show-overlay-element')
 
 
 		closePopUpMenu(pop_up_menu, pop_up_menu_btn)
+		// underlay.classList.remove('underlay_hide-pop-up-menu')
 	}
 }
 

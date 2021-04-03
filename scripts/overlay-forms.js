@@ -23,6 +23,12 @@ window.addEventListener('load', () => {
 	let close_item_info_form_btn = document.querySelector('.item-description__button_close-form')
 	close_item_info_form_btn.addEventListener('click', () => {closeOverlayForm('.item-description-wrapper')})
 
+	let open_calculator_term_choose_form = document.querySelector('.content__term__mobile-select__input')
+	open_calculator_term_choose_form.addEventListener('click', () => {showOverlayForm('.form_term-choose')})
+
+	let close_calculator_term_choose_form = document.querySelector('.form_term-choose__footer__button_close')
+	close_calculator_term_choose_form.addEventListener('click', () => {closeOverlayForm('.form_term-choose')})
+
 // CHECK INPUT VALIDITY
 	let is_checkbox_checked = document.querySelector('.form_call-request__main__checkbox')
 	is_checkbox_checked.addEventListener('change', () => {
