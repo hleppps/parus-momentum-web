@@ -704,6 +704,15 @@ body {
   width: 100%;
   box-sizing: border-box;
 }
+input::placeholder {
+  color: #3C80AA;
+}
+input::-ms-input-placeholder {
+  color: #3C80AA;
+}
+input:-ms-input-placeholder {
+  color: #3C80AA;
+}
 .category-selection__input {
   position: relative;
   z-index: 2;
@@ -1476,6 +1485,7 @@ body {
 }
 .content__term__mobile-select__button_selected {
   color: #005182;
+  font-weight: 500;
 }
 .calculator__content__confidence {
   display: flex;

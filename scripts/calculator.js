@@ -85,6 +85,9 @@ function fillCalculatorTerms(selector) {
 function calculatorMobileCheckInput(selector) {
 	let sum_input = document.querySelector('.content__amount-of-money__mobile-select__input')
 	let term_input = document.querySelector('.content__term__mobile-select__button')
+	term_input.innerHTML = 'Оберіть термін'
+	term_input.classList.remove('content__term__mobile-select__button_selected')
+
 	let radio_buttons = document.querySelectorAll('.form_term-choose__list__option__radio-button')
 
 	let percent_sum = document.querySelector('.content__total-value__sum_percent_value')
@@ -92,13 +95,14 @@ function calculatorMobileCheckInput(selector) {
 
 	let radio_button_active = ''
 
-	if (Number(sum_input.value >= 0) && Number(sum_input.value <= 50000)) {
+	if (Number(sum_input.value) >= 0 && Number(sum_input.value) <= 50000) {
 		values_object['sum'] = sum_input.value
-	} else {
+	} else if (sum_input.value > 50000) {
+		sum_input.value = 50000
+	}	else {
 		sum_input.value = ''
 		percent_sum.innerHTML = 0
 		repayment_sum.innerHTML = 0
-
 	}
 	
 	for (let i = 0; i < radio_buttons.length; i++) {
@@ -109,12 +113,9 @@ function calculatorMobileCheckInput(selector) {
 		}
 	}
 
-	// calculateTotalSum()
 	if (sum_input.value && (term_input.innerHTML != 'Оберіть термін')) {
 		calculateTotalSum()
 	}
-	// if (term_input.innerHTML != 'Оберіть термін') {alert('q')}
-
 }
 
 function loadScrollers(selector) {
