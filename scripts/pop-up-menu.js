@@ -1,20 +1,20 @@
 let is_menu_open = false
 
 window.addEventListener('load', () => {
-	// document.querySelector('.header__mob').addEventListener('click', event => {
- //    if (event.target.className === 'header__mob__button_pop-up-menu') {
- //      popUpMenu()
- //    } else if (event.target.classList.contains('pop-up-menu__contacts_sub__button')) {
- //    	buttonClosePopUpMenu()
- //    } 
- //  })
+	document.querySelector('.header__mob').addEventListener('click', event => {
+    if (event.target.className === 'header__mob__button_pop-up-menu') {
+      popUpMenu()
+    } else if (event.target.classList.contains('pop-up-menu__contacts_sub__button')) {
+    	buttonClosePopUpMenu()
+    } 
+  })
 
 
-	let pop_up_menu_btn = document.querySelector('.header__mob__button_pop-up-menu')
-	pop_up_menu_btn.addEventListener('click', popUpMenu)
+	// let pop_up_menu_btn = document.querySelector('.header__mob__button_pop-up-menu')
+	// pop_up_menu_btn.addEventListener('click', popUpMenu)
 
-	let close_pop_up_menu_btn = document.querySelector('.pop-up-menu__contacts_sub__button')
-	close_pop_up_menu_btn.addEventListener('click', buttonClosePopUpMenu)
+	// let close_pop_up_menu_btn = document.querySelector('.pop-up-menu__contacts_sub__button')
+	// close_pop_up_menu_btn.addEventListener('click', buttonClosePopUpMenu)
 })
 
 function popUpMenu () {

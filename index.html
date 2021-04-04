@@ -13,7 +13,6 @@
 
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/input-range-style.css">
 
   </head>
 
@@ -297,7 +296,7 @@
         <div class="main__calculator">
           <h1 class="main__calculator__heading">КАЛЬКУЛЯТОР КРЕДИТУ ПІД ЗАСТАВУ</h1>
 
-          <form class="main__calculator__content">
+          <div class="main__calculator__content">
 
             <div class="calculator__content__amount-of-money__text">
               <h2 class="content__amount-of-money__text__heading content__heading">Бажана сума:</h2>
@@ -318,7 +317,7 @@
             </div>
 
             <div class="calculator__content__amount-of-money__mobile-select calculator__content__mobile-select">
-              <input class="content__amount-of-money__mobile-select__input content__mobile-select__input" type="number" pattern="[0-9]*" placeholder="Введіть суму:">
+              <input class="content__amount-of-money__mobile-select__input" type="text" pattern="[0-9]*" placeholder="Введіть суму:">
             </div>
 
 
@@ -326,13 +325,13 @@
               <h2 class="content__term__text__heading content__heading">Строк:</h2>
               <div class="content__term__text__radio-buttons">
 
-                <input id="calculator__radio-button-1" class="content__term__text__radio-buttons__button radio-button_orange" name="select-term-type" type="radio" checked="">
+                <input id="calculator__radio-button-1" class="content__term__text__radio-buttons__button content__term__text__radio-buttons__button-1 radio-button_orange" name="select-term-type" type="radio" checked="">
                 <label for="calculator__radio-button-1" class="content__term__text__radio-buttons__label content__term__text__radio-buttons__label_radio-button-1 radio-button_orange__label">
                   Місяць
                 </label>
 
-                <input id="calculator__radio-button-2" class="content__term__text__radio-buttons__button radio-button_orange" name="select-term-type" type="radio">
-                <label for="calculator__radio-button-2" class="content__term__text__radio-buttons__label radio-button_orange__label">
+                <input id="calculator__radio-button-2" class="content__term__text__radio-buttons__button content__term__text__radio-buttons__button-2 radio-button_orange" name="select-term-type" type="radio">
+                <label for="calculator__radio-button-2" class="content__term__text__radio-buttons__label content__term__text__radio-buttons__label_radio-button-2 radio-button_orange__label">
                   Рік
                 </label>
 
@@ -351,34 +350,41 @@
             </div>
 
             <div class="calculator__content__term__mobile-select calculator__content__mobile-select">
-              <button class="content__term__mobile-select__input content__mobile-select__input" type="button">Оберіть термін</button>
+              <button class="content__term__mobile-select__button" type="button">Оберіть термін</button>
             </div>
 
             <div class="calculator__content__confidence">
               <div class="content__confidence__text">
-                <h2 class="content__confidence__text__heading content__heading">Кредит довіри:</h2>
+                <h2 class="content__confidence__text__heading content__heading">
+                  Кредит довіри:
+                  <div class="content__confidence__text__heading__info">
+                    Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное Lorem Ipsum используют потому, что тот
+                  </div>
+                </h2>
                 <p class="content__confidence__text__description">
                   <span class="content__confidence__text__description_highlighted">+0</span>
                   Бонусів
                 </p>
               </div>
-              <input class="content__confidence__button" type="submit" value="Взяти кредит під заставу">
+              <!-- <input class="content__confidence__button" type="submit" value="Взяти кредит під заставу"> -->
+              <a class="content__confidence__button content__confidence__button_desktop" href="#">Взяти кредит під заставу</a>
+              <button class="content__confidence__button content__confidence__button_mob button_take-credit">Взяти кредит під заставу</button>
             </div>
 
             <div class="calculator__content__total-value">
               <p class="content__total-value__text_percent content__total-value__text">% за період:</p>
               <p class="content__total-value__sum_percent content__total-value__sum">
-                <span class="content__total-value__sum_percent_value">1000</span>
+                <span class="content__total-value__sum_percent_value">0</span>
                  грн.(₴)
               </p>
               <p class="content__total-value__text_repayment content__total-value__text">Сума погашення:</p>
               <p class="content__total-value__sum_repayment content__total-value__sum">
-                <span class="content__total-value__sum_repayment_value">11000</span>
+                <span class="content__total-value__sum_repayment_value">0</span>
                  грн.(₴)
                </p>
             </div>
 
-          </form>
+          </div>
 
         </div>
       </div>
