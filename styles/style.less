@@ -1529,7 +1529,7 @@ input:-ms-input-placeholder {color: @color-light-blue;}
 	display: grid;
 	grid-template-columns: 1fr 3fr;
 	column-gap: 140px;
-	row-gap: 50px;
+	row-gap: 60px;
 
 	padding: 80px; 
 }
@@ -1551,13 +1551,13 @@ input:-ms-input-placeholder {color: @color-light-blue;}
 
 @media screen and (max-width: 600px) {
 	.main__calculator__content {
-		padding: 30px 20px 50px;
+		padding: 40px 20px 50px;
 	}
 }
 
 @media screen and (max-height: 800px) and (orientation: landscape) {
 	.main__calculator__content {
-		padding-top: 60px;
+		padding-top: 65px;
 		padding-bottom: 40px;
 	}
 }
@@ -1710,11 +1710,12 @@ input:-ms-input-placeholder {color: @color-light-blue;}
   color: @color-dark-blue;
 
   position: absolute;
+  z-index: 1;
   transform: translateX(-50%);  
  
   width: 137px;
   height: 55px;
-  top: -50px;
+  top: -53px;
   padding-top: 8px;
   margin-right: 20px;
 }
@@ -1769,6 +1770,26 @@ input:-ms-input-placeholder {color: @color-light-blue;}
 	}
 }
 
+.content__amount-of-money__selection__scroller {
+	position: relative;
+}
+
+.content__amount-of-money__selection__button {
+	position: absolute;
+
+	font-size: 0.875rem;
+	line-height: 1.0625rem;
+	font-weight: 700;
+	color: @color-orange;
+	text-decoration-line: underline;
+
+	top: -5px;
+	left: calc(100% - 195px);
+	margin-right: 200px;
+	width: 200px;
+}
+
+
 .content__amount-of-money__mobile-select__input {
 	text-align: center;
 	font-size: 1.25rem;
@@ -1794,6 +1815,17 @@ input:-ms-input-placeholder {color: @color-light-blue;}
 	color: #a5bac7;
 	opacity: 1;
 }
+
+.content__amount-of-money__mobile-select__button {
+	text-align: left;
+	line-height: 1.1875rem;
+	font-weight: 700;
+	color: @color-orange;
+	text-decoration-line: underline;
+
+	margin-top: 30px;
+}
+
 
 // Calculator Term
 .calculator__content__term {
@@ -1976,7 +2008,7 @@ input:-ms-input-placeholder {color: @color-light-blue;}
 
 @media screen and (max-width: 700px) {
 	.content__confidence__text__heading__info {
-		margin-left: 35px;
+		margin-left: 8px;
 		top: 30px;
 
 	}
