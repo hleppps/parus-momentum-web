@@ -6,8 +6,9 @@ window.addEventListener('load', () => {
 
 	let rate_stars = document.querySelectorAll('.item-rating__option-value')
 	for (let i = 0; i < rate_stars.length; i++) {
-		rate_stars[i].addEventListener('click', changeConditionRate(+i+1))
+		rate_stars[i].addEventListener('click', changeConditionRate(i))
 	}
+	
 
 	let file_input = document.querySelector('.photos-upload__loading-container')
 	file_input.addEventListener('change', previewFiles)
@@ -20,7 +21,6 @@ window.addEventListener('load', () => {
 	let item_info_input = document.querySelector('.personal-info__item-info')
 	item_info_input.addEventListener('keyup', () => {checkItemInfoInputLenght(item_info_input)})
 })
-
 
 function fillItemFormSelect () {
 	// запрос
@@ -47,18 +47,19 @@ function highlightSelectedValue() {
 	}
 }
 
-function changeConditionRate (rate) {
+function changeConditionRate(rate) {
 	return () => {
 		let rate_stars = document.querySelectorAll('.item-rating__option-value')
 		let input = document.querySelector('.item-rating__rate')
-		let counter = 0
-		while (counter < rate_stars.length) {
-			counter < rate ? 
-				rate_stars[counter].setAttribute('src', 'images/star-selected.svg') :
-				rate_stars[counter].setAttribute('src', 'images/star-not-selected.svg');
-			counter++
+		let counter = rate_stars.length - 1
+		while (counter >= 0) {
+		// 	console.log(counter)
+			counter >= rate ? 
+				rate_stars[counter].classList.add('item-rating__option-value_selected') :
+				rate_stars[counter].classList.remove('item-rating__option-value_selected')
+			counter--
 		}
-		input.value = rate
+		input.value = 5- rate
 	}
 }
 
@@ -75,7 +76,6 @@ function previewFiles() {
 
 
   function readAndPreview(file) {
-
     if ( /\.(jpe?g|png|tiff)$/i.test(file.name) ) {
       var reader = new FileReader();
 
@@ -87,12 +87,10 @@ function previewFiles() {
       		imageDrawer(upload_images_container)
       	}
 
-
       }, false);
 
       reader.readAsDataURL(file);
     }
-
   }
 
   if (files) {
