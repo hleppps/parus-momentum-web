@@ -7,9 +7,18 @@ body {
   scroll-behavior: smooth;
   font-family: 'Rubik', 'Arial';
   font-size: 16px;
-  background-image: url(../images/body-background-image-1.jpg), url(../images/body-background-image-2.jpg);
+}
+body {
+  background-image: url(../images/body-background-image-1.jpg), url(../images/body-background-image-2.jpg), url(../images/body-background-image-3.jpg), url(../images/body-background-image-4.jpg);
   background-repeat: no-repeat;
-  background-position: 100% 0, 0 30%;
+  background-size: min(100vh, 80vw);
+  background-position: 100% 0, 0 1100px, 100% 2000px, 0 100%;
+}
+@media screen and (max-width: 800px) {
+  body {
+    background-size: 100vh 650px;
+    background-position: calc(100% + 500px) 0, -300px 800px, calc(100% + 400px) 2000px, 0 calc(100% - 100px);
+  }
 }
 .preloader {
   position: fixed;
@@ -1183,6 +1192,7 @@ input:-ms-input-placeholder {
   line-height: 1.0625;
   font-weight: 700;
   color: #E96325;
+  background-color: #fff;
   border: 1px solid #E96325;
   border-radius: 20px;
   margin-top: 50px;

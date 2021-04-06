@@ -15,13 +15,23 @@ html, body {
 
 	font-family: 'Rubik', 'Arial';
   font-size: 16px;
-
-  background-image: url(../images/body-background-image-1.jpg), url(../images/body-background-image-2.jpg);
-  background-repeat: no-repeat;
-  background-position: 100% 0, 0 30%;
 }
 
 body {
+	background-image: url(../images/body-background-image-1.jpg), 
+  									url(../images/body-background-image-2.jpg), 
+  									url(../images/body-background-image-3.jpg),
+  									url(../images/body-background-image-4.jpg);
+  background-repeat: no-repeat;
+  background-size: min(100vh, 80vw);
+  background-position: 100% 0, 0 1100px, 100% 2000px, 0 100%;
+}
+
+@media screen and (max-width: 800px) {
+	body {
+	  background-size: 100vh 650px;
+		background-position: calc(100% + 500px) 0, -300px 800px, calc(100% + 400px) 2000px, 0 calc(100% - 100px);
+	}
 }
 
 
@@ -1532,6 +1542,7 @@ input:-ms-input-placeholder {color: @color-light-blue;}
 	font-weight: 700;
 	color: @color-orange;
 
+	background-color: @color-white;
 	border: 1px solid @color-orange;
 	border-radius: 20px;
 
