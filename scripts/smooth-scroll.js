@@ -18,7 +18,7 @@ function smoothScroll() {
         event.preventDefault();
         $('html, body').animate({
           scrollTop: target.offset().top
-        }, 1000);
+        }, 300);
       }
     }
   });

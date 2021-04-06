@@ -16,6 +16,9 @@ window.addEventListener('load', () => {
 	filter_function.addEventListener('keyup', (event) => {filterFunction(filter_function, event)})
 	filter_function.addEventListener('keyup', highlightSelectedValue)
 	filter_function.addEventListener('mouseover', highlightSelectedValue)
+
+	let item_info_input = document.querySelector('.personal-info__item-info')
+	item_info_input.addEventListener('keyup', () => {checkItemInfoInputLenght(item_info_input)})
 })
 
 
@@ -213,3 +216,10 @@ function cleanContainers() {
 	}
 }
 
+function checkItemInfoInputLenght(elem) {
+	if (elem.value.length >= 3000) {
+		elem.classList.add('personal-info__item-info_overloaded')
+	} else {
+		elem.classList.remove('personal-info__item-info_overloaded')
+	}
+}

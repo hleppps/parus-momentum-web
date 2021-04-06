@@ -1,12 +1,18 @@
 let is_menu_open = false
 
 window.addEventListener('load', () => {
-	document.querySelector('.header__mob').addEventListener('click', event => {
+	smoothScroll()
+
+	document.querySelector('.header').addEventListener('click', event => {
     if (event.target.className === 'header__mob__button_pop-up-menu') {
       popUpMenu()
     } else if (event.target.classList.contains('pop-up-menu__contacts_sub__button')) {
     	buttonClosePopUpMenu()
-    } 
+    } else if (event.target.classList.contains('pop-up-menu__nav__link')) {
+    	buttonClosePopUpMenu()
+    } else if (event.target.classList.contains('header__logo_mob__image')) {
+    	buttonClosePopUpMenu()
+    }
   })
 
 
