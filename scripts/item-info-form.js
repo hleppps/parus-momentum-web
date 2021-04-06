@@ -11,7 +11,7 @@ window.addEventListener('load', () => {
 	
 
 	let file_input = document.querySelector('.photos-upload__loading-container')
-	file_input.addEventListener('change', previewFiles)
+	file_input.addEventListener('change', () => {previewFiles(file_input)})
 
 	let filter_function = document.querySelector('.category-selection__input')
 	filter_function.addEventListener('keyup', (event) => {filterFunction(filter_function, event)})
@@ -63,8 +63,8 @@ function changeConditionRate(rate) {
 	}
 }
 
-function previewFiles() {
-  let files = document.querySelector('.photos-upload__loading-container').files
+function previewFiles(uploaded_files) {
+  let files = uploaded_files.files
   files_len += files.length
 
   if (files_len > 10) {
@@ -77,6 +77,7 @@ function previewFiles() {
 
   function readAndPreview(file) {
     if ( /\.(jpe?g|png|tiff)$/i.test(file.name) ) {
+    	// alert('q')
       var reader = new FileReader();
 
       reader.addEventListener("load", function () {
@@ -90,6 +91,8 @@ function previewFiles() {
       }, false);
 
       reader.readAsDataURL(file);
+    } else {
+    	files_len--
     }
   }
 
