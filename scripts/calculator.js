@@ -132,6 +132,8 @@ function loadScrollers(selector) {
 }
 
 function setBubble(range, bubble) {
+  let root = document.documentElement;
+  let scroller_range_progress = '--scroller-sum-range-progress'
 
   const val = range.value;
   const min = range.min ? range.min : 0;
@@ -140,17 +142,22 @@ function setBubble(range, bubble) {
 
   let span = document.createElement('span')
   span.classList.add('content__scroller-bubble__text')
+
 	if (range.classList.contains('content__amount-of-money__selection__scroller')) {
 		values_object['sum'] = val
-  	span.innerHTML = '₴'
+		span.innerHTML = '₴'
 	} else {
+		scroller_range_progress = '--scroller-term-range-progress'
 		values_object['term'] = val
-  	span.innerHTML = term_array[range.value - range.min].split(' ')[1]
+		span.innerHTML = term_array[range.value - range.min].split(' ')[1]
 	}
 
 	bubble.innerHTML = val
 	bubble.appendChild(span)
-  bubble.style.left = `calc(${newVal}% + (${8 - newVal * 0.15}px))`;
+	
+  let range_progress = `calc(${newVal}% + (${8 - newVal * 0.15}px))`
+  bubble.style.left = range_progress
+  root.style.setProperty(scroller_range_progress, range_progress)
 
   calculateTotalSum()
 }
