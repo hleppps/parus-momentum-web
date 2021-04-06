@@ -53,6 +53,12 @@ window.addEventListener('load', () => {
 	is_phone_entered_itemForm.addEventListener('keyup', () => {
 		inputCheck('.item-description__button_send-form', '.personal-info__user-info_phone')
 	})
+
+	let inputs = document.querySelectorAll('input, textarea')
+	for (let input of inputs) {
+		input.addEventListener('keydown', () => {checkInputLength(input)})
+	}
+
 })
 
 
@@ -117,4 +123,13 @@ function inputCheck(submit_btn_cls, phone_input_cls, check_box_cls = null) {
 function checkNumberValidity(number) {
 	const reg = /^\+380\s(\([0-9]{2}\)\s*|[0-9]{3}\-)\s[0-9]{3}-[0-9]{2}-[0-9]{2}$/
 	return reg.test(number) ? true : false
+}
+
+function checkInputLength(elem) {
+	let max_input_length = elem.getAttribute('maxlength')
+	if (elem.value.length >= max_input_length) {
+		elem.classList.add('input_overloaded')
+	} else {
+		elem.classList.remove('input_overloaded')
+	}
 }

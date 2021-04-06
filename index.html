@@ -38,7 +38,7 @@
         <p class="form_call-request__main__text_info">
           Вкажіть свій контактний телефон, і ми зателефонуємо Вам протягом 5 хвилин
         </p>
-        <input class="form_call-request__main__input form_call-request__main__input_name" type="text" name="user-name" placeholder="Ім'я" autocomplete="off">
+        <input class="form_call-request__main__input form_call-request__main__input_name" type="text" name="user-name" placeholder="Ім'я" autocomplete="off" maxlength="200">
         <input class="form_call-request__main__input form_call-request__main__input_phone input_phone" type="text" name="user-number" placeholder="Телефон">
         <div class="form_call-request__main__checkbox-wrapper">
           <input class="form_call-request__main__checkbox" id="confirmDataProcessing" type="checkbox" checked="true">
@@ -157,7 +157,7 @@
 
             <div class="searchable item-description__category-selection">
 
-              <input class="category-selection__input" type="text" placeholder="Оберіть категорію товару" autocomplete="off" value="" name="item-category">
+              <input class="category-selection__input" type="text" placeholder="Оберіть категорію товару" autocomplete="off" value="" name="item-category" maxlength="200">
 
               <ul class="category-selection__options-container">
 
@@ -216,7 +216,7 @@
 
             <div class="item-description__personal-info">
               <textarea class="personal-info__item-info" placeholder="Про товар" name="item-info" maxlength="3000"></textarea>
-              <input class="personal-info__user-info" type="text" placeholder="Ім'я" name="user-name">
+              <input class="personal-info__user-info input_name" type="text" placeholder="Ім'я" name="user-name" maxlength="200">
               <input class="input_phone personal-info__user-info personal-info__user-info_phone" type="text" placeholder="Телефон" name="user-number" autocomplete="off">
             </div>
 
