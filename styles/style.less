@@ -30,7 +30,7 @@ body {
 @media screen and (max-width: 800px) {
 	body {
 	  background-size: 100vh 650px;
-		background-position: calc(100% + 500px) 0, -300px 800px, calc(100% + 400px) 2000px, 0 calc(100% - 100px);
+		background-position: calc(100% + 380px) 0, -300px 800px, calc(100% + 400px) 2000px, 0 calc(100% - 100px);
 	}
 }
 
@@ -330,6 +330,56 @@ body {
 		display: none;
 	}
 }
+
+
+// FORM ITEM INFO
+.form_item-description-wrapper {
+	display: none;
+	position: fixed;
+	flex-direction: column;
+
+	border-radius: 25px;
+	background-color: @color-white;
+	box-shadow: 7px 10px 50px rgba(11, 58, 72, 0.33);
+
+	z-index: 6;
+	top: 10%;
+	width: 458px;
+}
+
+@media screen and (max-width: 800px) {
+	.form_item-description-wrapper {
+		left: 0;
+		right: 0;
+
+		margin: 0 auto;
+		width: 90vw;
+		max-width: 374px;
+		top: 10%;
+	}
+}
+
+@media screen and (max-height: 700px) {
+	.form_item-description-wrapper {
+		top: 3vh;
+	}
+}
+
+.item-description__close_image {
+	position: absolute;
+	cursor: pointer;
+	top: 5px;
+	left: 478px;
+}
+
+@media screen and (max-width: 800px) {
+	.item-description__close_image {
+		display: none;
+	}
+}
+
+
+
 
 
 // FORM TERM CHOOSE
@@ -893,6 +943,10 @@ body {
 
 
 
+
+
+
+
 // PHOTO SELECTOR
 
 .item-description-wrapper {
@@ -928,13 +982,13 @@ body {
 	padding: 32px 0;
 }
 
-@media screen and (max-height: 810px) and (orientation: landscape) {
-	.item-description__header {
-		padding: 3vh 0;
-	}
-}
+// @media screen and (max-height: 810px) and (orientation: landscape) {
+// 	.item-description__header {
+// 		padding: 3vh 0;
+// 	}
+// }
 
-@media screen and (max-height: 800px) and (orientation: portrait) {
+@media screen and (max-height: 800px) {
 	.item-description__header {
 		padding: 15px 0;
 	}
@@ -971,6 +1025,7 @@ body {
 @media screen and (max-height: 800px) {
 	.item-description__main {
 		padding-top: 15px;
+		padding-bottom: 25px;
 	}
 }
 
@@ -1272,7 +1327,7 @@ input:-ms-input-placeholder {color: @color-light-blue;}
 	height: 80px;
 }
 
-@media screen and (max-height: 800px) and (orientation: portrait) {
+@media screen and (max-height: 800px) {
 	.personal-info__item-info {
 		margin-top: 10px;
 	}
@@ -1335,12 +1390,12 @@ input:-ms-input-placeholder {color: @color-light-blue;}
 	}
 }
 
-.item-description__button_close-form {
+.item-description__close_button {
 	display: none;
 }
 
 @media screen and (max-width: 800px) {
-	.item-description__button_close-form {
+	.item-description__close_button {
 		display: flex;
 		justify-content: center;
 
@@ -1355,12 +1410,6 @@ input:-ms-input-placeholder {color: @color-light-blue;}
 		width: 100%;
 		max-width: 228px;
 		padding: 12px 0;
-		margin-top: 30px;
-	}
-}
-
-@media screen and (max-height: 800px) and (orientation: portrait) {
-	.item-description__button_close-form {
 		margin-top: 15px;
 	}
 }
@@ -1530,8 +1579,8 @@ input:-ms-input-placeholder {color: @color-light-blue;}
 }
 
 
-.advantages-wrapper__button_mob {
-	display: none;
+.advantages-wrapper__button {
+	// display: none;
 	font-size: 0.875rem;
 	line-height: 1.0625;
 	font-weight: 700;
@@ -1546,36 +1595,36 @@ input:-ms-input-placeholder {color: @color-light-blue;}
 
 @media screen and (max-width: 800px) {
 	.advantages-wrapper__button_mob {
-		display: inherit;
+		// display: inherit;
 		padding: 12px 21px;
 	}
 }
 
-.advantages-wrapper__button_desktop {
-	font-size: 0.875rem;
-	line-height: 1.0625;
-	font-weight: 700;
-	color: @color-orange;
+// .advantages-wrapper__button_desktop {
+// 	font-size: 0.875rem;
+// 	line-height: 1.0625;
+// 	font-weight: 700;
+// 	color: @color-orange;
 
-	background-color: @color-white;
-	border: 1px solid @color-orange;
-	border-radius: 20px;
+// 	background-color: @color-white;
+// 	border: 1px solid @color-orange;
+// 	border-radius: 20px;
 
-	margin-top: 50px;
-	padding: 7px 21px;
-}
+// 	margin-top: 50px;
+// 	padding: 7px 21px;
+// }
 
-@media screen and (max-width: 800px) {
-	.advantages-wrapper__button_desktop {
-		display: none;
-	}
-}
+// @media screen and (max-width: 800px) {
+// 	.advantages-wrapper__button_desktop {
+// 		display: none;
+// 	}
+// }
 
-@media screen and (max-height: 950px) and (orientation: landscape) {
-	.advantages-wrapper__button_desktop {
-		margin-top: 30px;
-	}
-}
+// @media screen and (max-height: 950px) and (orientation: landscape) {
+// 	.advantages-wrapper__button_desktop {
+// 		margin-top: 30px;
+// 	}
+// }
 
 
 // CALCULATOR 
@@ -2179,21 +2228,9 @@ input:-ms-input-placeholder {color: @color-light-blue;}
 	width: 228px;
 }
 
-
-
 @media screen and (max-width: 800px) {
-	.content__confidence__button_desktop {
-		display: none;
-	}
-}
-
-.content__confidence__button_mob {
-	display: none;
-}
-
-@media screen and (max-width: 800px) {
-	.content__confidence__button_mob {
-		display: inherit;
+	.content__confidence__button {
+		// display: inherit;
 		margin-top: 50px;
 	}
 }
@@ -2671,19 +2708,6 @@ input:-ms-input-placeholder {color: @color-light-blue;}
 	}
 }
 
-.text-information__button_mob {
-	display: none;
-}
-
-@media screen and (max-width: 800px) {
-	.text-information__button_mob {
-		display: inherit;
-	}
-
-	.text-information__button_desktop {
-		display: none;
-	}
-}
 
 .text-information__slogan {
 	width: 80%;

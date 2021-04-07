@@ -39,7 +39,7 @@
           Вкажіть свій контактний телефон, і ми зателефонуємо Вам протягом 5 хвилин
         </p>
         <input class="form_call-request__main__input form_call-request__main__input_name" type="text" name="user-name" placeholder="Ім'я" autocomplete="off" maxlength="200">
-        <input class="form_call-request__main__input form_call-request__main__input_phone input_phone" type="text" name="user-number" placeholder="Телефон">
+        <input class="form_call-request__main__input form_call-request__main__input_phone input_phone" type="text" name="user-number" placeholder="Телефон" maxlength="20">
         <div class="form_call-request__main__checkbox-wrapper">
           <input class="form_call-request__main__checkbox" id="confirmDataProcessing" type="checkbox" checked="true">
           <div class="form_call-request__main__checkbox__text_confirmation" for="confirmDataProcessing">
@@ -52,6 +52,81 @@
       <button class="form_call-request__close_button form_call-request__close" type='button'>Зачинити</button>
       <img class="form_call-request__close_image form_call-request__close" src="images/close-callback-form.svg" alt="">
     </form>
+
+
+    <form class="form_item-description-wrapper">
+      <div class="item-description__header">
+        <p class="item-description__heading">Дані про товар</p>
+      </div>
+      <div class="item-description__main">
+
+        <div class="searchable item-description__category-selection">
+
+          <input class="category-selection__input" type="text" placeholder="Оберіть категорію товару" autocomplete="off" value="" name="item-category" maxlength="200">
+
+          <ul class="category-selection__options-container">
+
+            <!-- <li class="a-value   category-selection__option-value">value</li> -->
+
+          </ul>
+        </div>
+
+        <div class="item-description__item-rating">
+          <p class="item-rating__description">Стан товару: </p>
+          <input class="item-rating__rate" type="text" name="item-codition-rate">
+          <ul class="item-rating__options-container">
+            <li class="item-rating__option-value"></li>
+            <li class="item-rating__option-value"></li>
+            <li class="item-rating__option-value"></li>
+            <li class="item-rating__option-value"></li>
+            <li class="item-rating__option-value"></li>
+          </ul>
+        </div>
+
+        <div class="item-description__photos-upload">
+
+          <div class="photos-upload__description">
+            <p class="photos-upload__description_basic">Фото товару:</p>
+            <p class="photos-upload__description_sub">(jpg,png,tiff)</p>
+          </div>
+
+          <div class="photos-upload__container" for="file">
+            <div class="photos-upload__container_basic">
+
+              <div class="photos-upload__container__photo-block">
+                <label class="photos-upload__label" for="file">
+                </label>
+              </div>
+
+              <div class="photos-upload__container__photo-block">
+                <label class="photos-upload__label" for="file">
+                </label>
+              </div>
+              <p class="a-jsAddedText">+4</p>
+            </div>
+            <div class="photos-upload__container__photo-block">
+              <label class="photos-upload__label" for="file">
+              </label>
+            </div>
+          </div>
+
+          <input class="photos-upload__loading-container" type="file" id="file" multiple>
+          <input class="photos-upload__unloading-container" type="text" name="item-photos" value="">
+        </div>
+
+        <div class="item-description__personal-info">
+          <textarea class="personal-info__item-info" placeholder="Про товар" name="item-info" maxlength="3000"></textarea>
+          <input class="personal-info__user-info input_name" type="text" placeholder="Ім'я" name="user-name" maxlength="200">
+          <input class="input_phone personal-info__user-info personal-info__user-info_phone" type="text" placeholder="Телефон" name="user-number" autocomplete="off" maxlength="20">
+        </div>
+
+        <input class="item-description__button_send-form" type="submit" value="Відправити" disabled>
+        <button class="item-description__close_button item-description__close" type='button'>Зачинити</button>
+        <img class="item-description__close_image item-description__close" src="images/close-callback-form.svg" alt="">
+
+      </div>
+    </form>
+
 
     <div class="form_term-choose">
       <h1 class="form_term-choose__header">Оберіть термін</h1>
@@ -170,11 +245,6 @@
               <p class="item-rating__description">Стан товару: </p>
               <input class="item-rating__rate" type="text" name="item-codition-rate">
               <ul class="item-rating__options-container">
-               <!--  <li><img class="item-rating__option-value" src="images/star-not-selected.svg"></li>
-                <li><img class="item-rating__option-value" src="images/star-not-selected.svg"></li>
-                <li><img class="item-rating__option-value" src="images/star-not-selected.svg"></li>
-                <li><img class="item-rating__option-value" src="images/star-not-selected.svg"></li>
-                <li><img class="item-rating__option-value" src="images/star-not-selected.svg"></li> -->
                 <li class="item-rating__option-value"></li>
                 <li class="item-rating__option-value"></li>
                 <li class="item-rating__option-value"></li>
@@ -217,11 +287,11 @@
             <div class="item-description__personal-info">
               <textarea class="personal-info__item-info" placeholder="Про товар" name="item-info" maxlength="3000"></textarea>
               <input class="personal-info__user-info input_name" type="text" placeholder="Ім'я" name="user-name" maxlength="200">
-              <input class="input_phone personal-info__user-info personal-info__user-info_phone" type="text" placeholder="Телефон" name="user-number" autocomplete="off">
+              <input class="input_phone personal-info__user-info personal-info__user-info_phone" type="text" placeholder="Телефон" name="user-number" autocomplete="off" maxlength="20">
             </div>
 
             <input class="item-description__button_send-form" type="submit" value="Відправити" disabled>
-            <button class="item-description__button_close-form" type='button'>Зачинити</button>
+            <button class="item-description__close_button" type='button'>Зачинити</button>
 
           </div>
         </form>
@@ -304,8 +374,8 @@
           </div>
         </section>
 
-        <button class="advantages-wrapper__button_mob button_take-credit">Взяти кредит</button>
-        <a class="advantages-wrapper__button_desktop" href="#">Взяти кредит</a>
+        <button class="advantages-wrapper__button button_take-credit">Взяти кредит</button>
+        <!-- <a class="advantages-wrapper__button_desktop" href="#">Взяти кредит</a> -->
       </div>
 
 
@@ -351,7 +421,7 @@
                   Місяць
                 </label>
 
-                <input id="calculator__radio-button-2" class="content__term__text__radio-buttons__button content__term__text__radio-buttons__button-2 radio-button_orange" name="select-term-type" type="radio">
+                <input id="calculator__radio-button-2" class="content__term__text__radio-buttons__button content__term__text__radio-buttons__button-2 radio-button_orange" name="select-term-type" type="radio" checked="">
                 <label for="calculator__radio-button-2" class="content__term__text__radio-buttons__label content__term__text__radio-buttons__label_radio-button-2 radio-button_orange__label">
                   Рік
                 </label>
@@ -387,9 +457,7 @@
                   Бонусів
                 </p>
               </div>
-              <!-- <input class="content__confidence__button" type="submit" value="Взяти кредит під заставу"> -->
-              <a class="content__confidence__button content__confidence__button_desktop" href="#">Взяти кредит під заставу</a>
-              <button class="content__confidence__button content__confidence__button_mob button_take-credit">Взяти кредит під заставу</button>
+              <button class="content__confidence__button button_take-credit">Взяти кредит під заставу</button>
             </div>
 
             <div class="calculator__content__total-value">
@@ -486,8 +554,7 @@
           <div class="assessment-content__text-information">
             <img class="text-information__slogan text-information__slogan" src="images/text-slogan.svg" alt="">
 
-            <a class="text-information__button text-information__button_desktop" href="#">Взяти кредит під заставу</a>
-            <button class="text-information__button text-information__button_mob button_take-credit">
+            <button class="text-information__button button_take-credit">
               Взяти кредит під заставу
             </button>
 

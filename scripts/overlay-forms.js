@@ -17,11 +17,13 @@ window.addEventListener('load', () => {
 
 	let open_item_info_form_btns = document.querySelectorAll('.button_take-credit')
 	for (let i = 0; i < open_item_info_form_btns.length; i++) {
-		open_item_info_form_btns[i].addEventListener('click', () => {showOverlayForm('.item-description-wrapper')})
+		open_item_info_form_btns[i].addEventListener('click', () => {showOverlayForm('.form_item-description-wrapper')})
 	}
 
-	let close_item_info_form_btn = document.querySelector('.item-description__button_close-form')
-	close_item_info_form_btn.addEventListener('click', () => {closeOverlayForm('.item-description-wrapper')})
+	let close_item_info_form_btns = document.querySelectorAll('.item-description__close')
+	for (let i = 0; i < close_item_info_form_btns.length; i++) {
+		close_item_info_form_btns[i].addEventListener('click', () => {closeOverlayForm('.form_item-description-wrapper')})
+	}
 
 	let open_calculator_term_choose_form = document.querySelector('.content__term__mobile-select__button')
 	open_calculator_term_choose_form.addEventListener('click', () => {showOverlayForm('.form_term-choose')})
