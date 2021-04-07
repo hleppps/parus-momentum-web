@@ -2,13 +2,13 @@ let upload_images_container = []
 let files_len = 0
 
 window.addEventListener('load', () => {
+	test()
 	fillItemFormSelect()
 
 	let rate_stars = document.querySelectorAll('.item-rating__option-value')
 	for (let i = 0; i < rate_stars.length; i++) {
 		rate_stars[i].addEventListener('click', changeConditionRate(i))
 	}
-	
 
 	let file_input = document.querySelector('.photos-upload__loading-container')
 	file_input.addEventListener('change', () => {previewFiles(file_input)})
@@ -19,6 +19,19 @@ window.addEventListener('load', () => {
 	filter_function.addEventListener('mouseover', highlightSelectedValue)
 })
 
+function test() {
+	const first_container = document.querySelector(".item-description-wrapper");
+	const second_container = document.querySelector('.form_item-description-wrapper')
+	const template = document.querySelector(".template_item-description-wrapper");
+	const firstClone = template.content.cloneNode(true);
+	first_container.appendChild(firstClone);
+
+	// const secondClone = template.content.cloneNode(true);
+	// second_container.appendChild(secondClone)
+}
+
+
+
 function fillItemFormSelect () {
 	// запрос
 	const values = ['Нерухомість','Транспорт', 'Побутова техніка', 'Электротехніка', 'Украшения', 'Антиквариат', 'Меблі', 'Інструменти', 'Інше', 'Тест']
@@ -27,9 +40,9 @@ function fillItemFormSelect () {
 	for (value of values) {
 		let li = document.createElement('li')
 		li.innerHTML = value
-    li.classList.add('category-selection__option-value')
+	    li.classList.add('category-selection__option-value')
 
-    select.appendChild(li)
+	    select.appendChild(li)
 	}
 }
 
