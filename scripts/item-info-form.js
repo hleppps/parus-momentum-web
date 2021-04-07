@@ -21,11 +21,11 @@ window.addEventListener('load', () => {
 
 function test() {
 	const first_container = document.querySelector(".item-description-wrapper");
-	const second_container = document.querySelector('.form_item-description-wrapper')
 	const template = document.querySelector(".template_item-description-wrapper");
 	const firstClone = template.content.cloneNode(true);
 	first_container.appendChild(firstClone);
 
+	selectizeEventListener()
 	// const secondClone = template.content.cloneNode(true);
 	// second_container.appendChild(secondClone)
 }

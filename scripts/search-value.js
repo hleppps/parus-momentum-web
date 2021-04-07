@@ -49,23 +49,25 @@ function keyControl(e, container) {
     // });
 }
 
-$(".searchable input").focus(function () {
-    $(this).closest(".searchable").find("ul").show();
-    $(this).closest(".searchable").find("ul li").show();
-});
-$(".searchable input").blur(function () {
-    let that = this;
-    setTimeout(function () {
-        $(that).closest(".searchable").find("ul").hide();
-    }, 200);
-});
+function selectizeEventListener() {
+    $(".searchable input").focus(function () {
+        $(this).closest(".searchable").find("ul").show();
+        $(this).closest(".searchable").find("ul li").show();
+    });
+    $(".searchable input").blur(function () {
+        let that = this;
+        setTimeout(function () {
+            $(that).closest(".searchable").find("ul").hide();
+        }, 200);
+    });
 
-$(document).on('click', '.searchable ul li', function () {
-    $(this).closest(".searchable").find("input").val($(this).text()).blur();
-    // onSelect($(this).text())
-});
+    $(document).on('click', '.searchable ul li', function () {
+        $(this).closest(".searchable").find("input").val($(this).text()).blur();
+        // onSelect($(this).text())
+    });
 
-$(".searchable ul li").hover(function () {
-    $(this).closest(".searchable").find("ul li.selected").removeClass("selected");
-    $(this).addClass("selected");
-});
+    $(".searchable ul li").hover(function () {
+        $(this).closest(".searchable").find("ul li.selected").removeClass("selected");
+        $(this).addClass("selected");
+    });
+}

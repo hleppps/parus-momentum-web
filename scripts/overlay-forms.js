@@ -17,12 +17,12 @@ window.addEventListener('load', () => {
 
 	let open_item_info_form_btns = document.querySelectorAll('.button_take-credit')
 	for (let i = 0; i < open_item_info_form_btns.length; i++) {
-		open_item_info_form_btns[i].addEventListener('click', () => {showOverlayForm('.form_item-description-wrapper')})
+		open_item_info_form_btns[i].addEventListener('click', () => {showOverlayForm('.item-description-wrapper')})
 	}
 
 	let close_item_info_form_btns = document.querySelectorAll('.item-description__close')
 	for (let i = 0; i < close_item_info_form_btns.length; i++) {
-		close_item_info_form_btns[i].addEventListener('click', () => {closeOverlayForm('.form_item-description-wrapper')})
+		close_item_info_form_btns[i].addEventListener('click', () => {closeOverlayForm('.item-description-wrapper')})
 	}
 
 	let open_calculator_term_choose_form = document.querySelector('.content__term__mobile-select__button')
@@ -70,13 +70,13 @@ function showOverlayForm(selector, display_type = 'none') {
 	let form = document.querySelector(selector)
 	let body = document.body
 
-	form.style.display = 'flex'
-	// body.style.overflowY = 'hidden'
+	if (selector === '.item-description-wrapper') {
+		form.classList.remove('item-description-form_normal-state')
+		form.classList.add('item-description-form_overlayed-state')
+	}
 
-	// underlay.style.display = 'inherit'
-	// underlay.style.backgroundColor = '#000'
-	// underlay.style.opacity = '.5'
-	// underlay.style.zIndex = '5'
+	form.style.display = 'flex'
+
 	underlay.classList.add('underlay_show-overlay-form')
 	body.classList.add('body_show-overlay-element')
 
@@ -90,14 +90,15 @@ function closeOverlayForm(selector, display_type = 'none') {
 	underlay.removeEventListener('click', closeOverlayForm)
 
 	let form = document.querySelector(selector)
+
+	if (selector === '.item-description-wrapper') {
+		form.classList.remove('item-description-form_overlayed-state')
+		form.classList.add('item-description-form_normal-state')
+	}
+
 	let body = document.body
 	form.style.display = display_type
-	// body.style.overflowY = 'scroll'
 
-	// underlay.style.display = 'none'
-	// underlay.style.zIndex = '1'
-	// underlay.style.backgroundColor = 'transparent'
-	// underlay.style.opacity = '1'
 	underlay.classList.remove('underlay_show-overlay-form')
 	body.classList.remove('body_show-overlay-element')
 
