@@ -2081,8 +2081,8 @@ input:-ms-input-placeholder {color: @color-light-blue;}
 	text-align: center;
 	font-size: 1.25rem;
 	line-height: 1.5rem;
-	font-weight: 400;
-	color: #a5bac7;
+	font-weight: 500;
+	color: @color-dark-blue;
 
 	box-sizing: border-box;
 	background-color: #FFEBE1;
@@ -2242,20 +2242,15 @@ input:-ms-input-placeholder {color: @color-light-blue;}
 	grid-template-columns: 2fr 3fr;
 	row-gap: 12px;
 
-	background-image: url('../images/border-dashed.svg');
-	background-repeat: no-repeat;
-	background-size: 100%;
-	padding: 39px 0px 39px 39px;
+	border: 1px dashed #a8d6e4;
+	border-radius: 20px;
+
+	padding: 25px 0px 25px 35px;
 }
 
 @media screen and (max-width: 1200px) {
 	.calculator__content__total-value {
 	  grid-template-columns: 1fr;
-
-		background-image: none;
-		border: 1px dashed #A8D6E4;
-		border-radius: 20px;
-
 		padding: 15px 34px;
 	}
 }
@@ -2273,6 +2268,17 @@ input:-ms-input-placeholder {color: @color-light-blue;}
 	font-size: 1.25rem;
 	line-height: 1.5rem;
 	color: @color-light-blue;
+}
+
+.content__total-value__text_monthly {
+	font-size: 1.15rem;
+}
+
+.content__total-value__sum_monthly_value {
+	font-size: 1.25rem;
+	line-height: 1.5rem;
+	font-weight: 500;
+	color: @color-dark-blue;
 }
 
 .content__total-value__sum {
@@ -2381,6 +2387,7 @@ input:-ms-input-placeholder {color: @color-light-blue;}
 	text-align: center;
 	width: 308px;
 	box-sizing: border-box;
+	background-color: @color-white;
 }
 
 @media screen and (max-width: 1140px + 20px + 20px) {
@@ -2470,6 +2477,12 @@ input:-ms-input-placeholder {color: @color-light-blue;}
 
 .comparison-table__column_after-active .column__cell_heading {
 	border-right: 1px solid @color-white;
+}
+
+@media screen and (max-width: 800px) {
+	.comparison-table__column_after-active .column__cell_heading {
+		border-right: none;
+	}
 }
 
 .column__cell_heading {

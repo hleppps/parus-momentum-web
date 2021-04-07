@@ -407,7 +407,7 @@
             </div>
 
             <div class="calculator__content__amount-of-money__mobile-select calculator__content__mobile-select">
-              <input class="content__amount-of-money__mobile-select__input" type="text" pattern="[0-9]*" placeholder="Введіть суму:">
+              <input class="content__amount-of-money__mobile-select__input" type="text" pattern="[0-9]*" placeholder="Введіть суму:" maxlength="6">
               <button class="content__amount-of-money__mobile-select__button button_request-call">Залог більш-ніж 50 000 ₴</button>
             </div>
 
@@ -421,7 +421,7 @@
                   Місяць
                 </label>
 
-                <input id="calculator__radio-button-2" class="content__term__text__radio-buttons__button content__term__text__radio-buttons__button-2 radio-button_orange" name="select-term-type" type="radio" checked="">
+                <input id="calculator__radio-button-2" class="content__term__text__radio-buttons__button content__term__text__radio-buttons__button-2 radio-button_orange" name="select-term-type" type="radio">
                 <label for="calculator__radio-button-2" class="content__term__text__radio-buttons__label content__term__text__radio-buttons__label_radio-button-2 radio-button_orange__label">
                   Рік
                 </label>
@@ -441,7 +441,7 @@
             </div>
 
             <div class="calculator__content__term__mobile-select calculator__content__mobile-select">
-              <button class="content__term__mobile-select__button" type="button">Оберіть термін</button>
+              <button class="content__term__mobile-select__button" type="button"></button>
             </div>
 
             <div class="calculator__content__confidence">
@@ -461,6 +461,11 @@
             </div>
 
             <div class="calculator__content__total-value">
+              <p class="content__total-value__text_monthly content__total-value__text">Виплата за 1 місяць:</p>
+              <p class="content__total-value__sum_monthly content__total-value__sum">
+                <span class="content__total-value__sum_monthly_value">0</span>
+                 грн.(₴)
+              </p>
               <p class="content__total-value__text_percent content__total-value__text">% за період:</p>
               <p class="content__total-value__sum_percent content__total-value__sum">
                 <span class="content__total-value__sum_percent_value">0</span>

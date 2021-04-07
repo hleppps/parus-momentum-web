@@ -58,7 +58,7 @@ window.addEventListener('load', () => {
 
 	let inputs = document.querySelectorAll('input, textarea')
 	for (let input of inputs) {
-		input.addEventListener('keydown', () => {checkInputLength(input)})
+		input.addEventListener('keyup', () => {checkInputLength(input)})
 	}
 
 })

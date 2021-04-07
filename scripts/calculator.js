@@ -1,11 +1,11 @@
 window.addEventListener('load', () => {
 
-	fillCalculatorTerms('days')
+	identifyCheckedButton()
 
-	let radio_btn_1 = document.querySelector('.content__term__text__radio-buttons__button-1')
-	radio_btn_1.addEventListener('change', () => {fillCalculatorTerms('days')})
-	let radio_btn_2 = document.querySelector('.content__term__text__radio-buttons__button-2')
-	radio_btn_2.addEventListener('change', () => {fillCalculatorTerms('months')})
+	let radio_btns = document.querySelectorAll('.content__term__text__radio-buttons__button')
+	for (let button of radio_btns) {
+		button.addEventListener('change', identifyCheckedButton)
+	}
 
 	let sum_input = document.querySelector('.content__amount-of-money__mobile-select__input')
 	sum_input.addEventListener('keyup', calculatorMobileCheckInput)
@@ -15,6 +15,14 @@ window.addEventListener('load', () => {
 
 let term_array = []
 let values_object = {}
+
+function identifyCheckedButton() {
+	let radio_btn_1 = document.querySelector('.content__term__text__radio-buttons__button-1')
+	let radio_btn_2 = document.querySelector('.content__term__text__radio-buttons__button-2')
+
+	if (radio_btn_1.checked) {fillCalculatorTerms('days')
+	} else {fillCalculatorTerms('months')}
+}
 
 function fillCalculatorTerms(selector) {
 	let list = document.querySelector('.form_term-choose__list')
@@ -75,17 +83,17 @@ function fillCalculatorTerms(selector) {
 
 	values_object['type'] = selector
 
-	if (window.getComputedStyle(document.querySelector('.calculator__content__term__mobile-select')).display != 'none') {
+	// if (window.getComputedStyle(document.querySelector('.calculator__content__term__mobile-select')).display != 'none') {
+	// } else {
+	// }
 		calculatorMobileCheckInput(selector)
-	} else {
-		loadScrollers(selector)
-	}
+		loadScrollers()
 }
 
 function calculatorMobileCheckInput(selector) {
 	let sum_input = document.querySelector('.content__amount-of-money__mobile-select__input')
 	let term_input = document.querySelector('.content__term__mobile-select__button')
-	term_input.innerHTML = 'Оберіть термін'
+	// term_input.innerHTML = 'Оберіть термін'
 	term_input.classList.remove('content__term__mobile-select__button_selected')
 
 	let radio_buttons = document.querySelectorAll('.form_term-choose__list__option__radio-button')
@@ -99,6 +107,8 @@ function calculatorMobileCheckInput(selector) {
 		values_object['sum'] = sum_input.value
 	} else if (sum_input.value > 50000) {
 		sum_input.value = 50000
+	// }	else if (sum_input.value < 2500) {
+	// 	sum_input.value = 2500
 	}	else {
 		sum_input.value = ''
 		percent_sum.innerHTML = 0
@@ -112,30 +122,48 @@ function calculatorMobileCheckInput(selector) {
 			values_object['term'] = term_array[i].split(' ')[0]
 		}
 	}
+	changeScrollerValue(sum_input.value, 0)
+	changeScrollerValue(term_input.innerHTML.split(' ')[0], 1)
 
-	if (sum_input.value && (term_input.innerHTML != 'Оберіть термін')) {
-		calculateTotalSum()
-	}
+	calculateTotalSum()
 }
 
-function loadScrollers(selector) {
+function changeScrollerValue(value, counter) {
+	const allRanges = document.querySelectorAll(".content__scroller-wrapper");
+  const range = allRanges[counter].querySelector(".content__scroller");
+  const bubble = allRanges[counter].querySelector(".content__scroller-bubble");
+
+  range.value = value
+  setBubble(range, bubble, value);
+}
+
+
+function loadScrollers() {
 	const allRanges = document.querySelectorAll(".content__scroller-wrapper");
 	allRanges.forEach(wrap => {
 	  const range = wrap.querySelector(".content__scroller");
 	  const bubble = wrap.querySelector(".content__scroller-bubble");
 
 	  range.addEventListener("input", () => {
-	    setBubble(range, bubble);
+  		const val = range.value;
+	    setBubble(range, bubble, val);
 	  });
-	  setBubble(range, bubble);
+	  const val = range.value;
+	  setBubble(range, bubble, val);
 	});
 }
 
-function setBubble(range, bubble) {
+
+function setBubble(range, bubble, val) {
   let root = document.documentElement;
   let scroller_range_progress = '--scroller-sum-range-progress'
 
-  const val = range.value;
+  let sum_input = document.querySelector('.content__amount-of-money__mobile-select__input')
+	let term_input = document.querySelector('.content__term__mobile-select__button')
+
+  // const val = range.value;
+	// console.log(range, bubble, val)
+
   const min = range.min ? range.min : 0;
   const max = range.max ? range.max : 100;
   const newVal = Number(((val - min) * 100) / (max - min));
@@ -146,10 +174,14 @@ function setBubble(range, bubble) {
 	if (range.classList.contains('content__amount-of-money__selection__scroller')) {
 		values_object['sum'] = val
 		span.innerHTML = '₴'
+		sum_input.value = val
+
 	} else {
 		scroller_range_progress = '--scroller-term-range-progress'
 		values_object['term'] = val
 		span.innerHTML = term_array[range.value - range.min].split(' ')[1]
+
+		term_input.innerHTML = val + ' ' + term_array[range.value - range.min].split(' ')[1]
 	}
 
 	bubble.innerHTML = val
@@ -178,6 +210,9 @@ function calculateTotalSum() {
   percent_sum.innerHTML = (values_object['sum'] * percent * months).toFixed(1)
   let repayment_sum = document.querySelector('.content__total-value__sum_repayment_value')
   repayment_sum.innerHTML = (Number(values_object['sum']) + Number(percent_sum.innerHTML)).toFixed(1)
+  let monthly_sum = document.querySelector('.content__total-value__sum_monthly_value')
+  monthly_sum.innerHTML = (Number(repayment_sum.innerHTML)/months + Number(percent_sum.innerHTML)/months).toFixed(0)
+
 
 }
 
