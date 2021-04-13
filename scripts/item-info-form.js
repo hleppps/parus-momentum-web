@@ -63,7 +63,6 @@ function changeConditionRate(rate) {
 		let input = document.querySelector('.item-rating__rate')
 		let counter = rate_stars.length - 1
 		while (counter >= 0) {
-		// 	console.log(counter)
 			counter >= rate ? 
 				rate_stars[counter].classList.add('item-rating__option-value_selected') :
 				rate_stars[counter].classList.remove('item-rating__option-value_selected')
@@ -87,7 +86,6 @@ function previewFiles(uploaded_files) {
 
   function readAndPreview(file) {
     if ( /\.(jpe?g|png|tiff)$/i.test(file.name) ) {
-    	// alert('q')
       var reader = new FileReader();
 
       reader.addEventListener("load", function () {
@@ -119,9 +117,10 @@ function imageDrawer(images) {
 
 	cleanContainers()
 
-	amount_of_uploaded_photos.style.display = 'none'
+	// amount_of_uploaded_photos.style.display = 'none'
+	amount_of_uploaded_photos.classList.remove('a-jsAddedText_show')
 	amount_of_uploaded_photos.innerHTML = '+' + (images.length - 4) 
-	amount_of_uploaded_photos.style.right = '6%'
+	// amount_of_uploaded_photos.style.right = '6%'
 
 	for (let index in images) {
 		if ((images.length > 4 && index >= images.length - 4) || (images.length <= 4)) {
@@ -139,23 +138,24 @@ function imageDrawer(images) {
 				added_container.appendChild(image)
 				added_container.classList.add('m-jsAddedImageContainer')
 
-				let close_button = document.createElement('img')
+				let close_button = document.createElement('button')
 			  	close_button.classList.add('a-jsAddedCloseButton')
-			  	close_button.src = 'images/remove-img-btn.svg'
 			  	close_button.onclick = removePhotos(index)
 				added_container.appendChild(close_button)			
 
 
-				сlick_upload_blocks[0].style.display = 'none'
+				// сlick_upload_blocks[0].style.display = 'none'
+				сlick_upload_blocks[0].classList.add('photos-upload__container__photo-block_hide')
 
 				switch (images.length) {
 					case 1:
 						сlick_upload_blocks[1].style.display = 'inherit'
 						сlick_upload_blocks[1].style.borderColor = '#a8d6e4'
-						сlick_upload_blocks[1].style.backgroundImage = 'url(images/upload-photo-active.svg)'
+
+						// сlick_upload_blocks[1].style.backgroundImage = 'url(images/upload-photo-active.svg)'
+						сlick_upload_blocks[1].classList.add('photos-upload__container__photo-block_active')
 
 						photo_upload_block.insertBefore(added_container, сlick_upload_blocks[0]);
-
 						break
 
 					case 2:
@@ -163,14 +163,18 @@ function imageDrawer(images) {
 						photo_upload_block.insertBefore(added_container, сlick_upload_blocks[1]);
 						сlick_upload_blocks[1].style.display = 'none'
 						сlick_upload_blocks[2].style.borderColor = '#a8d6e4'
-						сlick_upload_blocks[2].style.backgroundImage = 'url(images/upload-photo-active.svg)'
 
+						// сlick_upload_blocks[2].style.backgroundImage = 'url(images/upload-photo-active.svg)'
+						сlick_upload_blocks[2].classList.add('photos-upload__container__photo-block_active')
 						break
 
 					default:
 						сlick_upload_blocks[1].style.display = 'none'
 						сlick_upload_blocks[2].style.borderColor = '#a8d6e4'
-						сlick_upload_blocks[2].style.backgroundImage = 'url(images/upload-photo-active.svg)'
+
+						// сlick_upload_blocks[2].style.backgroundImage = 'url(images/upload-photo-active.svg)'
+						сlick_upload_blocks[2].classList.add('photos-upload__container__photo-block_active')
+
 
 						photo_upload_block.appendChild(added_container)
 
@@ -182,11 +186,12 @@ function imageDrawer(images) {
 						}
 
 						if (images.length <= 4) {
-							amount_of_uploaded_photos.display = 'none'
+							// amount_of_uploaded_photos.display = 'none'
+							amount_of_uploaded_photos.classList.remove('a-jsAddedText_show')
 						} else {
-							amount_of_uploaded_photos.style.display = 'inherit'
+							// amount_of_uploaded_photos.style.display = 'inherit'
+							amount_of_uploaded_photos.classList.add('a-jsAddedText_show')
 						}
-
 						break
 				}
   			let photos_container = document.querySelector('.photos-upload__unloading-container')
@@ -208,14 +213,17 @@ function removePhotos(index) {
 
 			imageDrawer(upload_images_container)
 			let сlick_upload_blocks = document.querySelectorAll('.photos-upload__container__photo-block')
-			сlick_upload_blocks[0].style.display = 'inherit'
+			// сlick_upload_blocks[0].style.display = 'inherit'
+			сlick_upload_blocks[0].classList.remove('photos-upload__container__photo-block_hide')
 			сlick_upload_blocks[0].style.borderColor = '#a8d6e4'
-			сlick_upload_blocks[0].style.backgroundImage = 'url(images/upload-photo-active.svg)'
+			// сlick_upload_blocks[0].style.backgroundImage = 'url(images/upload-photo-active.svg)'
 
 
 			for (let i = 1; i <= 2; i++) {
 				сlick_upload_blocks[i].style.borderColor = '#BEE0EB'
-				сlick_upload_blocks[i].style.backgroundImage = 'url(images/upload-photo.svg)'
+				// сlick_upload_blocks[i].style.backgroundImage = 'url(images/upload-photo.svg)'
+				сlick_upload_blocks[i].classList.remove('photos-upload__container__photo-block_active')
+
 			}
 		}		
 }

@@ -4,7 +4,7 @@ window.addEventListener('load', () => {
 	smoothScroll()
 
 	document.querySelector('.header').addEventListener('click', event => {
-    if (event.target.className === 'header__mob__button_pop-up-menu') {
+    if (event.target.classList.contains('header__mob__button_pop-up-menu')) {
       popUpMenu()
     } else if (event.target.classList.contains('pop-up-menu__contacts_sub__button')) {
     	buttonClosePopUpMenu()
@@ -55,14 +55,18 @@ function popUpMenu () {
 }
 
 function openPopUpMenu (menu, btn) {
-	btn.style.backgroundImage = 'url(images/pop-up-menu-btn-close.svg)'
+	// btn.style.backgroundImage = 'url(images/pop-up-menu-btn-close.svg)'
+	btn.classList.add('header__mob__button_pop-up-menu_close')
+
 	menu.style.transform = 'none'
 
 	is_menu_open = true
 }
 
 function closePopUpMenu (menu, btn) {
-	btn.style.backgroundImage = 'url(images/pop-up-menu-btn-open.svg)'
+	// btn.style.backgroundImage = 'url(images/pop-up-menu-btn-open.svg)'
+	btn.classList.remove('header__mob__button_pop-up-menu_close')
+
 	menu.style.transform = 'translate(120%, 0)'
 
 	is_menu_open = false
