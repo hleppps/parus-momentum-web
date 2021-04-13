@@ -927,6 +927,7 @@ input:-ms-input-placeholder {
   display: none;
 }
 .photos-upload__container__photo-block_active {
+  border-color: #a8d6e4;
   background-image: url(../images/upload-photo-active.svg);
 }
 .photos-upload__container__photo-block:first-child {

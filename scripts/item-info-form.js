@@ -2,8 +2,10 @@ let upload_images_container = []
 let files_len = 0
 
 window.addEventListener('load', () => {
-	test()
+	loadItemForm()
 	fillItemFormSelect()
+
+	let telegram_buttons = document.querySelectorAll('.button_telegram')
 
 	let rate_stars = document.querySelectorAll('.item-rating__option-value')
 	for (let i = 0; i < rate_stars.length; i++) {
@@ -19,15 +21,13 @@ window.addEventListener('load', () => {
 	filter_function.addEventListener('mouseover', highlightSelectedValue)
 })
 
-function test() {
+function loadItemForm() {
 	const first_container = document.querySelector(".item-description-wrapper");
 	const template = document.querySelector(".template_item-description-wrapper");
 	const firstClone = template.content.cloneNode(true);
 	first_container.appendChild(firstClone);
 
 	selectizeEventListener()
-	// const secondClone = template.content.cloneNode(true);
-	// second_container.appendChild(secondClone)
 }
 
 
@@ -149,8 +149,10 @@ function imageDrawer(images) {
 
 				switch (images.length) {
 					case 1:
-						сlick_upload_blocks[1].style.display = 'inherit'
-						сlick_upload_blocks[1].style.borderColor = '#a8d6e4'
+						сlick_upload_blocks[1].classList.remove('photos-upload__container__photo-block_hide')
+						// сlick_upload_blocks[1].style.display = 'inherit'
+
+						// сlick_upload_blocks[1].style.borderColor = '#a8d6e4'
 
 						// сlick_upload_blocks[1].style.backgroundImage = 'url(images/upload-photo-active.svg)'
 						сlick_upload_blocks[1].classList.add('photos-upload__container__photo-block_active')
@@ -161,16 +163,21 @@ function imageDrawer(images) {
 					case 2:
 						photo_upload_block.insertBefore(added_container, сlick_upload_blocks[0]);
 						photo_upload_block.insertBefore(added_container, сlick_upload_blocks[1]);
-						сlick_upload_blocks[1].style.display = 'none'
-						сlick_upload_blocks[2].style.borderColor = '#a8d6e4'
+
+						сlick_upload_blocks[1].classList.add('photos-upload__container__photo-block_hide')
+						// сlick_upload_blocks[1].style.display = 'none'
+
+						// сlick_upload_blocks[2].style.borderColor = '#a8d6e4'
 
 						// сlick_upload_blocks[2].style.backgroundImage = 'url(images/upload-photo-active.svg)'
 						сlick_upload_blocks[2].classList.add('photos-upload__container__photo-block_active')
 						break
 
 					default:
-						сlick_upload_blocks[1].style.display = 'none'
-						сlick_upload_blocks[2].style.borderColor = '#a8d6e4'
+						// сlick_upload_blocks[1].style.display = 'none'\
+						сlick_upload_blocks[1].classList.add('photos-upload__container__photo-block_hide')
+
+						// сlick_upload_blocks[2].style.borderColor = '#a8d6e4'
 
 						// сlick_upload_blocks[2].style.backgroundImage = 'url(images/upload-photo-active.svg)'
 						сlick_upload_blocks[2].classList.add('photos-upload__container__photo-block_active')
@@ -213,14 +220,16 @@ function removePhotos(index) {
 
 			imageDrawer(upload_images_container)
 			let сlick_upload_blocks = document.querySelectorAll('.photos-upload__container__photo-block')
+
 			// сlick_upload_blocks[0].style.display = 'inherit'
 			сlick_upload_blocks[0].classList.remove('photos-upload__container__photo-block_hide')
-			сlick_upload_blocks[0].style.borderColor = '#a8d6e4'
+
+			// сlick_upload_blocks[0].style.borderColor = '#a8d6e4'
 			// сlick_upload_blocks[0].style.backgroundImage = 'url(images/upload-photo-active.svg)'
 
 
 			for (let i = 1; i <= 2; i++) {
-				сlick_upload_blocks[i].style.borderColor = '#BEE0EB'
+				// сlick_upload_blocks[i].style.borderColor = '#BEE0EB'
 				// сlick_upload_blocks[i].style.backgroundImage = 'url(images/upload-photo.svg)'
 				сlick_upload_blocks[i].classList.remove('photos-upload__container__photo-block_active')
 
