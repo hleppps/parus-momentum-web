@@ -2,7 +2,26 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable: no">    
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable: no">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    
+    <script src="https://cdn.jsdelivr.net/gh/thealphadollar/vanilla-i18n/src/vanilla-i18n.min.js"></script>
+    <script>
+      const languages = [
+        "UKR"
+      ];
+      new vanilla_i18n (
+        languages,
+        opts = {
+          path: "/assets/vanilla-i18n",
+          debug: false,
+          i18n_attr_name: "vanilla-i18n",
+          toggler_id: "vanilla-i18n-toggler",
+          default_language: languages[0],
+        }
+      ).run();
+    </script>
+
     <title>Parus - мережа ломбардiв</title>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -32,31 +51,51 @@
 
     <form class="form_call-request">
       <div class="form_call-request__header">
-        <p class="form_call-request__header__heading">Замовити дзвінок</p>
+        <p class="form_call-request__header__heading">
+          <i18n vanilla-i18n="form_call-request__header__heading">
+            Замовити дзвінок
+          </i18n>
+        </p>
       </div>
       <div class="form_call-request__main">
         <p class="form_call-request__main__text_info">
-          Вкажіть свій контактний телефон, і ми зателефонуємо Вам протягом 5 хвилин
+          <i18n vanilla-i18n="form_call-request__main__text_info">
+            Вкажіть свій контактний телефон, і ми зателефонуємо Вам протягом 5 хвилин
+          </i18n>
         </p>
         <input class="form_call-request__main__input form_call-request__main__input_name" type="text" name="user-name" placeholder="Ім'я" autocomplete="off" maxlength="200">
         <input class="form_call-request__main__input form_call-request__main__input_phone input_phone" type="text" name="user-number" placeholder="Телефон" maxlength="20">
         <div class="form_call-request__main__checkbox-wrapper">
           <input class="form_call-request__main__checkbox" id="confirmDataProcessing" type="checkbox" checked="true">
           <div class="form_call-request__main__checkbox__text_confirmation" for="confirmDataProcessing">
-            Погоджуюсь на 
-            <span class="form_call-request__main__checkbox__text_confirmation__highlighted">обробку даних</span>
+            <i18n vanilla-i18n="form_call-request__main__checkbox__text_confirmation">
+              Погоджуюсь на 
+            </i18n>
+            <span class="form_call-request__main__checkbox__text_confirmation__highlighted">
+              <i18n vanilla-i18n="form_call-request__main__checkbox__text_confirmation__highlighted">
+                обробку даних
+              </i18n>
+            </span>
           </div>
         </div>
       </div>
       <input class="form_call-request__input_submit" type="submit" value="Відправити" disabled>
-      <button class="form_call-request__close_button form_call-request__close" type='button'>Зачинити</button>
+      <button class="form_call-request__close_button form_call-request__close" type='button'>
+        <i18n vanilla-i18n="form_call-request__close_button">
+          Зачинити
+        </i18n>
+      </button>
       <img class="form_call-request__close_image form_call-request__close" src="images/close-callback-form.svg" alt="">
     </form>
 
 
     <template class="template_item-description-wrapper">
       <div class="item-description__header">
-        <p class="item-description__heading">Дані про товар</p>
+        <p class="item-description__heading">
+          <i18n vanilla-i18n="item-description__heading">
+            Дані про товар
+          </i18n>
+        </p>
       </div>
       <div class="item-description__main">
 
@@ -72,7 +111,11 @@
         </div>
 
         <div class="item-description__item-rating">
-          <p class="item-rating__description">Стан товару: </p>
+          <p class="item-rating__description">
+            <i18n vanilla-i18n="item-rating__description">
+              Стан товару:
+            </i18n>
+          </p>
           <input class="item-rating__rate" type="text" name="item-codition-rate">
           <ul class="item-rating__options-container">
             <li class="item-rating__option-value"></li>
@@ -86,8 +129,16 @@
         <div class="item-description__photos-upload">
 
           <div class="photos-upload__description">
-            <p class="photos-upload__description_basic">Фото товару:</p>
-            <p class="photos-upload__description_sub">(jpg,png,tiff)</p>
+            <p class="photos-upload__description_basic">
+              <i18n vanilla-i18n="photos-upload__description_basic">
+                Фото товару:
+              </i18n>
+            </p>
+            <p class="photos-upload__description_sub">
+              <i18n vanilla-i18n="photos-upload__description_sub">
+                (jpg,,jpeg,png,tiff)
+              </i18n>
+            </p>
           </div>
 
           <div class="photos-upload__container" for="file">
@@ -110,7 +161,7 @@
             </div>
           </div>
 
-          <input class="photos-upload__loading-container" type="file" id="file" multiple>
+          <input class="photos-upload__loading-container" type="file" id="file" accept=".jpg, .jpeg, .png" multiple>
           <input class="photos-upload__unloading-container" type="text" name="item-photos" value="">
         </div>
 
@@ -121,7 +172,11 @@
         </div>
 
         <input class="item-description__button_send-form" type="submit" value="Відправити" disabled>
-        <button class="item-description__close_button item-description__close" type='button'>Зачинити</button>
+        <button class="item-description__close_button item-description__close" type='button'>
+          <i18n vanilla-i18n="item-description__close_button">
+            Зачинити
+          </i18n>
+        </button>
         <img class="item-description__close_image item-description__close" src="images/close-callback-form.svg" alt="">
         
 
@@ -130,7 +185,11 @@
 
 
     <div class="form_term-choose">
-      <h1 class="form_term-choose__header">Оберіть термін</h1>
+      <h1 class="form_term-choose__header">
+        <i18n vanilla-i18n="form_term-choose__header">
+          Оберіть термін
+        </i18n>
+      </h1>
 
       <ul class="form_term-choose__list">
         <!-- <li class="form_term-choose__list__option">
@@ -142,8 +201,16 @@
       </ul>
 
       <div class="form_term-choose__footer">
-        <button class="form_term-choose__footer__button_close">Зачинити</button>
-        <button class="form_term-choose__footer__button_choose">Обрати</button>
+        <button class="form_term-choose__footer__button_close">
+          <i18n vanilla-i18n="form_term-choose__footer__button_close">
+            Зачинити
+          </i18n>
+        </button>
+        <button class="form_term-choose__footer__button_choose">
+          <i18n vanilla-i18n="form_term-choose__footer__button_choose">
+            Обрати
+          </i18n>
+        </button>
       </div>
     </div>
 
@@ -158,11 +225,31 @@
         </a>
 
         <div class="header__desktop">
-          <a class="header__desktop__link" href="#acnhor_advantages">Про нас</a>
-          <a class="header__desktop__link" href="#acnhor_calculator">Послуги</a>
-          <a class="header__desktop__link" href="#acnhor_comparison">Умови кредитування</a>
-          <a class="header__desktop__link" href="#acnhor_contacts">Контакти</a>
-          <button class="header__desktop__button button_request-call">Запитати</button>
+          <a class="header__desktop__link" href="#acnhor_advantages">
+            <i18n vanilla-i18n="header__desktop__link_1">
+              Про нас
+            </i18n>
+          </a>
+          <a class="header__desktop__link" href="#acnhor_calculator">
+            <i18n vanilla-i18n="header__desktop__link_2">
+              Послуги
+            </i18n>
+          </a>
+          <a class="header__desktop__link" href="#acnhor_comparison">
+            <i18n vanilla-i18n="header__desktop__link_3">
+              Умови кредитування
+            </i18n>
+          </a>
+          <a class="header__desktop__link" href="#acnhor_contacts">
+            <i18n vanilla-i18n="header__desktop__link_4">
+              Контакти
+            </i18n>
+          </a>
+          <button class="header__desktop__button button_request-call">
+            <i18n vanilla-i18n="header__desktop__button">
+              Запитати
+            </i18n>
+          </button>
         </div>
 
         <div class="header__mob">
@@ -174,17 +261,45 @@
 
           <div class="header_mob__pop-up-menu">
             <nav class="pop-up-menu__nav">
-              <a class="pop-up-menu__nav__link" href="#acnhor_advantages">Про нас</a>
-              <a class="pop-up-menu__nav__link" href="#acnhor_calculator">Послуги</a>
-              <a class="pop-up-menu__nav__link" href="#acnhor_comparison">Умови кредитування</a>
-              <a class="pop-up-menu__nav__link" href="#acnhor_contacts">Контакти</a>
+              <a class="pop-up-menu__nav__link" href="#acnhor_advantages">
+                <i18n vanilla-i18n="pop-up-menu__nav__link_1">
+                  Про нас
+                </i18n>
+              </a>
+              <a class="pop-up-menu__nav__link" href="#acnhor_calculator">
+                <i18n vanilla-i18n="pop-up-menu__nav__link_2">
+                  Послуги
+                </i18n>
+              </a>
+              <a class="pop-up-menu__nav__link" href="#acnhor_comparison">
+                <i18n vanilla-i18n="pop-up-menu__nav__link_3">
+                  Умови кредитування
+                </i18n>
+              </a>
+              <a class="pop-up-menu__nav__link" href="#acnhor_contacts">
+                <i18n vanilla-i18n="pop-up-menu__nav__link_4">
+                  Контакти
+                </i18n>
+              </a>
             </nav>
 
             <div class="pop-up-menu__contacts">
-              <p class="pop-up-menu__contacts__address">м. Київ,  вул. Рибальська 2</p>
+              <p class="pop-up-menu__contacts__address">
+                <i18n vanilla-i18n="pop-up-menu__contacts__address">
+                  м. Київ,  вул. Рибальська 2
+                </i18n>
+              </p>
               <div class="pop-up-menu__contacts_sub">
-                <a class="pop-up-menu__contacts_sub__phone" href="tel:+380504625650">050 462 56 50</a>
-                <button class="pop-up-menu__contacts_sub__button button_request-call">Запитати</button>
+                <a class="pop-up-menu__contacts_sub__phone" href="tel:+380504625650">
+                  <i18n vanilla-i18n="pop-up-menu__contacts_sub__phone">
+                    050 462 56 50
+                  </i18n>
+                </a>
+                <button class="pop-up-menu__contacts_sub__button button_request-call">
+                  <i18n vanilla-i18n="pop-up-menu__contacts_sub__button">
+                    Запитати
+                  </i18n>
+                </button>
               </div>
             </div>
             <div class="pop-up-menu__social-networks">
@@ -208,17 +323,42 @@
         <section class="product-data__info-block">
           <img class="product-data__info-block__logo_desktop" src="images/text-logo-desktop.svg" alt="Company Logo">
           <img class="product-data__info-block__logo_mob" src="images/text-logo-mob.svg" alt="Company Logo">
-          <p class="product-data__info-block__heading">З турботою про Вас</p>
-          <p class="product-data__info-block__text">Слідкуй за статусом свого товару</p>
+
+
+          <!-- <div> <i18n vanilla-i18n="form.name"></i18n> </div> -->
+
+
+          <p class="product-data__info-block__heading">
+            <i18n vanilla-i18n="product-data__info-block__heading">
+              З турботою про Вас
+            </i18n>
+          </p>
+          <p class="product-data__info-block__text">
+            <i18n vanilla-i18n="product-data__info-block__text">
+              Слідкуй за статусом свого товару
+            </i18n>
+          </p>
           <button class="product-data__info-block__button" onclick="window.open('https://t.me/parus_dev_bot','_blank')" value="Go to Bot">
             <img src="images/telegram-logo-2.svg" alt="Telegram Logo">
             <div class="info-block__button__text-block">
-              <p class="info-block__button__text-block__text_basic">ЗАВЖДИ ПОРЯД</p>
-              <p class="info-block__button__text-block__text_sub">TELEGRAM BOT</p>
+              <p class="info-block__button__text-block__text_basic">
+                <i18n vanilla-i18n="info-block__button__text-block__text_basic">
+                  ЗАВЖДИ ПОРЯД
+                </i18n>
+              </p>
+              <p class="info-block__button__text-block__text_sub">
+                <i18n vanilla-i18n="info-block__button__text-block__text_sub">
+                  TELEGRAM BOT
+                </i18n>
+              </p>
             </div>
           </button>
           <img class="product-data__info-block__text-banner" src="images/text-banner-1.svg" alt="">
-          <button class="product-data__info-block__button_call button_request-call">Запитати</button>
+          <button class="product-data__info-block__button_call button_request-call">
+            <i18n vanilla-i18n="product-data__info-block__button_call">
+              Запитати
+            </i18n>
+          </button>
         </section>
 
         <img class="product-data__image_arrow a-dottedArrowImage" src="images/dotted-arrow.svg" alt="Arrow">
@@ -230,7 +370,11 @@
       </div>
 
       <div class="main__advantages-wrapper" id="acnhor_advantages">
-        <h1 class="advantages-wrapper__heading">Переваги які ти отримаєш</h1>
+        <h1 class="advantages-wrapper__heading">
+          <i18n vanilla-i18n="advantages-wrapper__heading">
+            Переваги які ти отримаєш
+          </i18n>
+        </h1>
 
         <section class="advantages-list">   
           <div class="advantage-card">
@@ -238,10 +382,15 @@
               class="advantage-card__image"
               src="images/benefit-image-1.svg"
             />
-            <h2 class="advantage-card__heading">Швидка оцінка</h2>
+            <h2 class="advantage-card__heading">
+              <i18n vanilla-i18n="advantage-card__heading_1">
+                Швидка оцінка
+              </i18n>
+            </h2>
             <p class="advantage-card__description">
-              Lorem Ipsum используют потому, что тот обеспечивает более или менее
-              стандартное
+              <i18n vanilla-i18n="advantage-card__description_1">
+                Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное
+              </i18n>
             </p>
           </div>
 
@@ -250,10 +399,16 @@
               class="advantage-card__image"
               src="images/benefit-image-2.svg"
             />
-            <h2 class="advantage-card__heading">Оформлення за 10 хвилин</h2>
+            <h2 class="advantage-card__heading">
+              <i18n vanilla-i18n="advantage-card__heading_2">
+                Оформлення за 10 хвилин
+              </i18n>
+            </h2>
             <p class="advantage-card__description">
-              Lorem Ipsum используют потому, что тот обеспечивает более или менее
-              стандартное
+              <i18n vanilla-i18n="advantage-card__description_2">
+                Lorem Ipsum используют потому, что тот обеспечивает более или менее
+                стандартное
+              </i18n>
             </p>
           </div>
 
@@ -262,10 +417,16 @@
               class="advantage-card__image"
               src="images/benefit-image-3.svg"
             />
-            <h2 class="advantage-card__heading">Не потрібні довідки</h2>
+            <h2 class="advantage-card__heading">
+              <i18n vanilla-i18n="advantage-card__heading_3">
+                Не потрібні довідки
+              </i18n>
+            </h2>
             <p class="advantage-card__description">
-              Lorem Ipsum используют потому, что тот обеспечивает более или менее
-              стандартное
+              <i18n vanilla-i18n="advantage-card__description_3">
+                Lorem Ipsum используют потому, что тот обеспечивает более или менее
+                стандартное
+              </i18n>
             </p>
           </div>
 
@@ -274,10 +435,16 @@
               class="advantage-card__image"
               src="images/benefit-image-4.svg"
             />
-            <h2 class="advantage-card__heading">Миттевий викуп</h2>
+            <h2 class="advantage-card__heading">
+              <i18n vanilla-i18n="advantage-card__heading_4">
+                Миттевий викуп
+              </i18n>
+            </h2>
             <p class="advantage-card__description">
-              Lorem Ipsum используют потому, что тот обеспечивает более или менее
-              стандартное
+              <i18n vanilla-i18n="advantage-card__description_4">
+                Lorem Ipsum используют потому, что тот обеспечивает более или менее
+                стандартное
+              </i18n>
             </p>
           </div>
 
@@ -286,10 +453,16 @@
               class="advantage-card__image"
               src="images/benefit-image-5.svg"
             />
-            <h2 class="advantage-card__heading">Гарантований кредит</h2>
+            <h2 class="advantage-card__heading">
+              <i18n vanilla-i18n="advantage-card__heading_5">
+                Гарантований кредит
+              </i18n>
+            </h2>
             <p class="advantage-card__description">
-              Lorem Ipsum используют потому, что тот обеспечивает более или менее
-              стандартное
+              <i18n vanilla-i18n="advantage-card__description_5">
+                Lorem Ipsum используют потому, что тот обеспечивает более или менее
+                стандартное
+              </i18n>
             </p>
           </div>
 
@@ -298,15 +471,25 @@
               class="advantage-card__image"
               src="images/benefit-image-6.svg"
             />
-            <h2 class="advantage-card__heading">Індивідуальний підхід</h2>
+            <h2 class="advantage-card__heading">
+              <i18n vanilla-i18n="advantage-card__heading_6">
+                Індивідуальний підхід
+              </i18n>
+            </h2>
             <p class="advantage-card__description">
-              Lorem Ipsum используют потому, что тот обеспечивает более или менее
-              стандартное
+              <i18n vanilla-i18n="advantage-card__description_6">
+                Lorem Ipsum используют потому, что тот обеспечивает более или менее
+                стандартное
+              </i18n>
             </p>
           </div>
         </section>
 
-        <button class="advantages-wrapper__button button_take-credit">Взяти кредит</button>
+        <button class="advantages-wrapper__button button_take-credit">
+          <i18n vanilla-i18n="advantages-wrapper__button">
+            Взяти кредит
+          </i18n>
+        </button>
         <!-- <a class="advantages-wrapper__button_desktop" href="#">Взяти кредит</a> -->
       </div>
 
@@ -315,14 +498,24 @@
 
       <div class="main__calculator-wrapper" id="acnhor_calculator">
         <div class="main__calculator">
-          <h1 class="main__calculator__heading">КАЛЬКУЛЯТОР КРЕДИТУ ПІД ЗАСТАВУ</h1>
+          <h1 class="main__calculator__heading">
+            <i18n vanilla-i18n="main__calculator__heading">
+              КАЛЬКУЛЯТОР КРЕДИТУ ПІД ЗАСТАВУ
+            </i18n>
+          </h1>
 
           <div class="main__calculator__content">
 
             <div class="calculator__content__amount-of-money__text">
-              <h2 class="content__amount-of-money__text__heading content__heading">Бажана сума:</h2>
+              <h2 class="content__amount-of-money__text__heading content__heading">
+                <i18n vanilla-i18n="content__amount-of-money__text__heading">
+                  Бажана сума:
+                </i18n>
+              </h2>
               <p class="content__amount-of-money__text__description">
-                (Не більше нiж 80% від нашої оцінки)
+                <i18n vanilla-i18n="content__amount-of-money__text__description">
+                  (Не більше нiж 80% від нашої оцінки)
+                </i18n>
               </p>
             </div>
 
@@ -330,32 +523,56 @@
               <div class="content__amount-of-money__selection__scroller-wrapper content__scroller-wrapper">
                 <input class="content__amount-of-money__selection__scroller content__scroller" type="range" min="2500" max="50000" step="100">
                 <output class="content__amount-of-money__selection__scroller-bubble content__scroller-bubble"></output>
-                <button class="content__amount-of-money__selection__button button_request-call">Залог більш-ніж 50 000 ₴</button>
+                <button class="content__amount-of-money__selection__button button_request-call">
+                  <i18n vanilla-i18n="content__amount-of-money__selection__button">
+                    Залог більш-ніж 50 000 ₴
+                  </i18n>
+                </button>
               </div>
               <div class="content__amount-of-money__selection__critical-values content__critical-values">
-                <span class="content__amount-of-money__selection__critical-values_min">2 500 грн.</span>
-                <span class="content__amount-of-money__selection__critical-values_max">50 000 грн.</span>
+                <span class="content__amount-of-money__selection__critical-values_min">
+                  <i18n vanilla-i18n="content__amount-of-money__selection__critical-values_min">
+                    2 500 грн.
+                  </i18n>
+                </span>
+                <span class="content__amount-of-money__selection__critical-values_max">
+                  <i18n vanilla-i18n="content__amount-of-money__selection__critical-values_max">
+                    50 000 грн.
+                  </i18n>
+                </span>
               </div>
             </div>
 
             <div class="calculator__content__amount-of-money__mobile-select calculator__content__mobile-select">
               <input class="content__amount-of-money__mobile-select__input" type="text" pattern="[0-9]*" placeholder="Введіть суму:" maxlength="6">
-              <button class="content__amount-of-money__mobile-select__button button_request-call">Залог більш-ніж 50 000 ₴</button>
+              <button class="content__amount-of-money__mobile-select__button button_request-call">
+                <i18n vanilla-i18n="content__amount-of-money__mobile-select__button">
+                  Залог більш-ніж 50 000 ₴
+                </i18n>
+              </button>
             </div>
 
 
             <div class="calculator__content__term">
-              <h2 class="content__term__text__heading content__heading">Строк:</h2>
+              <h2 class="content__term__text__heading content__heading">
+                <i18n vanilla-i18n="content__term__text__heading">
+                  Строк:
+                </i18n>
+              </h2>
               <div class="content__term__text__radio-buttons">
 
                 <input id="calculator__radio-button-1" class="content__term__text__radio-buttons__button content__term__text__radio-buttons__button-1 radio-button_orange" name="select-term-type" type="radio" checked="">
                 <label for="calculator__radio-button-1" class="content__term__text__radio-buttons__label content__term__text__radio-buttons__label_radio-button-1 radio-button_orange__label">
-                  Місяць
+                  <i18n vanilla-i18n="content__term__text__radio-buttons__label_radio-button-1">
+                    Місяць
+                  </i18n>
                 </label>
 
                 <input id="calculator__radio-button-2" class="content__term__text__radio-buttons__button content__term__text__radio-buttons__button-2 radio-button_orange" name="select-term-type" type="radio">
                 <label for="calculator__radio-button-2" class="content__term__text__radio-buttons__label content__term__text__radio-buttons__label_radio-button-2 radio-button_orange__label">
-                  Рік
+                  <i18n vanilla-i18n="content__term__text__radio-buttons__label_radio-button-2">
+                    Рік
+                  </i18n>
                 </label>
 
               </div>
@@ -367,8 +584,16 @@
                 <output class="content__term__selection__scroller-bubble content__scroller-bubble"></output> 
               </div>
               <div class="content__term__selection__critical-values content__critical-values">
-                <span class="content__term__selection__critical-values_min">5 діб</span>
-                <span class="content__term__selection__critical-values_max">30 діб</span>
+                <span class="content__term__selection__critical-values_min">
+                  <i18n vanilla-i18n="content__term__selection__critical-values_min">
+                    5 діб
+                  </i18n>
+                </span>
+                <span class="content__term__selection__critical-values_max">
+                  <i18n vanilla-i18n="content__term__selection__critical-values_max">
+                    30 діб
+                  </i18n>
+                </span>
               </div>
             </div>
 
@@ -379,34 +604,78 @@
             <div class="calculator__content__confidence">
               <div class="content__confidence__text">
                 <h2 class="content__confidence__text__heading content__heading">
-                  Кредит довіри:
+                  <i18n vanilla-i18n="content__confidence__text__heading">
+                    Кредит довіри:
+                  </i18n>
                   <div class="content__confidence__text__heading__info">
-                    Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное Lorem Ipsum используют потому, что тот
+                    <i18n vanilla-i18n="content__confidence__text__heading__info">
+                      Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное Lorem Ipsum используют потому, что тот
+                    </i18n>
                   </div>
                 </h2>
                 <p class="content__confidence__text__description">
-                  <span class="content__confidence__text__description_highlighted">+0</span>
-                  Бонусів
+                  <span class="content__confidence__text__description_highlighted">
+                    <i18n vanilla-i18n="content__confidence__text__description_highlighted">
+                      +0
+                    </i18n>
+                  </span>
+                  <i18n vanilla-i18n="content__confidence__text__description">
+                    Бонусів
+                  </i18n>
                 </p>
               </div>
-              <button class="content__confidence__button button_take-credit">Взяти кредит під заставу</button>
+              <button class="content__confidence__button button_take-credit">
+                <i18n vanilla-i18n="content__confidence__button button_take-credit">
+                  Взяти кредит під заставу
+                </i18n>
+              </button>
             </div>
 
             <div class="calculator__content__total-value">
-              <p class="content__total-value__text_monthly content__total-value__text">Виплата за 1 місяць:</p>
+              <p class="content__total-value__text_monthly content__total-value__text">
+                <i18n vanilla-i18n="content__total-value__text_monthly">
+                  Виплата за 1 місяць:
+                </i18n>
+              </p>
               <p class="content__total-value__sum_monthly content__total-value__sum">
-                <span class="content__total-value__sum_monthly_value">0</span>
-                 грн.(₴)
+                <span class="content__total-value__sum_monthly_value">
+                  <i18n vanilla-i18n="content__total-value__sum_monthly_value">
+                    0
+                  </i18n>
+                </span>
+                <i18n vanilla-i18n="content__total-value__sum_monthly">
+                  грн.(₴)
+                </i18n>
               </p>
-              <p class="content__total-value__text_percent content__total-value__text">% за період:</p>
+              <p class="content__total-value__text_percent content__total-value__text">
+                <i18n vanilla-i18n="content__total-value__text_percent">
+                  % за період:
+                </i18n>
+              </p>
               <p class="content__total-value__sum_percent content__total-value__sum">
-                <span class="content__total-value__sum_percent_value">0</span>
-                 грн.(₴)
+                <span class="content__total-value__sum_percent_value">
+                  <i18n vanilla-i18n="content__total-value__sum_percent_value">
+                    0
+                  </i18n>
+                </span>
+                <i18n vanilla-i18n="content__total-value__sum_percent">
+                  грн.(₴)
+                </i18n>
               </p>
-              <p class="content__total-value__text_repayment content__total-value__text">Сума погашення:</p>
+              <p class="content__total-value__text_repayment content__total-value__text">
+                <i18n vanilla-i18n="content__total-value__text_repayment">
+                  Сума погашення:
+                </i18n>
+              </p>
               <p class="content__total-value__sum_repayment content__total-value__sum">
-                <span class="content__total-value__sum_repayment_value">0</span>
-                 грн.(₴)
+                <span class="content__total-value__sum_repayment_value">
+                  <i18n vanilla-i18n="content__total-value__sum_repayment_value">
+                    0
+                  </i18n>
+                </span>
+                <i18n vanilla-i18n="content__total-value__sum_repayment">
+                  грн.(₴)
+                </i18n>
                </p>
             </div>
 
@@ -421,16 +690,36 @@
 
 
       <div class="main__comparison-wrapper" id="acnhor_comparison">
-        <h1 class="comparison__heading">Співвідношення ломбардів</h1>
+        <h1 class="comparison__heading">
+          <i18n vanilla-i18n="comparison__heading">
+            Співвідношення ломбардів
+          </i18n>
+        </h1>
 
         <div class="comparison__comparison-table">
           <div class="comparison-table__column comparison-table__column_headlines">
             <div class="column__cell_heading"></div>
             <div class="column_headlines__content column__content">
-              <div class="column__content__cell column__content__cell_time">Час:</div>
-              <div class="column__content__cell column__content__cell_paperwork">Оформлення:</div>
-              <div class="column__content__cell column__content__cell_sending">Відправка:</div>
-              <div class="column__content__cell column__content__cell_benefit">Вигода:</div>
+              <div class="column__content__cell column__content__cell_time">
+                <i18n vanilla-i18n="column_headlines__content__cell_time">
+                  Час:
+                </i18n>
+              </div>
+              <div class="column__content__cell column__content__cell_paperwork">
+                <i18n vanilla-i18n="column_headlines__content__cell_paperwork">
+                  Оформлення:
+                </i18n>
+              </div>
+              <div class="column__content__cell column__content__cell_sending">
+                <i18n vanilla-i18n="column_headlines__content__cell_sending">
+                  Відправка:
+                </i18n>
+              </div>
+              <div class="column__content__cell column__content__cell_benefit">
+                <i18n vanilla-i18n="column_headlines__content__cell_benefit">
+                  Вигода:
+                </i18n>
+              </div>
             </div>
           </div>
 
@@ -439,12 +728,32 @@
               <img class="column__cell_heading__image" src="images/img-logo-desktop.svg" alt="">
             </div>
             <div class="column-active__content column__content">
-              <div class="column__content__cell column__content__cell_time">Від 10 хвилин</div>
-              <div class="column__content__cell column__content__cell_paperwork">Швидко без різних паперів</div>
-              <div class="column__content__cell column__content__cell_sending">Ми приїдемо до вас</div>
-              <div class="column__content__cell column__content__cell_benefit">Є можливість викупу</div>
+              <div class="column__content__cell column__content__cell_time">
+                <i18n vanilla-i18n="column_active__content__cell_time">
+                  Від 10 хвилин
+                </i18n>
+              </div>
+              <div class="column__content__cell column__content__cell_paperwork">
+                <i18n vanilla-i18n="column_active__content__cell_paperwork">
+                  Швидко без різних паперів
+                </i18n>
+              </div>
+              <div class="column__content__cell column__content__cell_sending">
+                <i18n vanilla-i18n="column_active__content__cell_sending">
+                  Ми приїдемо до вас
+                </i18n>
+              </div>
+              <div class="column__content__cell column__content__cell_benefit">
+                <i18n vanilla-i18n="column_active__content__cell_benefit">
+                  Є можливість викупу
+                </i18n>
+              </div>
             </div>
-            <button class="column-active__button button_request-call">Зв'язатись</button>
+            <button class="column-active__button button_request-call">
+              <i18n vanilla-i18n="column-active__button">
+                Зв'язатись
+              </i18n>
+            </button>
           </div>
 
           <div class="comparison-table__column comparison-table__column_after-active">
@@ -452,14 +761,40 @@
               <img class="column__cell_heading__image" src="images/olx-logo.svg" alt="">
             </div>
             <div class="column_after-active__content column__content">
-              <div class="column__content__cell column__content__cell_time">Від 2 годин</div>
-              <div class="column__content__cell column__content__list column__content__cell_paperwork">
-                <span>- Створення об’яви</span>
-                <span>- Відправити посилку</span>
-                <span>- Дочекатися грошей</span>
+              <div class="column__content__cell column__content__cell_time">
+                <i18n vanilla-i18n="column_after-active__content__cell_time">
+                  Від 2 годин
+                </i18n>
               </div>
-              <div class="column__content__cell column__content__cell_sending">На Вас, довго і потрібно їздити в відділення</div>
-              <div class="column__content__cell column__content__cell_benefit">Продано по низькій ціні нема можливості викупу</div>
+              <div class="column__content__cell column__content__list column__content__cell_paperwork">
+                <span>
+                  <i18n vanilla-i18n="column_after-active__content__cell_paperwork_1">
+                    - Створення об’яви
+                  </i18n>
+                </span>
+
+                <span>
+                  <i18n vanilla-i18n="column_after-active__content__cell_paperwork_2">
+                    - Відправити посилку
+                  </i18n>
+                </span>
+
+                <span>
+                  <i18n vanilla-i18n="column_after-active__content__cell_paperwork_3">
+                    - Дочекатися грошей
+                  </i18n>
+                </span>
+              </div>
+              <div class="column__content__cell column__content__cell_sending">
+                <i18n vanilla-i18n="column_after-active__content__cell_sending">
+                  На Вас, довго і потрібно їздити в відділення
+                </i18n>
+              </div>
+              <div class="column__content__cell column__content__cell_benefit">
+                <i18n vanilla-i18n="column_after-active__content__cell_benefit">
+                  Продано по низькій ціні нема можливості викупу
+                </i18n>
+              </div>
             </div>
           </div>
 
@@ -468,14 +803,38 @@
               <img class="column__cell_heading__image" src="images/credit-logo.svg" alt="">
             </div>
             <div class="column__content">
-              <div class="column__content__cell column__content__cell_time">Від 10 хвилин на невеликі суми</div>
-              <div class="column__content__cell column__content__list column__content__cell_paperwork">
-                <span>- В любому випадку потрібен паспорт</span>
-                <span>- Персональні дані</span>
-                <span>- Заповнення ряду паперів</span>
+              <div class="column__content__cell column__content__cell_time">
+                <i18n vanilla-i18n="column_last__content__cell_time">
+                  Від 10 хвилин на невеликі суми
+                </i18n>
               </div>
-              <div class="column__content__cell column__content__cell_sending">На невеликі суми  швидко і просто але! серйозніше, потрібно їхати в відділення</div>
-              <div class="column__content__cell column__content__cell_benefit">Зростаючий відсоток</div>
+              <div class="column__content__cell column__content__list column__content__cell_paperwork">
+                <span>
+                  <i18n vanilla-i18n="column_last__content__cell_paperwork_1">
+                    - В любому випадку потрібен паспорт
+                  </i18n>
+                </span>
+                <span>
+                  <i18n vanilla-i18n="column_last__content__cell_paperwork_2">
+                    - Персональні дані
+                  </i18n>
+                </span>
+                <span>
+                  <i18n vanilla-i18n="column_last__content__cell_paperwork_3">
+                    - Заповнення ряду паперів
+                  </i18n>
+                </span>
+              </div>
+              <div class="column__content__cell column__content__cell_sending">
+                <i18n vanilla-i18n="column_last__content__cell_sending">
+                  На невеликі суми  швидко і просто але! серйозніше, потрібно їхати в відділення
+                </i18n>
+              </div>
+              <div class="column__content__cell column__content__cell_benefit">
+                <i18n vanilla-i18n="column_last__content__cell_benefit">
+                  Зростаючий відсоток
+                </i18n>
+              </div>
             </div>
           </div>
 
@@ -492,7 +851,9 @@
             <img class="text-information__slogan text-information__slogan" src="images/text-slogan.svg" alt="">
 
             <button class="text-information__button button_take-credit">
-              Взяти кредит під заставу
+              <i18n vanilla-i18n="text-information__button">
+                Взяти кредит під заставу
+              </i18n>
             </button>
 
 
@@ -511,13 +872,33 @@
     <footer class="footer-wrapper" id="acnhor_contacts">
       <div class="footer-content">
         <img class="footer-content__image" src="images/logo-footer.svg" alt="">
-        <p class="footer-content__copyright ">©2021 Всі права захищені</p>
+        <p class="footer-content__copyright">
+          <i18n vanilla-i18n="footer-content__copyright">
+            ©2021 Всі права захищені
+          </i18n>
+        </p>
 
-        <p class="footer-content__adress">м Київ,  вул. Рибальська 2</p>
-        <a class="footer-content__email" href="mailto:info@parus.com">info@parus.com</a>
-        <a class="footer-content__phone-number" href="tel:+380504625650">0504625650</a>
+        <p class="footer-content__adress">
+          <i18n vanilla-i18n="footer-content__adress">
+            м Київ,  вул. Рибальська 2
+          </i18n>
+        </p>
+        <a class="footer-content__email" href="mailto:info@parus.com">
+          <i18n vanilla-i18n="footer-content__email">
+            info@parus.com
+          </i18n>
+        </a>
+        <a class="footer-content__phone-number" href="tel:+380504625650">
+          <i18n vanilla-i18n="footer-content__phone-number">
+            0504625650
+          </i18n>
+        </a>
 
-        <button class="footer-content__button button_request-call">Запитати</button>
+        <button class="footer-content__button button_request-call">
+          <i18n vanilla-i18n="footer-content__button">
+            Запитати
+          </i18n>
+        </button>
         <div class="footer-content__social-networks">
           <a class="social-networks__telegram-link" href="https://t.me/parus_dev_bot" target="_blank"><img src="images/telegram.svg" alt=""></a>
           <a class="social-networks__whatsapp-link" href="https://t.me/parus_dev_bot" target="_blank"><img src="images/whatsapp.svg" alt=""></a>
@@ -529,7 +910,6 @@
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.js" type="text/javascript"></script>
 
 

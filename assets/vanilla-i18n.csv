@@ -1,0 +1,99 @@
+vanilla-i18n-key,UKR
+form_call-request__header__heading,Замовити дзвінок
+form_call-request__main__text_info,Вкажіть свій контактний телефон| і ми зателефонуємо Вам протягом 5 хвилин
+form_call-request__main__checkbox__text_confirmation,Погоджуюсь на
+form_call-request__main__checkbox__text_confirmation__highlighted,обробку даних
+form_call-request__close_button,Зачинити
+item-description__heading,Дані про товар
+item-rating__description,Стан товару:
+photos-upload__description_basic,Фото товару:
+photos-upload__description_sub,(jpg|png|tiff)
+item-description__close_button,Зачинити
+form_term-choose__header,Оберіть термін
+form_term-choose__footer__button_close,Зачинити
+form_term-choose__footer__button_choose,Обрати
+header__desktop__link_1,Про нас
+header__desktop__link_2,Послуги
+header__desktop__link_3,Умови кредитування
+header__desktop__link_4,Контакти
+header__desktop__button,Запитати
+pop-up-menu__nav__link_1,Про нас
+pop-up-menu__nav__link_2,Послуги
+pop-up-menu__nav__link_3,Умови кредитування
+pop-up-menu__nav__link_4,Контакти
+pop-up-menu__contacts__address,м. Київ| вул. Рибальська 2
+pop-up-menu__contacts_sub__phone,050 462 56 50
+pop-up-menu__contacts_sub__button,Запитати
+product-data__info-block__heading,З турботою про Вас
+product-data__info-block__text,Слідкуй за статусом свого товару
+info-block__button__text-block__text_basic,ЗАВЖДИ ПОРЯД
+info-block__button__text-block__text_sub,TELEGRAM BOT
+product-data__info-block__button_call,Запитати
+advantages-wrapper__heading,Переваги які ти отримаєш
+advantage-card__heading_1,Lorem ipsum dolor sit amet
+advantage-card__description_1,Lorem Ipsum используют потому| что тот обеспечивает более или менее стандартное
+advantage-card__heading_2,Lorem ipsum dolor sit amet
+advantage-card__description_2,Lorem Ipsum используют потому| что тот обеспечивает более или менее стандартное
+advantage-card__heading_3,Lorem ipsum dolor sit amet
+advantage-card__description_3,Lorem Ipsum используют потому| что тот обеспечивает более или менее стандартное
+advantage-card__heading_4,Lorem ipsum dolor sit amet
+advantage-card__description_4,Lorem Ipsum используют потому| что тот обеспечивает более или менее стандартное
+advantage-card__heading_5,Lorem ipsum dolor sit amet
+advantage-card__description_5,Lorem Ipsum используют потому| что тот обеспечивает более или менее стандартное
+advantage-card__heading_6,Lorem ipsum dolor sit amet
+advantage-card__description_6,Lorem Ipsum используют потому| что тот обеспечивает более или менее стандартное
+advantages-wrapper__button,Взяти кредит
+main__calculator__heading,КАЛЬКУЛЯТОР ПІД ЗАСТАВУ
+content__amount-of-money__text__heading,Бажана сума:
+content__amount-of-money__text__description,(Не більше нiж 80% від нашої оцінки)
+content__amount-of-money__selection__button,Залог більш ніж 50 000 ₴
+content__amount-of-money__selection__critical-values_min,2 500 грн.
+content__amount-of-money__selection__critical-values_max,50 000 грн.
+content__amount-of-money__mobile-select__button,Залог більш ніж 50 000 ₴
+content__term__text__heading,Строк:
+content__term__text__radio-buttons__label_radio-button-1,Місяць
+content__term__text__radio-buttons__label_radio-button-2,Рік
+content__term__selection__critical-values_min,5 діб
+content__term__selection__critical-values_max,30 діб
+content__confidence__text__heading,Кредит довіри:
+content__confidence__text__heading__info,Lorem Ipsum используют потому| что
+content__confidence__text__description_highlighted,+0
+content__confidence__text__description,Бонусів
+content__confidence__button button_take-credit,Взяти кредит під заставу
+content__total-value__text_monthly,Виплата за 1 місяць:
+content__total-value__sum_monthly_value,0
+content__total-value__sum_monthly,грн.(₴)
+content__total-value__text_percent,% за період:
+content__total-value__sum_percent_value,0
+content__total-value__sum_percent,грн.(₴)
+content__total-value__text_repayment,Сума погашення:
+content__total-value__sum_repayment_value,0
+content__total-value__sum_repayment,грн.(₴)
+comparison__heading,Співвідношення ломбардів
+column_headlines__content__cell_time,Час:
+column_headlines__content__cell_paperwork,Оформлення:
+column_headlines__content__cell_sending,Відправка:
+column_headlines__content__cell_benefit,Вигода:
+column_active__content__cell_time,Від 10 хвилин
+column_active__content__cell_paperwork,Швидко без різних паперів
+column_active__content__cell_sending,Ми приїдемо до вас
+column_active__content__cell_benefit,Є можливість викупу
+column_active__button,Зв'язатись
+column_after-active__content__cell_time,Від 2 годин
+column_after-active__content__cell_paperwork_1,- Створення об’яви
+column_after-active__content__cell_paperwork_2,- Відправити посилку
+column_after-active__content__cell_paperwork_3,- Дочекатися грошей
+column_after-active__content__cell_sending,На Вас| довго і потрібно їздити в відділення
+column_after-active__content__cell_benefit,Продано по низькій ціні нема можливості викупу
+column_last__content__cell_time,Від 10 хвилин на невеликі суми
+column_last__content__cell_paperwork_1,- В любому випадку потрібен паспорт
+column_last__content__cell_paperwork_2,- Персональні дані
+column_last__content__cell_paperwork_3,- Заповнення ряду паперів
+column_last__content__cell_sending,На невеликі суми  швидко і просто але! серйозніше| потрібно їхати в відділення
+column_last__content__cell_benefit,Зростаючий відсоток
+text-information__button,Взяти кредит під заставу
+footer-content__copyright,©2021 Всі права захищені
+footer-content__adress,м Київ|  вул. Рибальська 2
+footer-content__email,info@parus.com
+footer-content__phone-number,0504625650
+footer-content__button,Запитати

@@ -50,9 +50,11 @@ function highlightSelectedValue() {
 	let input_value = document.querySelector('.category-selection__input').value
 	let options = document.querySelectorAll('.category-selection__option-value')
 	for (let option of options) {
-		option.style.color = '#005182'
+		// option.style.color = '#005182'
+		option.classList.remove('category-selection__option-value_selected')
 		if (option.innerHTML === input_value) {
-			option.style.color = '#E96325'
+			// option.style.color = '#E96325'
+			option.classList.add('category-selection__option-value_selected')
 		}
 	}
 }
@@ -85,7 +87,8 @@ function previewFiles(uploaded_files) {
 
 
   function readAndPreview(file) {
-    if ( /\.(jpe?g|png|tiff)$/i.test(file.name) ) {
+    // if ( /\.(jpe?g|png|tiff)$/i.test(file.name) ) {
+    	if ( true ) {
       var reader = new FileReader();
 
       reader.addEventListener("load", function () {
@@ -93,6 +96,7 @@ function previewFiles(uploaded_files) {
       	upload_images_container.push(this.result)
 
       	if (upload_images_container.length === files_len) {
+      		console.log(upload_images_container)
       		imageDrawer(upload_images_container)
       	}
 
