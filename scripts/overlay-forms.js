@@ -49,7 +49,7 @@ window.addEventListener('load', () => {
 	}) 
 
 	let is_phone_entered_itemForm = document.querySelector('.personal-info__user-info_phone')
-	is_phone_entered_itemForm.addEventListener('blur', () => {
+	is_phone_entered_itemForm.addEventListener	('blur', () => {
 		inputCheck('.item-description__button_send-form', '.personal-info__user-info_phone')
 	})
 	is_phone_entered_itemForm.addEventListener('keyup', () => {
