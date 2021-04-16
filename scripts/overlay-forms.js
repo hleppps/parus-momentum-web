@@ -113,15 +113,21 @@ function inputCheck(submit_btn_cls, phone_input_cls, check_box_cls = null) {
 		is_checkbox_checked = true
 	}
 	let submit_btn = document.querySelector(submit_btn_cls)
-	let phone_input = document.querySelector(phone_input_cls).value
+	let phone_input = document.querySelector(phone_input_cls)
 
-	phone_input = checkNumberValidity(phone_input)
+	let is_phone_inputed = checkNumberValidity(phone_input.value)
 	submit_btn.disabled = true
 
-	if (is_checkbox_checked && phone_input) {
+	if (is_checkbox_checked && is_phone_inputed) {
 		submit_btn.disabled = false
-	}	
+		phone_input.classList.remove('input_phone_incorrect')
+	}	else {
+		phone_input.classList.add('input_phone_incorrect')
+		phone_input.placeholder = 'Введіть коректний номер телефону!'
+	}
+		// phone_input.addEventListener('focus', () => {phone_input.classList.remove('input_phone_incorrect')})
 }
+
 
 function checkNumberValidity(number) {
 	const reg = /^\+380\s(\([0-9]{2}\)\s*|[0-9]{3}\-)\s[0-9]{3}-[0-9]{2}-[0-9]{2}$/
@@ -131,7 +137,15 @@ function checkNumberValidity(number) {
 function checkInputLength(elem) {
 	let max_input_length = elem.getAttribute('maxlength')
 	if (elem.value.length >= max_input_length) {
-		elem.classList.add('input_overloaded')
+		let inputOverloadEvent = function() {
+			if (elem.value.length == max_input_length) {
+				elem.classList.add('input_overloaded')
+				setTimeout(() => {elem.classList.remove('input_overloaded')}, 600)
+			}
+				elem.removeEventListener('keypress', inputOverloadEvent)
+		}
+		elem.addEventListener('keypress', inputOverloadEvent)
+
 	} else {
 		elem.classList.remove('input_overloaded')
 	}

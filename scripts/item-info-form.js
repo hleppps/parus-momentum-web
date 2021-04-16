@@ -87,8 +87,8 @@ function previewFiles(uploaded_files) {
 
 
   function readAndPreview(file) {
-    // if ( /\.(jpe?g|png|tiff)$/i.test(file.name) ) {
-    	if ( true ) {
+  	// console.log(file.size)
+    if (( /\.(jpe?g|png|tiff)$/i.test(file.name)) && (file.size < 10000000) ) {
       var reader = new FileReader();
 
       reader.addEventListener("load", function () {
@@ -96,7 +96,7 @@ function previewFiles(uploaded_files) {
       	upload_images_container.push(this.result)
 
       	if (upload_images_container.length === files_len) {
-      		console.log(upload_images_container)
+      		// console.log(upload_images_container)
       		imageDrawer(upload_images_container)
       	}
 
@@ -205,11 +205,13 @@ function imageDrawer(images) {
 						}
 						break
 				}
-  			let photos_container = document.querySelector('.photos-upload__unloading-container')
-  			photos_container.value = upload_images_container
 			}
 		}
 	}
+	let photos_container = document.querySelector('.photos-upload__unloading-container')
+	photos_container.value = upload_images_container
+	// photos_container.value = photos_container.value.slice(1200000, -1)
+	// console.log(photos_container.value.length)
 }
 		
 

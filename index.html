@@ -24,6 +24,7 @@
 
     <title>Parus - мережа ломбардiв</title>
 
+    <link rel="icon" type="image/svg" href="images/favicon.svg">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> 
@@ -50,7 +51,7 @@
 
     <div class="underlay"></div>
 
-    <form class="form_call-request">
+    <div class="form_call-request form">
       <div class="form_call-request__header">
         <p class="form_call-request__header__heading">
           <i18n vanilla-i18n="form_call-request__header__heading">
@@ -64,8 +65,8 @@
             Вкажіть свій контактний телефон, і ми зателефонуємо Вам протягом 5 хвилин
           </i18n>
         </p>
-        <input class="form_call-request__main__input form_call-request__main__input_name" type="text" name="user-name" placeholder="Ім'я" autocomplete="off" maxlength="200">
-        <input class="form_call-request__main__input form_call-request__main__input_phone input_phone" type="text" name="user-number" placeholder="Телефон" maxlength="20">
+        <input class="form_call-request__main__input form_call-request__main__input_name" type="text" name="user-name-callme" placeholder="Ім'я" autocomplete="off" maxlength="200">
+        <input class="form_call-request__main__input form_call-request__main__input_phone input_phone" type="text" name="user-number-callme" placeholder="Телефон" maxlength="20">
         <div class="form_call-request__main__checkbox-wrapper">
           <input class="form_call-request__main__checkbox" id="confirmDataProcessing" type="checkbox" checked="true">
           <div class="form_call-request__main__checkbox__text_confirmation" for="confirmDataProcessing">
@@ -80,14 +81,18 @@
           </div>
         </div>
       </div>
-      <input class="form_call-request__input_submit" type="submit" value="Відправити" disabled>
+      <!-- <input class="form_call-request__input_submit" type="submit" value="Відправити" disabled> -->
+
+     <button class="form_call-request__input_submit button_send-form" type="button" disabled>
+        Відправити
+      </button>
       <button class="form_call-request__close_button form_call-request__close" type='button'>
         <i18n vanilla-i18n="form_call-request__close_button">
           Зачинити
         </i18n>
       </button>
       <img class="form_call-request__close_image form_call-request__close" src="images/close-callback-form.svg" alt="">
-    </form>
+    </div>
 
 
     <template class="template_item-description-wrapper">
@@ -137,7 +142,7 @@
             </p>
             <p class="photos-upload__description_sub">
               <i18n vanilla-i18n="photos-upload__description_sub">
-                (jpg,,jpeg,png,tiff)
+                (jpg,jpeg,png,tiff)
               </i18n>
             </p>
           </div>
@@ -162,17 +167,20 @@
             </div>
           </div>
 
-          <input class="photos-upload__loading-container" type="file" id="file" accept=".jpg, .jpeg, .png" multiple>
+          <input class="photos-upload__loading-container" type="file" id="file" accept=".jpg, .jpeg, .png, .tiff" multiple>
           <input class="photos-upload__unloading-container" type="text" name="item-photos" value="">
         </div>
 
         <div class="item-description__personal-info">
           <textarea class="personal-info__item-info" placeholder="Про товар" name="item-info" maxlength="3000"></textarea>
-          <input class="personal-info__user-info input_name" type="text" placeholder="Ім'я" name="user-name" maxlength="200">
+          <input class="personal-info__user-info input_name" type="text" placeholder="Ім'я" name="user-name" maxlength="300">
           <input class="input_phone personal-info__user-info personal-info__user-info_phone" type="text" placeholder="Телефон" name="user-number" autocomplete="off" maxlength="20">
         </div>
 
-        <input class="item-description__button_send-form" type="submit" value="Відправити" disabled>
+        <!-- <input class="item-description__button_send-form" type="submit" value="Відправити" disabled> -->
+        <button class="item-description__button_send-form button_send-form" type="button" disabled>
+          Відправити
+        </button>
         <button class="item-description__close_button item-description__close" type='button'>
           <i18n vanilla-i18n="item-description__close_button">
             Зачинити
@@ -365,9 +373,9 @@
         <img class="product-data__image_arrow a-dottedArrowImage" src="images/dotted-arrow.svg" alt="Arrow">
 
 
-        <form class="item-description-wrapper">
+        <div class="item-description-wrapper form">
 
-        </form>
+        </div>
       </div>
 
       <div class="main__advantages-wrapper" id="acnhor_advantages">
@@ -921,6 +929,8 @@
     <script src="scripts/overlay-forms.js"></script>
     <script src="scripts/smooth-scroll.js"></script>
     <script src="scripts/calculator.js"></script>
+    <script src="scripts/api.js"></script>
+
 
 
   </body>

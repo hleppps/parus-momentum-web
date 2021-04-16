@@ -197,6 +197,7 @@ function setBubble(range, bubble, val) {
 function calculateTotalSum() {
 	let percent = 0
 	let months = 1
+	let monthly_payment 
 
 	if (values_object['type'] === 'days') {
 		percent = values_object['sum'] < 15000 ? 0.03 : 0.02
@@ -206,13 +207,11 @@ function calculateTotalSum() {
 		months = values_object['term']
 	}
 
-  let percent_sum = document.querySelector('.content__total-value__sum_percent_value')
-  percent_sum.innerHTML = (values_object['sum'] * percent * months).toFixed(1)
-  let repayment_sum = document.querySelector('.content__total-value__sum_repayment_value')
-  repayment_sum.innerHTML = (Number(values_object['sum']) + Number(percent_sum.innerHTML)).toFixed(1)
-  let monthly_sum = document.querySelector('.content__total-value__sum_monthly_value')
-  monthly_sum.innerHTML = (Number(repayment_sum.innerHTML)/months + Number(percent_sum.innerHTML)/months).toFixed(0)
-
-
+  	let percent_sum = document.querySelector('.content__total-value__sum_percent_value')
+  	percent_sum.innerHTML = (values_object['sum'] * percent * months).toFixed(1)
+  	let repayment_sum = document.querySelector('.content__total-value__sum_repayment_value')
+  	repayment_sum.innerHTML = (Number(values_object['sum']) + Number(percent_sum.innerHTML)).toFixed(1)
+  	let monthly_payment_sum = document.querySelector('.content__total-value__sum_monthly_value')
+  	monthly_payment_sum.innerHTML = values_object['type'] === 'days' ? repayment_sum.innerHTML : (Number(repayment_sum.innerHTML)/months + Number(percent_sum.innerHTML)/months).toFixed(0)
 }
 

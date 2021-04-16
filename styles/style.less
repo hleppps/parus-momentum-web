@@ -1294,14 +1294,29 @@ input:-ms-input-placeholder {color: @color-light-blue;}
 .a-jsAddedText {
 	display: none;
 	position: absolute;
+	box-sizing: border-box;
 
-	filter: drop-shadow(0 0 1px #000);
-	color: @color-white;
+	color: #57A0CD;
+	font-weight: 500;
 	font-size: 0.625rem;
 	line-height: 0.75rem;
 
+	filter: drop-shadow(0px 0 1px @color-light-blue);
+
+	// -webkit-box-shadow: 0px 0px 0px px #000;
+	// -moz-box-shadow: 0px 0px 0px 54px #000;
+	background-color: @color-white;
+	border: solid @color-white;
+	border-width: 4.5px 5.5px 3px 5px;
+	border-radius: 50px;
+	box-shadow: 0px 0px 0px -10px #000;
+
+
 	right: 6%;
-	bottom: 8%;
+	bottom: 6%;
+	// width: 20px;
+	// height: 20px;
+	padding-bottom: 2px;
 	z-index: 1;
 
 	user-select: none;
@@ -1372,6 +1387,22 @@ input:-ms-input-placeholder {color: @color-light-blue;}
 	margin-top: 10px;
   width: 100%;
 }
+
+.input_phone_incorrect:not(:focus) {
+	border-color: @color-orange;
+}
+
+.input_phone_incorrect::-webkit-input-placeholder {color:@color-orange;}
+.input_phone_incorrect::-moz-placeholder          {color:@color-orange;}/* Firefox 19+ */
+.input_phone_incorrect:-moz-placeholder           {color:@color-orange;}/* Firefox 18- */
+.input_phone_incorrect:-ms-input-placeholder      {color:@color-orange;}
+.input_phone_incorrect::placeholder      					{color:@color-orange;}
+
+
+
+// .input_phone_incorrect {
+	// border-color: @color-light-blue !important;
+// }
 
 .item-description__button_send-form {
 	font-size: 0.875rem;
@@ -2432,6 +2463,7 @@ input:-ms-input-placeholder {color: @color-light-blue;}
 	flex-direction: column;
 	align-items: flex-end;
 
+	border-radius: 25px 0 0 25px;
 	width: 193px;
 }
 
@@ -2476,6 +2508,10 @@ input:-ms-input-placeholder {color: @color-light-blue;}
 	.comparison-table__column_after-active {
 		border-right: none;
 	}
+}
+
+.comparison-table__column_last {
+	border-radius: 0 25px 25px 0;
 }
 
 .comparison-table__column_plug {
