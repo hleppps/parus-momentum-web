@@ -761,7 +761,8 @@ body {
 }
 .item-description__category-selection {
   width: 100%;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
 }
 input::placeholder {
   color: #3C80AA;
@@ -808,30 +809,17 @@ input:-ms-input-placeholder {
   /* IE and Edge */
   scrollbar-width: none;
   /* Firefox */
+  overflow-x: hidden;
   height: 315px;
   width: 358px;
+  max-width: 358px;
   padding: 25px 0 29px 0;
   margin-top: -16px;
 }
 @media screen and (max-width: 800px) {
   .category-selection__options-container {
-    height: 312px;
-    width: 334px;
-  }
-}
-@media screen and (max-width: 420px) {
-  .category-selection__options-container {
-    width: 80vw;
-  }
-}
-@media screen and (max-width: 400px) {
-  .category-selection__options-container {
-    width: 79.5vw;
-  }
-}
-@media screen and (max-width: 370px) {
-  .category-selection__options-container {
-    width: 79vw;
+    width: calc(90vw - 40px);
+    max-width: calc(374px - 40px);
   }
 }
 .category-selection__options-container::-webkit-scrollbar {

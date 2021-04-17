@@ -5,34 +5,39 @@ window.addEventListener('load', () => {
   $(".input_phone").mask("+380 (99) 999-99-99")
 
 // SHOW/CLOSE FORMS
+	let close_form_btns = document.querySelectorAll('.button_close-form')
+	for (let button of close_form_btns) {
+		button.addEventListener('click', () => {closeOverlayForm('.' + button.closest('.form').classList[0])})
+	}
+
 	let open_call_request_form_btns = document.querySelectorAll('.button_request-call')
 	for (let i = 0; i < open_call_request_form_btns.length; i++) {
 		open_call_request_form_btns[i].addEventListener('click', () => {showOverlayForm('.form_call-request')})
 	}
 
-	let close_call_request_form_btns = document.querySelectorAll('.form_call-request__close')
-	for (let i = 0; i < close_call_request_form_btns.length; i++) {
-		close_call_request_form_btns[i].addEventListener('click', () => {closeOverlayForm('.form_call-request')})
-	}
+	// let close_call_request_form_btns = document.querySelectorAll('.form_call-request__close')
+	// for (let i = 0; i < close_call_request_form_btns.length; i++) {
+	// 	close_call_request_form_btns[i].addEventListener('click', () => {closeOverlayForm('.form_call-request')})
+	// }
 
 	let open_item_info_form_btns = document.querySelectorAll('.button_take-credit')
 	for (let i = 0; i < open_item_info_form_btns.length; i++) {
 		open_item_info_form_btns[i].addEventListener('click', () => {showOverlayForm('.item-description-wrapper')})
 	}
 
-	let close_item_info_form_btns = document.querySelectorAll('.item-description__close')
-	for (let i = 0; i < close_item_info_form_btns.length; i++) {
-		close_item_info_form_btns[i].addEventListener('click', () => {closeOverlayForm('.item-description-wrapper')})
-	}
+	// let close_item_info_form_btns = document.querySelectorAll('.item-description__close')
+	// for (let i = 0; i < close_item_info_form_btns.length; i++) {
+	// 	close_item_info_form_btns[i].addEventListener('click', () => {closeOverlayForm('.item-description-wrapper')})
+	// }
 
 	let open_calculator_term_choose_form = document.querySelector('.content__term__mobile-select__button')
 	open_calculator_term_choose_form.addEventListener('click', () => {showOverlayForm('.form_term-choose')})
 
-	let close_btn_calculator_term_choose_form = document.querySelector('.form_term-choose__footer__button_close')
-	close_btn_calculator_term_choose_form.addEventListener('click', () => {closeOverlayForm('.form_term-choose')})
+	// let close_btn_calculator_term_choose_form = document.querySelector('.form_term-choose__footer__button_close')
+	// close_btn_calculator_term_choose_form.addEventListener('click', () => {closeOverlayForm('.form_term-choose')})
 
-	let choose_btn_calculator_term_choose_form = document.querySelector('.form_term-choose__footer__button_choose')
-	choose_btn_calculator_term_choose_form.addEventListener('click', () => {closeOverlayForm('.form_term-choose')})
+	// let choose_btn_calculator_term_choose_form = document.querySelector('.form_term-choose__footer__button_choose')
+	// choose_btn_calculator_term_choose_form.addEventListener('click', () => {closeOverlayForm('.form_term-choose')})
 
 // CHECK INPUT VALIDITY
 	let is_checkbox_checked = document.querySelector('.form_call-request__main__checkbox')
@@ -125,7 +130,6 @@ function inputCheck(submit_btn_cls, phone_input_cls, check_box_cls = null) {
 		phone_input.classList.add('input_phone_incorrect')
 		phone_input.placeholder = 'Введіть коректний номер телефону!'
 	}
-		// phone_input.addEventListener('focus', () => {phone_input.classList.remove('input_phone_incorrect')})
 }
 
 

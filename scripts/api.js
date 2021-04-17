@@ -1,7 +1,7 @@
 window.addEventListener('load', () => {
 	let buttons_send_form = document.querySelectorAll('.button_send-form')
 	for (let button of buttons_send_form) {
-		button.addEventListener('click', () => {getDataFromForm(button.closest('.form'), 1)    })
+		button.addEventListener('click', () => {getDataFromForm(button.closest('.form'), true)    })
 	}
 })
 
@@ -12,15 +12,12 @@ function getDataFromForm(form, counter, data = {}) {
 			if (child.nodeName == 'INPUT') {
 				if (child.name) data[child.name] = child.value
 			}
-			getDataFromForm(child, 0, data)
+			getDataFromForm(child, false, data)
 		}
-	} else {
-		// sendPostRequets(data)
 	}
 	if (counter) sendPostRequets(data)
 }
 
 function sendPostRequets(data) {
-	console.log(data)
-	// $.post( "https://lombard-parus.com.ua/", { data });
+	$.post( "https://lombard-parus.com.ua/", { data });
 } 
