@@ -51,6 +51,20 @@
 
     <div class="underlay"></div>
 
+    <div class="form-notification form">
+      <h1 class="form-notification__header">Ваш запит відправленно</h1>
+      <div class="form-notification__main">
+        <img class="form-notification__main__image" src="images/circle-with-check-symbol.svg" alt="">
+        <p class="form-notification__main__text">
+          Зачекайте, Ваш запит обробляється. 
+          <br>
+          Наш консультант зв'яжеться з Вами протягом 5 хвилин.
+        </p>
+        <button class="form-notification__main__button_close button_close-form">Закрити</button>
+        <img class="form-notification__main__image_close button_close-form" src="images/close-callback-form.svg" alt="">
+      </div>
+    </div>
+      
     <div class="form_call-request form">
       <div class="form_call-request__header">
         <p class="form_call-request__header__heading">
@@ -83,7 +97,7 @@
       </div>
       <!-- <input class="form_call-request__input_submit" type="submit" value="Відправити" disabled> -->
 
-     <button class="form_call-request__input_submit button_send-form" type="button" disabled>
+     <button class="form_call-request__input_submit button_send-form button_close-form" type="button" disabled>
         Відправити
       </button>
       <button class="form_call-request__close_button form_call-request__close button_close-form" type='button'>
@@ -178,7 +192,7 @@
         </div>
 
         <!-- <input class="item-description__button_send-form" type="submit" value="Відправити" disabled> -->
-        <button class="item-description__button_send-form button_send-form" type="button" disabled>
+        <button class="item-description__button_send-form button_send-form button_close-form" type="button" disabled>
           Відправити
         </button>
         <button class="item-description__close_button item-description__close button_close-form" type='button'>

@@ -85,6 +85,8 @@ body {
 // PRELOADER }
 
 
+// UNDERLAY {
+
 .body_show-overlay-element {
 	overflow: hidden;
 }
@@ -111,6 +113,90 @@ body {
 .underlay_show-pop-up-menu {
 	display: inherit;
 }
+// UNDERLAY }
+
+
+// FORM NOTIFICATION {
+.form-notification {
+	display: none;
+	flex-direction: column;
+	
+	position: fixed;
+	z-index: 6;
+
+	border-radius: 25px;
+	background-color: @color-white;
+	box-shadow: 7px 10px 50px rgba(11, 58, 72, 0.33);
+
+	top: calc(15vh);
+	width: 440px;
+	max-width: 80vw;
+}
+
+.form-notification__header {
+	text-align: center;
+	font-size: 1.5625rem;
+	line-height: 1.875rem;
+	color: @color-dark-blue;
+	font-weight: 500;
+
+	border-bottom: 1px solid #d9e5ed;
+	padding: 32px;
+}
+
+.form-notification__main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	box-sizing: border-box;
+
+	padding: 48px 32px 32px 32px;
+}
+
+.form-notification__main__image {
+	width: 41px;
+	height: 41px;
+}
+
+.form-notification__main__text {
+	text-align: center;
+	font-size: 0.875rem;
+	line-height: 1.0625rem;
+	color: @color-light-blue;
+
+	margin-top: 36px;
+	max-width: 270px;
+}
+
+.form-notification__main__button_close {
+	font-size: 0.875rem;
+	line-height: 1.0625rem;
+	font-weight: 700;
+	color: @color-white;
+
+	border-radius: 20px;
+	background-color: @color-orange;
+
+	margin-top: 93px;
+	padding: 12px;
+	width: 228px;
+}
+
+@media screen and (max-width: 380px) {
+	.form-notification__main__button_close {
+		width: 80%
+	}
+}
+
+.form-notification__main__image_close {
+	position: absolute;
+	cursor: pointer;
+	top: 3px;
+	left: 460px;
+}
+
+// FORM NOTIFICATION }
+
 
 // FORM CALL REQ
 .form_call-request {
@@ -1076,31 +1162,6 @@ input:-ms-input-placeholder {color: @color-light-blue;}
 		max-width: calc(374px - 40px);
 	}
 }
-
-// @media screen and (max-width: 800px) {
-// 	.category-selection__options-container {
-//   	height: 312px;
-// 		width: 334px;
-// 	}
-// }
-
-// @media screen and (max-width: 420px) {
-// 	.category-selection__options-container {
-// 		width: 80vw;
-// 	}
-// }
-
-// @media screen and (max-width: 400px) {
-// 	.category-selection__options-container {
-// 		width: 79.5vw;
-// 	}
-// }
-
-// @media screen and (max-width: 370px) {
-// 	.category-selection__options-container {
-// 		width: 79vw;
-// 	}
-// }
 
 .category-selection__options-container::-webkit-scrollbar {
   display: none;
