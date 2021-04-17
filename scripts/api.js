@@ -19,6 +19,11 @@ function getDataFromForm(form, counter, data = {}) {
 }
 
 function sendPostRequets(data) {
-	$.post( "https://lombard-parus.com.ua/", { data });
+	// $.post( "https://lombard-parus.com.ua/", { data });
 	showOverlayForm('.popup-notification')
+
+	$.post( "https://lombard-parus.com.ua/", { data })
+	  .done(function( data ) {
+	    console.log( "Data Loaded: " + data );
+	  });
 } 
