@@ -88,7 +88,7 @@ function previewFiles(uploaded_files) {
 
   function readAndPreview(file) {
   	// console.log(file.size)
-    if (( /\.(jpe?g|png|tiff)$/i.test(file.name)) && (file.size < 10000000) ) {
+    if (( /\.(jpe?g|png|tiff)$/i.test(file.name)) && (file.size <= 10000000) ) {
       var reader = new FileReader();
 
       reader.addEventListener("load", function () {
@@ -104,6 +104,10 @@ function previewFiles(uploaded_files) {
 
       reader.readAsDataURL(file);
     } else {
+    	if (file.size >= 10000000) {
+    		let popup_error = document.querySelector('.popup-error')
+    		popup_error.classList.add('popup-error_show')
+    	}
     	files_len--
     }
   }

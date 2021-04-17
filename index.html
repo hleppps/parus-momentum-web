@@ -51,17 +51,41 @@
 
     <div class="underlay"></div>
 
-    <div class="form-notification form">
-      <h1 class="form-notification__header">Ваш запит відправленно</h1>
-      <div class="form-notification__main">
-        <img class="form-notification__main__image" src="images/circle-with-check-symbol.svg" alt="">
-        <p class="form-notification__main__text">
+    <div class="popup-error form">
+      <h1 class="popup-error__header">
+        Помилка завантаження
+      </h1>
+
+      <div class="popup-error__main">
+        <img class="popup-error__main__image" src="images/circle-with-cross-symbol.svg" alt="">
+
+        <p class="popup-error__main__text">
+          Деякі з обраних Вами файлів перевищують максимально допустимий розмір. 
+          <br>
+          Вони не будуть завантажені!
+        </p>
+
+        <button class="popup-error__main__button_close">Закрити</button>
+      </div>
+    </div>
+
+
+    <div class="popup-notification form">
+      <h1 class="popup-notification__header">
+        Ваш запит відправленно
+      </h1>
+
+      <div class="popup-notification__main">
+        <img class="popup-notification__main__image" src="images/circle-with-check-symbol.svg" alt="">
+
+        <p class="popup-notification__main__text">
           Зачекайте, Ваш запит обробляється. 
           <br>
           Наш консультант зв'яжеться з Вами протягом 5 хвилин.
         </p>
-        <button class="form-notification__main__button_close button_close-form">Закрити</button>
-        <img class="form-notification__main__image_close button_close-form" src="images/close-callback-form.svg" alt="">
+
+        <button class="popup-notification__main__button_close button_close-form">Закрити</button>
+        <img class="popup-notification__main__image_close button_close-form" src="images/close-callback-form.svg" alt="">
       </div>
     </div>
       

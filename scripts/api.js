@@ -20,6 +20,5 @@ function getDataFromForm(form, counter, data = {}) {
 
 function sendPostRequets(data) {
 	$.post( "https://lombard-parus.com.ua/", { data });
-	showOverlayForm('.form-notification')
-	
+	showOverlayForm('.popup-notification')
 } 
