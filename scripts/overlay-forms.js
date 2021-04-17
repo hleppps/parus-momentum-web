@@ -6,7 +6,10 @@ window.addEventListener('load', () => {
 
 // SHOW/CLOSE FORMS
 	let hide_error_popup = document.querySelector('.popup-error__main__button_close')
-	hide_error_popup.addEventListener('click', () => {hide_error_popup.closest('.form').classList.remove('popup-error_show')})
+	hide_error_popup.addEventListener('click', () => {
+		hide_error_popup.closest('.form').classList.remove('popup-error_show')
+		document.body.classList.remove('body_unscroll')
+	})
 
 	let close_form_btns = document.querySelectorAll('.button_close-form')
 	for (let button of close_form_btns) {

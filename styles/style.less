@@ -17,7 +17,7 @@ html, body {
   font-size: 16px;
 }
 
-body {
+.body {
 	background-image: url(../images/body-background-image-1.jpg), 
   									url(../images/body-background-image-2.jpg), 
   									url(../images/body-background-image-3.jpg),
@@ -28,10 +28,14 @@ body {
 }
 
 @media screen and (max-width: 800px) {
-	body {
+	.body {
 	  background-size: 650px 650px, 100vh 650px, 100vh 650px, 100vh 650px;
 		background-position: calc(100% + 400px) 0, -300px 800px, calc(100% + 400px) 2000px, 0 calc(100% - 100px);
 	}
+}
+
+.body_unscroll {
+	overflow-y: hidden;
 }
 
 // LANG SELECT

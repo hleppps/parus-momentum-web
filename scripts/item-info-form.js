@@ -107,6 +107,11 @@ function previewFiles(uploaded_files) {
     	if (file.size >= 10000000) {
     		let popup_error = document.querySelector('.popup-error')
     		popup_error.classList.add('popup-error_show')
+    		document.body.classList.add('body_unscroll')
+    		setTimeout(() => {
+    			popup_error.classList.remove('popup-error_show')
+    			document.body.classList.remove('body_unscroll')
+    		}, 1000)
     	}
     	files_len--
     }
