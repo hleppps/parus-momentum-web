@@ -111,7 +111,7 @@ function previewFiles(uploaded_files) {
     		setTimeout(() => {
     			popup_error.classList.remove('popup-error_show')
     			document.body.classList.remove('body_unscroll')
-    		}, 1000)
+    		}, 1500)
     	}
     	files_len--
     }

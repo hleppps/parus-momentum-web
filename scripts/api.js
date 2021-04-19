@@ -9,9 +9,9 @@ function getDataFromForm(form, counter, data = {}) {
 	if (form.hasChildNodes()) {
 		let children = form.childNodes
 		for (let child of children) {
-			if (child.nodeName == 'INPUT') {
+			// if ( (child.nodeName == 'INPUT') && (child.nodeName == 'TEXTAREA')) {
 				if (child.name) data[child.name] = child.value
-			}
+			// }
 			getDataFromForm(child, false, data)
 		}
 	}
@@ -19,11 +19,26 @@ function getDataFromForm(form, counter, data = {}) {
 }
 
 function sendPostRequets(data) {
-	// $.post( "https://lombard-parus.com.ua/", { data });
+	// $.post( "https://lombard-parus.com.ua/", data);
+
+	$.post( "https://lombard-parus.com.ua/", data)
+	  .done(function( data ) {
+	    console.log( "Data Loaded: " );
+	 		setSelectorClasslist('popup-notification_success', 'popup-notification_await')
+	  });
+	setSelectorClasslist('popup-notification_await', 'popup-notification_success')
 	showOverlayForm('.popup-notification')
 
-	$.post( "https://lombard-parus.com.ua/", { data })
-	  .done(function( data ) {
-	    console.log( "Data Loaded: " + data );
-	  });
-} 
+}
+
+function setSelectorClasslist( selector_show, selector_hide ) {
+	let show_elements = document.querySelectorAll( '.' + selector_show )
+	for ( let element of show_elements ) {
+		element.classList.remove( selector_show + '_hide' )
+	}
+
+	let hide_elements = document.querySelectorAll( '.' + selector_hide )
+	for ( let element of hide_elements ) {
+		element.classList.add( selector_hide + '_hide')
+	}
+}

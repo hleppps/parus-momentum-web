@@ -133,7 +133,8 @@ html, body {
 	// box-shadow: 7px 10px 50px rgba(11, 58, 72, 0.33);
 	box-shadow: 4px 4px 0px 10000px rgba(0, 0, 0, 0.2);
 
-	top: 20vh;
+	// top: calc(100vh-440px)  ;
+	top: calc((100vh - 440px) / 2);
 	width: 440px;
 	max-width: 80vw;
 }
@@ -214,6 +215,14 @@ html, body {
 
 
 // POPUP NOTIFICATION {
+.popup-notification_await_hide {
+	display: none;
+}
+
+.popup-notification_success_hide {
+	display: none;
+}
+
 .popup-notification {
 	display: none;
 	flex-direction: column;
@@ -225,7 +234,7 @@ html, body {
 	background-color: @color-white;
 	box-shadow: 7px 10px 50px rgba(11, 58, 72, 0.33);
 
-	top: 20vh;
+	top: calc((100vh - 440px) / 2 );
 	width: 440px;
 	max-width: 80vw;
 }
@@ -255,6 +264,11 @@ html, body {
 	height: 41px;
 }
 
+.popup-notification_await__main__image {
+  	animation: preloader-rotate 2s infinite linear;
+	fill: @color-orange;
+}
+
 .popup-notification__main__text {
 	text-align: center;
 	font-size: 0.875rem;
@@ -274,7 +288,7 @@ html, body {
 	border-radius: 20px;
 	background-color: @color-orange;
 
-	margin-top: 93px;
+	margin-top: 60px;
 	padding: 12px;
 	width: 228px;
 }
@@ -311,7 +325,7 @@ html, body {
 	border-radius: 25px;
 
 	padding: 32px 0 40px;
-	top: 20vh;
+	top: calc( (100vh - 440px) / 2 );
 	width: 458px;	
 }
 
@@ -2489,6 +2503,10 @@ input:-ms-input-placeholder {color: @color-light-blue;}
 	line-height: 1.5rem;
 	font-weight: 500;
 	color: @color-dark-blue;
+}
+
+.content__total-value__monthly_hide {
+	display: none;
 }
 
 .content__total-value__sum {

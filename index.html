@@ -71,18 +71,29 @@
 
 
     <div class="popup-notification form">
-      <h1 class="popup-notification__header">
-        Ваш запит відправленно
+      <h1 class="popup-notification__header popup-notification_await">
+        Ваш запит відправляється, зачекайте!
+      </h1>
+      <h1 class="popup-notification__header popup-notification_success popup-notification_success">
+        Ваш запит відправленно!
       </h1>
 
       <div class="popup-notification__main">
-        <img class="popup-notification__main__image" src="images/circle-with-check-symbol.svg" alt="">
+        <svg class="popup-notification__main__image popup-notification_await__main__image popup-notification_await" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+          <path
+            d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z">
+          </path>
+        </svg>
+        <img class="popup-notification__main__image popup-notification_success" src="images/circle-with-check-symbol.svg" alt="">
 
-        <p class="popup-notification__main__text">
-          Зачекайте, Ваш запит обробляється. 
-          <br>
+
+        <p class="popup-notification__main__text popup-notification_await">
+          Не закривайте сторінку до відправлення запита.
+        </p>
+        <p class="popup-notification__main__text popup-notification_success popup-notification_success">
           Наш консультант зв'яжеться з Вами протягом 5 хвилин.
         </p>
+
 
         <button class="popup-notification__main__button_close button_close-form">Закрити</button>
         <img class="popup-notification__main__image_close button_close-form" src="images/close-callback-form.svg" alt="">
@@ -679,12 +690,12 @@
             </div>
 
             <div class="calculator__content__total-value">
-              <p class="content__total-value__text_monthly content__total-value__text">
+              <p class="content__total-value__text_monthly content__total-value__monthly content__total-value__text">
                 <i18n vanilla-i18n="content__total-value__text_monthly">
                   Виплата за 1 місяць:
                 </i18n>
               </p>
-              <p class="content__total-value__sum_monthly content__total-value__sum">
+              <p class="content__total-value__sum_monthly content__total-value__monthly content__total-value__sum">
                 <span class="content__total-value__sum_monthly_value">
                   <i18n vanilla-i18n="content__total-value__sum_monthly_value">
                     0

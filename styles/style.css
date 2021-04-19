@@ -91,7 +91,7 @@ body {
   border-radius: 25px;
   background-color: #fff;
   box-shadow: 4px 4px 0px 10000px rgba(0, 0, 0, 0.2);
-  top: 20vh;
+  top: calc((100vh - 440px) / 2);
   width: 440px;
   max-width: 80vw;
 }
@@ -153,6 +153,12 @@ body {
   top: 3px;
   left: 460px;
 }
+.popup-notification_await_hide {
+  display: none;
+}
+.popup-notification_success_hide {
+  display: none;
+}
 .popup-notification {
   display: none;
   flex-direction: column;
@@ -161,7 +167,7 @@ body {
   border-radius: 25px;
   background-color: #fff;
   box-shadow: 7px 10px 50px rgba(11, 58, 72, 0.33);
-  top: 20vh;
+  top: calc((100vh - 440px) / 2);
   width: 440px;
   max-width: 80vw;
 }
@@ -185,6 +191,10 @@ body {
   width: 41px;
   height: 41px;
 }
+.popup-notification_await__main__image {
+  animation: preloader-rotate 2s infinite linear;
+  fill: #E96325;
+}
 .popup-notification__main__text {
   text-align: center;
   font-size: 0.875rem;
@@ -200,7 +210,7 @@ body {
   color: #fff;
   border-radius: 20px;
   background-color: #E96325;
-  margin-top: 93px;
+  margin-top: 60px;
   padding: 12px;
   width: 228px;
 }
@@ -229,7 +239,7 @@ body {
   box-shadow: 7px 10px 50px rgba(11, 58, 72, 0.33);
   border-radius: 25px;
   padding: 32px 0 40px;
-  top: 20vh;
+  top: calc((100vh - 440px) / 2);
   width: 458px;
 }
 @media screen and (max-width: 800px) {
@@ -1943,6 +1953,9 @@ input:-ms-input-placeholder {
   line-height: 1.5rem;
   font-weight: 500;
   color: #005182;
+}
+.content__total-value__monthly_hide {
+  display: none;
 }
 .content__total-value__sum {
   align-self: center;

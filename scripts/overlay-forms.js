@@ -75,8 +75,8 @@ window.addEventListener('load', () => {
 })
 
 
-function showOverlayForm(selector, display_type = 'none') {
-
+function showOverlayForm(selector) {
+// selector, display_type = 'none'
 	let underlay = document.querySelector('.underlay')
 	let form = document.querySelector(selector)
 	let body = document.body
@@ -91,12 +91,13 @@ function showOverlayForm(selector, display_type = 'none') {
 	underlay.classList.add('underlay_show-overlay-form')
 	body.classList.add('body_show-overlay-element')
 
-	underlay.addEventListener('click', () => {closeOverlayForm(selector, display_type)})
+	underlay.addEventListener('click', () => {closeOverlayForm(selector)})
 
 	is_overlay_form_open = true
 }
 
-function closeOverlayForm(selector, display_type = 'none') {
+function closeOverlayForm(selector) {
+// selector, display_type = 'none'
 	let underlay = document.querySelector('.underlay')
 	underlay.removeEventListener('click', closeOverlayForm)
 
@@ -108,7 +109,7 @@ function closeOverlayForm(selector, display_type = 'none') {
 	}
 
 	let body = document.body
-	form.style.display = display_type
+	form.style.display = 'none'
 
 	underlay.classList.remove('underlay_show-overlay-form')
 	body.classList.remove('body_show-overlay-element')
