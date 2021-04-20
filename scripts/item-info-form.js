@@ -3,7 +3,7 @@ let files_len = 0
 
 window.addEventListener('load', () => {
 	loadItemForm()
-	fillItemFormSelect()
+	fillItemFormSelect(getItemFormSelectOptions())
 
 	let telegram_buttons = document.querySelectorAll('.button_telegram')
 
@@ -30,9 +30,12 @@ function loadItemForm() {
 	selectizeEventListener()
 }
 
-function fillItemFormSelect () {
-	// запрос
-	const values = ['Нерухомість','Транспорт', 'Побутова техніка', 'Электротехніка', 'Украшения', 'Антиквариат', 'Меблі', 'Інструменти', 'Інше', 'Тест']
+function getItemFormSelectOptions() {
+	const values = ['Нерухомість','Транспорт', 'Побутова техніка', 'Електротехніка', 'Украшения', 'Антиквариат', 'Меблі', 'Інструменти', 'Інше', 'Тест']
+	return values
+}
+
+function fillItemFormSelect (values) {
 	let select = document.querySelector('.category-selection__options-container')
 
 	for (value of values) {
@@ -42,7 +45,6 @@ function fillItemFormSelect () {
 
 	    select.appendChild(li)
 	}
-	return values
 }
 
 function highlightSelectedValue() {

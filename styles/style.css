@@ -973,6 +973,11 @@ input:-ms-input-placeholder {
     max-width: calc(374px - 40px);
   }
 }
+@media screen and (max-height: 800px) {
+  .category-selection__options-container {
+    max-height: 305px;
+  }
+}
 .category-selection__options-container::-webkit-scrollbar {
   display: none;
 }

@@ -61,7 +61,7 @@ function selectizeEventListener() {
         setTimeout(function () {
             $(that).closest(".searchable").find("ul").hide();
             let input = document.querySelector('.category-selection__input')
-            let options_list = fillItemFormSelect()
+            let options_list = getItemFormSelectOptions()
             if (!(options_list.includes(input.value))) {input.value = ''}
             incorrectSearchValue()
         }, 200);
@@ -79,7 +79,6 @@ function selectizeEventListener() {
 }
 
 function incorrectSearchValue(len = 0, state = null) {
-    console.log('q')
     let option_disabled = document.querySelector('.category-selection__option-value_disabled')
     option_disabled.classList.add('category-selection__option-value_disabled_hide')
     if (state) {
