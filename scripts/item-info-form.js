@@ -30,8 +30,6 @@ function loadItemForm() {
 	selectizeEventListener()
 }
 
-
-
 function fillItemFormSelect () {
 	// запрос
 	const values = ['Нерухомість','Транспорт', 'Побутова техніка', 'Электротехніка', 'Украшения', 'Антиквариат', 'Меблі', 'Інструменти', 'Інше', 'Тест']
@@ -44,6 +42,7 @@ function fillItemFormSelect () {
 
 	    select.appendChild(li)
 	}
+	return values
 }
 
 function highlightSelectedValue() {
@@ -87,41 +86,63 @@ function previewFiles(uploaded_files) {
 
 
   function readAndPreview(file) {
-  	// console.log(file.size)
-    if (( /\.(jpe?g|png|tiff)$/i.test(file.name)) && (file.size <= 10000000) ) {
-      var reader = new FileReader();
+  	handleImageUpload(file, (file) => {
+	    if (( /\.(jpe?g|png|tiff)$/i.test(file.name)) && (file.size <= 10000000) ) {
+	      var reader = new FileReader();
 
-      reader.addEventListener("load", function () {
+	      reader.addEventListener("load", function () {
 
-      	upload_images_container.push(this.result)
+	      	upload_images_container.push(this.result)
 
-      	if (upload_images_container.length === files_len) {
-      		// console.log(upload_images_container)
-      		imageDrawer(upload_images_container)
-      	}
+	      	if (upload_images_container.length === files_len) {
+	      		imageDrawer(upload_images_container)
+	      	}
 
-      }, false);
+	      }, false);
 
-      reader.readAsDataURL(file);
-    } else {
-    	if (file.size >= 10000000) {
-    		let popup_error = document.querySelector('.popup-error')
-    		popup_error.classList.add('popup-error_show')
-    		document.body.classList.add('body_unscroll')
-    		setTimeout(() => {
-    			popup_error.classList.remove('popup-error_show')
-    			document.body.classList.remove('body_unscroll')
-    		}, 1500)
-    	}
-    	files_len--
-    }
-  }
+      	reader.readAsDataURL(file);
+
+	    } else {
+	    	if (file.size >= 10000000) {
+	    		let popup_error = document.querySelector('.popup-error')
+	    		popup_error.classList.add('popup-error_show')
+	    		document.body.classList.add('body_unscroll')
+	    		setTimeout(() => {
+	    			popup_error.classList.remove('popup-error_show')
+	    			document.body.classList.remove('body_unscroll')
+	    		}, 1500)
+	    	}
+	    	files_len--
+	    }
+		})
+	}
+
 
   if (files) {
     [].forEach.call(files, readAndPreview);
   }
 }
 
+function handleImageUpload(imageFile, callback) {
+  // console.log('originalFile instanceof Blob', imageFile instanceof Blob); // true
+  // console.log(`originalFile size ${imageFile.size / 1024 / 1024} MB`);
+
+  var options = {
+    maxSizeMB: 1,
+    maxWidthOrHeight: 1920,
+    useWebWorker: true
+  }
+  imageCompression(imageFile, options)
+    .then(function (compressedFile) {
+      // console.log('compressedFile instanceof Blob', compressedFile instanceof Blob); // true
+      // console.log(`compressedFile size ${compressedFile.size / 1024 / 1024} MB`); // smaller than maxSizeMB
+
+      callback(compressedFile); // write your own logic
+    })
+    .catch(function (error) {
+      console.log(error.message);
+    });
+}
 
 function imageDrawer(images) {
 	let photo_upload_block = document.querySelector('.photos-upload__container_basic') //parent

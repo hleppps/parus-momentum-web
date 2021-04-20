@@ -14,7 +14,9 @@ function filterFunction(that, event) {
                 $(this).hide();
             }
         });
-
+        
+        let li_amount = container.find("ul li:visible").length
+        li_amount === 0 ? incorrectSearchValue(li_amount, true) : incorrectSearchValue(li_amount)
         container.find("ul li").removeClass("selected");
         setTimeout(function () {
             container.find("ul li:visible").first().addClass("selected");
@@ -58,6 +60,10 @@ function selectizeEventListener() {
         let that = this;
         setTimeout(function () {
             $(that).closest(".searchable").find("ul").hide();
+            let input = document.querySelector('.category-selection__input')
+            let options_list = fillItemFormSelect()
+            if (!(options_list.includes(input.value))) {input.value = ''}
+            incorrectSearchValue()
         }, 200);
     });
 
@@ -70,4 +76,14 @@ function selectizeEventListener() {
         $(this).closest(".searchable").find("ul li.selected").removeClass("selected");
         $(this).addClass("selected");
     });
+}
+
+function incorrectSearchValue(len = 0, state = null) {
+    console.log('q')
+    let option_disabled = document.querySelector('.category-selection__option-value_disabled')
+    option_disabled.classList.add('category-selection__option-value_disabled_hide')
+    if (state) {
+        option_disabled.classList.remove('category-selection__option-value_disabled_hide')
+    }
+
 }
